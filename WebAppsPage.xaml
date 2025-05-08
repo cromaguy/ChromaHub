@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="24,24,24,16">
-            <TextBlock Text="Web Applications" 
+            <TextBlock Text="Web Apps" 
                        Style="{ThemeResource TitleLargeTextBlockStyle}"
                        FontWeight="SemiBold"/>
             <TextBlock Text="Explore my interactive web applications" 

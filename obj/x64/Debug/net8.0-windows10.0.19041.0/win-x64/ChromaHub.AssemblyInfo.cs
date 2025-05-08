@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChromaHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3a835139f96afae4101da9345d62a5cc963f97a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChromaHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChromaHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

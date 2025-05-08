@@ -293,3 +293,4 @@ C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WebAppViewPage.g.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WebAppsPage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WebAppViewPage.xbf
+C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChromaHub.sourcelink.json
