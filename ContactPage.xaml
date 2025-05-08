@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ChromaHub.ContactPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChromaHub"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid Padding="24">
+        <StackPanel Spacing="24" MaxWidth="800" HorizontalAlignment="Center">
+            <TextBlock Text="Get In Touch" 
+                       Style="{ThemeResource TitleLargeTextBlockStyle}" 
+                       FontWeight="SemiBold"/>
+
+            <TextBlock Text="Whether you have an exciting project in mind or just want to connect, feel free to reach out! I'm always open to interesting collaborations and tech discussions."
+                       TextWrapping="Wrap"
+                       Style="{ThemeResource BodyTextBlockStyle}"
+                       Opacity="0.8"
+                       Margin="0,0,0,12"/>
+
+            <Button Content="Say Hello" 
+                    Style="{StaticResource AccentButtonStyle}"
+                    Click="EmailButton_Click"
+                    HorizontalAlignment="Center"/>
+
+            <Grid Margin="0,24,0,0">
+                <ItemsRepeater ItemsSource="{x:Bind ContactLinks}">
+                    <ItemsRepeater.Layout>
+                        <UniformGridLayout MinItemWidth="240"
+                                          MinColumnSpacing="16"
+                                          MinRowSpacing="16"/>
+                    </ItemsRepeater.Layout>
+                    <ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="local:ContactLinkItem">
+                            <Button HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Height="100"
+                                    Click="ContactButton_Click"
+                                    Tag="{x:Bind Url}">
+                                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                                    <Grid Background="{ThemeResource AccentFillColorDefaultBrush}" 
+                                          Width="48" 
+                                          Height="48" 
+                                          CornerRadius="24">
+                                        <FontIcon Glyph="{x:Bind Icon}" 
+                                                  Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"/>
+                                    </Grid>
+                                    <TextBlock Text="{x:Bind Name}" 
+                                               VerticalAlignment="Center" 
+                                               Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
+            </Grid>
+
+            <InfoBar Title="Don't be a stranger!"
+                     Message="I'm always looking forward to meeting new people and exploring exciting collaborations."
+                     IsOpen="True"
+                     Severity="Success"
+                     IsClosable="False"
+                     Margin="0,24,0,0"/>
+
+            <Image Source="ms-appx:///Assets/contact.png" 
+                   Height="200" 
+                   Stretch="Uniform" 
+                   HorizontalAlignment="Center"
+                   Margin="0,24,0,0"/>
+
+            <TextBlock Text="&quot;Code is like humor. When you have to explain it, it's bad.&quot; 🚀"
+                       Style="{ThemeResource BodyStrongTextBlockStyle}"
+                       HorizontalAlignment="Center"
+                       Opacity="0.8"/>
+        </StackPanel>
+    </Grid>
+</Page>

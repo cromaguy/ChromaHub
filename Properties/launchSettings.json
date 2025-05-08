@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ChromaHub (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ChromaHub (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
