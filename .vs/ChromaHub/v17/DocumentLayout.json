@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\package.appxmanifest||{4D47164B-07B6-4A52-A855-728D6A2E2AA3}",
+      "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:package.appxmanifest||{4D47164B-07B6-4A52-A855-728D6A2E2AA3}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -119,12 +123,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Package.appxmanifest",
+              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\Package.appxmanifest",
+              "RelativeDocumentMoniker": "Package.appxmanifest",
+              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\Package.appxmanifest",
+              "RelativeToolTip": "Package.appxmanifest",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001793|",
+              "WhenOpened": "2025-05-09T13:50:19.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ProjectsPage.g.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs",
               "RelativeDocumentMoniker": "obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs",
               "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs",
               "RelativeToolTip": "obj\\x64\\Release\\net8.0-windows10.0.19041.0\\win-x64\\ProjectsPage.g.cs",
-              "ViewState": "AgIAAAECAAAAAAAAAAAowA0CAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAECAAAAAAAAAAAowAoCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T11:17:33.855Z",
               "EditorCaption": ""
@@ -137,14 +153,14 @@
               "RelativeDocumentMoniker": "app.manifest",
               "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\app.manifest",
               "RelativeToolTip": "app.manifest",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAowBIAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
               "WhenOpened": "2025-05-09T11:04:13.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -156,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ContactPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ContactPage.xaml.cs",
               "RelativeDocumentMoniker": "ContactPage.xaml.cs",
@@ -168,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -180,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "WebAppsPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml",
               "RelativeDocumentMoniker": "WebAppsPage.xaml",
@@ -192,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HomePage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\HomePage.xaml.cs",
               "RelativeDocumentMoniker": "HomePage.xaml.cs",
@@ -204,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ContactPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ContactPage.xaml",
               "RelativeDocumentMoniker": "ContactPage.xaml",
@@ -216,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "WebAppProject.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppProject.cs",
               "RelativeDocumentMoniker": "WebAppProject.cs",
@@ -228,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "HomePage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\HomePage.xaml",
               "RelativeDocumentMoniker": "HomePage.xaml",
@@ -240,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -252,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ProjectsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ProjectsPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjectsPage.xaml.cs",
@@ -264,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "EmptyPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\Usables\\EmptyPage.xaml.cs",
               "RelativeDocumentMoniker": "Usables\\EmptyPage.xaml.cs",
@@ -276,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -288,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ProjectsPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ProjectsPage.xaml",
               "RelativeDocumentMoniker": "ProjectsPage.xaml",
@@ -300,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "UIElementExtension.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\UIElementExtension.cs",
               "RelativeDocumentMoniker": "UIElementExtension.cs",
@@ -312,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "SplashScreen.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\SplashScreen.xaml.cs",
               "RelativeDocumentMoniker": "SplashScreen.xaml.cs",
@@ -324,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "WebAppViewPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml",
               "RelativeDocumentMoniker": "WebAppViewPage.xaml",
@@ -336,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "WebAppsPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml",
               "RelativeDocumentMoniker": "WebAppsPage.xaml",
@@ -347,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SettingsPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\SettingsPage.xaml",
               "RelativeDocumentMoniker": "SettingsPage.xaml",
@@ -359,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SettingsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\SettingsPage.xaml.cs",
               "RelativeDocumentMoniker": "SettingsPage.xaml.cs",
@@ -371,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "WebAppsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml.cs",
               "RelativeDocumentMoniker": "WebAppsPage.xaml.cs",
@@ -383,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "WebAppViewPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml.cs",
               "RelativeDocumentMoniker": "WebAppViewPage.xaml.cs",
@@ -395,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "SplashScreen.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\SplashScreen.xaml",
               "RelativeDocumentMoniker": "SplashScreen.xaml",
@@ -407,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AboutPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\AboutPage.xaml.cs",
               "RelativeDocumentMoniker": "AboutPage.xaml.cs",
@@ -419,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "AboutPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\AboutPage.xaml",
               "RelativeDocumentMoniker": "AboutPage.xaml",
