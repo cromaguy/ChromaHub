@@ -1,7 +1,9 @@
 # ChromaHub 🎨
 
 <div align="center">
-  <img src="Assets/Logo.png" alt="ChromaHub Logo" width="200" />
+<span style="color: 
+#00BFFF; font-size: 72px; font-weight: bold;">AN.</span>
+
   <h2>Where Design Meets Technology</h2>
   <p><i>A modern personal portfolio built with WinUI 3</i></p>
   
