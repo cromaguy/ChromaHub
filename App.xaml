@@ -10,11 +10,20 @@
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
+
             <!-- WinUI 3 styles -->
             <Style x:Key="SubtleButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>
             </Style>
+
+            <!-- BodyLargeTextBlockStyle -->
+            <Style x:Key="BodyLargeTextBlockStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
+            </Style>
+
             <!-- Custom Colors -->
             <Color x:Key="WindowCaptionBackground">Transparent</Color>
             <Color x:Key="WindowCaptionBackgroundDisabled">Transparent</Color>
@@ -27,6 +36,8 @@
                     <SolidColorBrush x:Key="CardBorderBrush" Color="#DDDDDD"/>
                     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#333333"/>
                     <SolidColorBrush x:Key="TextSecondaryBrush" Color="#666666"/>
+                    <SolidColorBrush x:Key="TextSecondaryForegroundThemeBrush" Color="#666666"/>
+                    <!-- Added -->
                     <SolidColorBrush x:Key="AccentBrush" Color="#0078D7"/>
                 </ResourceDictionary>
 
@@ -36,14 +47,13 @@
                     <SolidColorBrush x:Key="CardBorderBrush" Color="#444444"/>
                     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#FFFFFF"/>
                     <SolidColorBrush x:Key="TextSecondaryBrush" Color="#AAAAAA"/>
+                    <SolidColorBrush x:Key="TextSecondaryForegroundThemeBrush" Color="#AAAAAA"/>
+                    <!-- Added -->
                     <SolidColorBrush x:Key="AccentBrush" Color="#4CC2FF"/>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
-
-
 
             <!-- Add more custom styles here -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>
-    

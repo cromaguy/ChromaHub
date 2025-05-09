@@ -1,7 +1,8 @@
 {
   "profiles": {
     "ChromaHub (Package)": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "alwaysReinstallApp": true
     },
     "ChromaHub (Unpackaged)": {
       "commandName": "Project"

@@ -35,6 +35,9 @@ namespace ChromaHub
         // Backdrop type
         private string _currentBackdropType = "Mica";
 
+        // Variable to track if the window is closing
+        private bool _isClosing = false;
+
         public MainWindow()
         {
             this.InitializeComponent();
@@ -79,7 +82,6 @@ namespace ChromaHub
                 _currentBackdropType = "Mica";
             }
         }
-
         private void SetupWindow()
         {
             try
