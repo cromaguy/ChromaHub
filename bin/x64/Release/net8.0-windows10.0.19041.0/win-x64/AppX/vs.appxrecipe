@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-61A7623</Machine>
+    <WindowsUser>KIIT0001</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>chromahub</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Anjishnu Nandi</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
+    <RegisteredManifestChecksum>4D8956714242BD115F35ABE954E6D1A4BC71EF09986009F1956350C01CD1870E</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>chromahub_1.2.27.0_x64__kyaa8gfbwxqqg</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>chromahub_kyaa8gfbwxqqg!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>chromahub</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Anjishnu Nandi</RegisteredPackagePublisher>
+    <RegisteredVersion>1.2.27.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-05-09T11:17:24.145</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2025-05-09T11:17:12.824</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\ChromaHub.runtimeconfig.json">
+      <PackagePath>ChromaHub.runtimeconfig.json</PackagePath>
+      <Modified>2025-05-09T11:17:12.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
+      <PackagePath>ChromaHub.exe</PackagePath>
+      <Modified>2025-05-09T11:17:12.652</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\Microsoft.DiaSymReader.Native.amd64.dll">
+      <PackagePath>Microsoft.DiaSymReader.Native.amd64.dll</PackagePath>
+      <Modified>2024-11-27T04:18:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\System.IO.Compression.Native.dll">
+      <PackagePath>System.IO.Compression.Native.dll</PackagePath>
+      <Modified>2025-03-15T03:04:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\clretwrc.dll">
+      <PackagePath>clretwrc.dll</PackagePath>
+      <Modified>2025-03-15T02:54:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\clrgc.dll">
+      <PackagePath>clrgc.dll</PackagePath>
+      <Modified>2025-03-15T02:52:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\clrjit.dll">
+      <PackagePath>clrjit.dll</PackagePath>
+      <Modified>2025-03-15T02:51:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\coreclr.dll">
+      <PackagePath>coreclr.dll</PackagePath>
+      <Modified>2025-03-15T02:49:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\createdump.exe">
+      <PackagePath>createdump.exe</PackagePath>
+      <Modified>2025-03-15T02:54:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\hostfxr.dll">
+      <PackagePath>hostfxr.dll</PackagePath>
+      <Modified>2025-03-15T03:03:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\hostpolicy.dll">
+      <PackagePath>hostpolicy.dll</PackagePath>
+      <Modified>2025-03-15T03:04:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\mscordaccore.dll">
+      <PackagePath>mscordaccore.dll</PackagePath>
+      <Modified>2025-03-15T02:56:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\mscordaccore_amd64_amd64_8.0.1525.16413.dll">
+      <PackagePath>mscordaccore_amd64_amd64_8.0.1525.16413.dll</PackagePath>
+      <Modified>2025-03-15T02:56:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\mscordbi.dll">
+      <PackagePath>mscordbi.dll</PackagePath>
+      <Modified>2025-03-15T02:56:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\mscorrc.dll">
+      <PackagePath>mscorrc.dll</PackagePath>
+      <Modified>2025-03-15T02:54:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\native\msquic.dll">
+      <PackagePath>msquic.dll</PackagePath>
+      <Modified>2025-03-03T22:23:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.web.webview2\1.0.2903.40\runtimes\win-x64\native\WebView2Loader.dll">
+      <PackagePath>WebView2Loader.dll</PackagePath>
+      <Modified>2024-11-10T08:57:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\runtimes\win-x64\native\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll">
+      <PackagePath>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll</PackagePath>
+      <Modified>2025-04-01T03:05:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\runtimes\win-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
+      <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
+      <Modified>2025-04-01T03:05:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.web.webview2\1.0.2903.40\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
+      <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
+      <Modified>2024-11-10T08:58:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\linked\System.ComponentModel.dll">
+      <PackagePath>System.ComponentModel.dll</PackagePath>
+      <Modified>2025-05-09T11:17:21.073</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.InteractiveExperiences.Projection.dll">
+      <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
+      <Modified>2025-05-09T11:17:21.416</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.WinUI.dll">
+      <PackagePath>Microsoft.WinUI.dll</PackagePath>
+      <Modified>2025-05-09T11:17:21.738</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.Web.WebView2.Core.Projection.dll">
+      <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
+      <Modified>2025-05-09T11:17:21.809</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\ChromaHub.dll">
+      <PackagePath>ChromaHub.dll</PackagePath>
+      <Modified>2025-05-09T11:17:21.929</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Collections.Concurrent.dll">
+      <PackagePath>System.Collections.Concurrent.dll</PackagePath>
+      <Modified>2025-05-09T11:17:21.987</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Collections.Immutable.dll">
+      <PackagePath>System.Collections.Immutable.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.048</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Collections.dll">
+      <PackagePath>System.Collections.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.109</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Diagnostics.StackTrace.dll">
+      <PackagePath>System.Diagnostics.StackTrace.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.156</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.IO.Compression.dll">
+      <PackagePath>System.IO.Compression.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.IO.MemoryMappedFiles.dll">
+      <PackagePath>System.IO.MemoryMappedFiles.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.270</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Linq.Expressions.dll">
+      <PackagePath>System.Linq.Expressions.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.327</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Linq.dll">
+      <PackagePath>System.Linq.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.383</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.ObjectModel.dll">
+      <PackagePath>System.ObjectModel.dll</PackagePath>
+      <Modified>2025-05-09T11:17:22.437</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Private.CoreLib.dll">
+      <PackagePath>System.Private.CoreLib.dll</PackagePath>
+      <Modified>2025-05-09T11:17:23.425</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Private.Uri.dll">
+      <PackagePath>System.Private.Uri.dll</PackagePath>
+      <Modified>2025-05-09T11:17:23.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Reflection.Metadata.dll">
+      <PackagePath>System.Reflection.Metadata.dll</PackagePath>
+      <Modified>2025-05-09T11:17:23.607</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Runtime.InteropServices.dll">
+      <PackagePath>System.Runtime.InteropServices.dll</PackagePath>
+      <Modified>2025-05-09T11:17:23.667</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\System.Security.Cryptography.dll">
+      <PackagePath>System.Security.Cryptography.dll</PackagePath>
+      <Modified>2025-05-09T11:17:23.723</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.Windows.SDK.NET.dll">
+      <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
+      <Modified>2025-05-09T11:17:23.817</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\WinRT.Runtime.dll">
+      <PackagePath>WinRT.Runtime.dll</PackagePath>
+      <Modified>2025-05-09T11:17:24.061</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\ChromaHub.deps.json">
+      <PackagePath>ChromaHub.deps.json</PackagePath>
+      <Modified>2025-05-09T11:17:24.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\anji.png">
+      <PackagePath>Assets\anji.png</PackagePath>
+      <Modified>2025-04-21T14:41:33.567</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Banner.png">
+      <PackagePath>Assets\Banner.png</PackagePath>
+      <Modified>2025-05-07T04:43:21.464</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\beta.png">
+      <PackagePath>Assets\beta.png</PackagePath>
+      <Modified>2025-05-08T10:29:07.672</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Feel.png">
+      <PackagePath>Assets\Feel.png</PackagePath>
+      <Modified>2025-04-21T14:41:32.603</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\GoalGuru.png">
+      <PackagePath>Assets\GoalGuru.png</PackagePath>
+      <Modified>2025-04-21T14:41:32.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\github.png">
+      <PackagePath>Assets\Icons\github.png</PackagePath>
+      <Modified>2025-05-09T09:44:16.773</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\github.svg">
+      <PackagePath>Assets\Icons\github.svg</PackagePath>
+      <Modified>2025-05-09T10:50:22.980</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\instagram.svg">
+      <PackagePath>Assets\Icons\instagram.svg</PackagePath>
+      <Modified>2025-05-09T10:46:49.210</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\linkedin.svg">
+      <PackagePath>Assets\Icons\linkedin.svg</PackagePath>
+      <Modified>2025-05-09T10:47:10.996</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\mail.gif">
+      <PackagePath>Assets\Icons\mail.gif</PackagePath>
+      <Modified>2025-05-09T10:48:01.988</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\mail.png">
+      <PackagePath>Assets\Icons\mail.png</PackagePath>
+      <Modified>2025-05-09T09:40:39.228</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\mail.svg">
+      <PackagePath>Assets\Icons\mail.svg</PackagePath>
+      <Modified>2025-05-09T04:17:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\whatsapp.svg">
+      <PackagePath>Assets\Icons\whatsapp.svg</PackagePath>
+      <Modified>2025-05-09T09:37:27.752</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\x.svg">
+      <PackagePath>Assets\Icons\x.svg</PackagePath>
+      <Modified>2025-05-09T10:45:31.391</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2025-05-08T08:53:53.150</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
+      <Modified>2025-04-21T14:41:33.569</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\NewAngle.png">
+      <PackagePath>Assets\NewAngle.png</PackagePath>
+      <Modified>2025-04-21T14:41:33.133</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Quizzy.png">
+      <PackagePath>Assets\Quizzy.png</PackagePath>
+      <Modified>2025-04-21T14:41:33.314</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <Modified>2025-05-08T08:53:58.809</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <Modified>2025-05-08T08:54:07.362</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <Modified>2025-05-08T08:54:06.049</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <Modified>2025-05-08T08:54:09.443</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.backup.png">
+      <PackagePath>Assets\StoreLogo.backup.png</PackagePath>
+      <Modified>2025-05-08T08:54:19.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <Modified>2025-05-09T10:58:36.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <Modified>2025-05-09T10:58:36.219</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <Modified>2025-05-09T10:58:36.223</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <Modified>2025-05-09T10:58:36.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <Modified>2025-05-09T10:58:36.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StudySkill.png">
+      <PackagePath>Assets\StudySkill.png</PackagePath>
+      <Modified>2025-04-21T14:41:33.542</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <Modified>2025-05-08T08:54:16.293</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.7.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.7</Name>
+      <Version>7000.456.1632.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.7, MinVersion = 7000.456.1632.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.7.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.7.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.7</Name>
+      <Version>7000.456.1632.0</Version>
+      <Architecture>win32</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.7, MinVersion = 7000.456.1632.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.7.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.7.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.7</Name>
+      <Version>7000.456.1632.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.7, MinVersion = 7000.456.1632.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.7.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.7.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.7</Name>
+      <Version>7000.456.1632.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.7, MinVersion = 7000.456.1632.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\KIIT0001\.nuget\packages\microsoft.windowsappsdk\1.7.250401001\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.7.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

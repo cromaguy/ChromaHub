@@ -9,11 +9,10 @@ namespace ChromaHub
     {
         public List<SocialLinkItem> SocialLinks { get; } = new List<SocialLinkItem>
         {
-            // Updated with proper Unicode icons for social platforms
-            new SocialLinkItem { Name = "LinkedIn", Icon = "\uE774", Url = "https://linkedin.com/in/anjishnu-nandi" },
-            new SocialLinkItem { Name = "Twitter", Icon = "\uE8AC", Url = "https://twitter.com/AnjiCroma" },
-            new SocialLinkItem { Name = "GitHub", Icon = "\uEA0A", Url = "https://github.com/cromaguy" },
-            new SocialLinkItem { Name = "Instagram", Icon = "\uE7AA", Url = "https://instagram.com/its.chroma.anji" }
+            new SocialLinkItem { Name = "LinkedIn", IconPath = "Assets/Icons/linkedin.svg", Url = "https://linkedin.com/in/anjishnu-nandi" },
+            new SocialLinkItem { Name = "X", IconPath = "Assets/Icons/x.svg", Url = "https://x.com/AnjiCroma" },
+            new SocialLinkItem { Name = "GitHub", IconPath = "Assets/Icons/github.svg", Url = "https://github.com/cromaguy" },
+            new SocialLinkItem { Name = "Instagram", IconPath = "Assets/Icons/instagram.svg", Url = "https://instagram.com/its.chroma.anji" }
         };
 
         public HomePage()
@@ -78,10 +77,9 @@ namespace ChromaHub
             var button = sender as Button;
             var url = button?.Tag?.ToString();
             if (!string.IsNullOrEmpty(url))
-            {
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
-            }
         }
+
 
         private async void EmailButton_Click(object sender, RoutedEventArgs e)
         {
@@ -97,7 +95,7 @@ namespace ChromaHub
     public class SocialLinkItem
     {
         public string Name { get; set; }
-        public string Icon { get; set; }
+        public string IconPath { get; set; }
         public string Url { get; set; }
     }
 }

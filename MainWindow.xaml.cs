@@ -387,12 +387,11 @@ namespace ChromaHub
 
             var panel = new StackPanel { Spacing = 12 };
 
-            // Updated with proper Unicode icons for social platforms
-            AddSocialLink(panel, "LinkedIn", "\uE774", "https://linkedin.com/in/anjishnu-nandi");
-            AddSocialLink(panel, "Twitter", "\uE8AC", "https://twitter.com/AnjiCroma");
-            AddSocialLink(panel, "Instagram", "\uE7AA", "https://instagram.com/its.chroma.anji");
-            AddSocialLink(panel, "GitHub", "\uEA0A", "https://github.com/cromaguy");
-            AddSocialLink(panel, "Email", "\uE715", "mailto:anjicroma@gmail.com");
+            AddSocialLink(panel, "LinkedIn", "Assets/Icons/linkedin.svg", "https://linkedin.com/in/anjishnu-nandi");
+            AddSocialLink(panel, "X", "Assets/Icons/x.svg", "https://x.com/AnjiCroma");
+            AddSocialLink(panel, "Instagram", "Assets/Icons/instagram.svg", "https://instagram.com/its.chroma.anji");
+            AddSocialLink(panel, "GitHub", "Assets/Icons/github.svg", "https://github.com/cromaguy");
+            AddSocialLink(panel, "Email", "Assets/Icons/mail.gif", "mailto:anjicroma@gmail.com"); // If you have an email SVG
 
             flyout.Content = panel;
 
@@ -403,7 +402,7 @@ namespace ChromaHub
             }
         }
 
-        private void AddSocialLink(StackPanel panel, string name, string icon, string url)
+        private void AddSocialLink(StackPanel panel, string name, string iconPath, string url)
         {
             var button = new Button
             {
@@ -412,21 +411,25 @@ namespace ChromaHub
                     Orientation = Orientation.Horizontal,
                     Spacing = 8,
                     Children =
-                    {
-                        new FontIcon { Glyph = icon, FontSize = 16 },
-                        new TextBlock { Text = name }
-                    }
+            {
+                new Image
+                {
+                    Source = new Microsoft.UI.Xaml.Media.Imaging.BitmapImage(new Uri($"ms-appx:///{iconPath}")),
+                    Width = 24,
+                    Height = 24
+                },
+                new TextBlock { Text = name }
+            }
                 },
                 HorizontalAlignment = HorizontalAlignment.Stretch,
-                HorizontalContentAlignment = HorizontalAlignment.Left
+                HorizontalContentAlignment = HorizontalAlignment.Left,
+                Tag = url
             };
-
             button.Click += async (s, e) =>
             {
                 var uri = new Uri(url);
                 await Windows.System.Launcher.LaunchUriAsync(uri);
             };
-
             panel.Children.Add(button);
         }
 

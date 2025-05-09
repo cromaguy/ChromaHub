@@ -79,7 +79,7 @@
                                Style="{ThemeResource TitleTextBlockStyle}" 
                                FontWeight="SemiBold"/>
 
-                    <Grid Height="300" CornerRadius="8">
+                    <Grid Height="300" CornerRadius="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -136,28 +136,53 @@
                     </InfoBar.ActionButton>
                 </InfoBar>
 
-                <ItemsRepeater ItemsSource="{x:Bind SocialLinks}">
-                    <ItemsRepeater.Layout>
-                        <UniformGridLayout MinItemWidth="150" 
-                                          MinItemHeight="100"
-                                          ItemsStretch="Fill"
-                                          MinRowSpacing="16"
-                                          MinColumnSpacing="16"/>
-                    </ItemsRepeater.Layout>
-                    <ItemsRepeater.ItemTemplate>
-                        <DataTemplate x:DataType="local:SocialLinkItem">
-                            <Button HorizontalAlignment="Stretch" 
-                                    VerticalAlignment="Stretch"
-                                    Click="SocialButton_Click"
-                                    Tag="{x:Bind Url}">
-                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                                    <FontIcon Glyph="{x:Bind Icon}" FontSize="24"/>
-                                    <TextBlock Text="{x:Bind Name}" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </Button>
-                        </DataTemplate>
-                    </ItemsRepeater.ItemTemplate>
-                </ItemsRepeater>
+                <!-- Updated Social Links Section -->
+                <Grid Margin="0,12,0,0" MaxWidth="800" HorizontalAlignment="Center">
+                    <ItemsRepeater ItemsSource="{x:Bind SocialLinks}">
+                        <ItemsRepeater.Layout>
+                            <UniformGridLayout MinItemWidth="160" 
+                                              MinItemHeight="56"
+                                              MaximumRowsOrColumns="2"
+                                              ItemsStretch="Uniform"
+                                              MinRowSpacing="16"
+                                              MinColumnSpacing="16"/>
+                        </ItemsRepeater.Layout>
+                        <ItemsRepeater.ItemTemplate>
+                            <DataTemplate x:DataType="local:SocialLinkItem">
+                                <Button Click="SocialButton_Click" 
+                                        Tag="{Binding Url}" 
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalContentAlignment="Center"
+                                        Padding="16,8"
+                                        CornerRadius="10">
+                                    <StackPanel Orientation="Horizontal" Spacing="12">
+                                        <Image Source="{Binding IconPath}" Width="50" Height="50"/>
+                                        <TextBlock Text="{Binding Name}" 
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                    <Button.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#F0F0F0"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#E0E0E0"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#D0D0D0"/>
+                                                </ResourceDictionary>
+                                                <ResourceDictionary x:Key="Dark">
+                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#2D2D2D"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3D3D3D"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4D4D4D"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </Button.Resources>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
 

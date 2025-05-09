@@ -24,34 +24,46 @@
             <Button Content="Say Hello" 
                     Style="{StaticResource AccentButtonStyle}"
                     Click="EmailButton_Click"
-                    HorizontalAlignment="Center"/>
+                    HorizontalAlignment="Center"
+                    Padding="20,8"
+                    FontWeight="SemiBold"/>
 
             <Grid Margin="0,24,0,0">
-                <ItemsRepeater ItemsSource="{x:Bind ContactLinks}">
+                <!-- Updated Contact Links Section -->
+                <ItemsRepeater ItemsSource="{x:Bind ContactLinks}" HorizontalAlignment="Center">
                     <ItemsRepeater.Layout>
-                        <UniformGridLayout MinItemWidth="240"
-                                          MinColumnSpacing="16"
-                                          MinRowSpacing="16"/>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
                     </ItemsRepeater.Layout>
                     <ItemsRepeater.ItemTemplate>
                         <DataTemplate x:DataType="local:ContactLinkItem">
-                            <Button HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Stretch"
-                                    Height="100"
-                                    Click="ContactButton_Click"
-                                    Tag="{x:Bind Url}">
-                                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
-                                    <Grid Background="{ThemeResource AccentFillColorDefaultBrush}" 
-                                          Width="48" 
-                                          Height="48" 
-                                          CornerRadius="24">
-                                        <FontIcon Glyph="{x:Bind Icon}" 
-                                                  Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"/>
-                                    </Grid>
+                            <Button Click="ContactButton_Click" 
+                                    Tag="{x:Bind Url}"
+                                    HorizontalAlignment="Stretch"
+                                    MinWidth="240"
+                                    Padding="16,12"
+                                    CornerRadius="6">
+                                <StackPanel Orientation="Horizontal" Spacing="16">
+                                    <Image Source="{x:Bind IconPath}" Width="28" Height="28"/>
                                     <TextBlock Text="{x:Bind Name}" 
-                                               VerticalAlignment="Center" 
-                                               Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                                               VerticalAlignment="Center"
+                                               FontWeight="SemiBold"/>
                                 </StackPanel>
+                                <Button.Resources>
+                                    <ResourceDictionary>
+                                        <ResourceDictionary.ThemeDictionaries>
+                                            <ResourceDictionary x:Key="Light">
+                                                <SolidColorBrush x:Key="ButtonBackground" Color="#F0F0F0"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#E0E0E0"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#D0D0D0"/>
+                                            </ResourceDictionary>
+                                            <ResourceDictionary x:Key="Dark">
+                                                <SolidColorBrush x:Key="ButtonBackground" Color="#2D2D2D"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3D3D3D"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4D4D4D"/>
+                                            </ResourceDictionary>
+                                        </ResourceDictionary.ThemeDictionaries>
+                                    </ResourceDictionary>
+                                </Button.Resources>
                             </Button>
                         </DataTemplate>
                     </ItemsRepeater.ItemTemplate>

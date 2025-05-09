@@ -52,6 +52,7 @@
 
                             <Grid Grid.Row="1" 
                                   BorderThickness="1"
+                                  CornerRadius="5"
                                   BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
                                   Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                                   Padding="16">

@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="3e366aed-cfb4-492d-8bd8-85b6224fffcc"
-    Publisher="CN=KIIT0001"
-    Version="1.0.0.0" />
+    Name="chromahub"
+    Publisher="CN=Anjishnu Nandi"
+    Version="1.2.27.0" />
 
   <mp:PhoneIdentity PhoneProductId="3e366aed-cfb4-492d-8bd8-85b6224fffcc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ChromaHub</DisplayName>
-    <PublisherDisplayName>KIIT0001</PublisherDisplayName>
+    <DisplayName>Chroma Hub ALPHA</DisplayName>
+    <PublisherDisplayName>Anjishnu Nandi</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

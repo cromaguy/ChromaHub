@@ -8,8 +8,8 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|x64</SolutionConfiguration>
     <PackageArchitecture>x64</PackageArchitecture>
-    <PackageIdentityName>3e366aed-cfb4-492d-8bd8-85b6224fffcc</PackageIdentityName>
-    <PackageIdentityPublisher>CN=KIIT0001</PackageIdentityPublisher>
+    <PackageIdentityName>chromahub</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Anjishnu Nandi</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
@@ -670,6 +670,9 @@
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\anji.png">
       <PackagePath>Assets\anji.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Banner.png">
+      <PackagePath>Assets\Banner.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\beta.png">
       <PackagePath>Assets\beta.png</PackagePath>
     </AppxPackagedFile>
@@ -678,6 +681,33 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\GoalGuru.png">
       <PackagePath>Assets\GoalGuru.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\github.png">
+      <PackagePath>Assets\Icons\github.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\github.svg">
+      <PackagePath>Assets\Icons\github.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\instagram.svg">
+      <PackagePath>Assets\Icons\instagram.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\linkedin.svg">
+      <PackagePath>Assets\Icons\linkedin.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\mail.gif">
+      <PackagePath>Assets\Icons\mail.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\mail.png">
+      <PackagePath>Assets\Icons\mail.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\mail.svg">
+      <PackagePath>Assets\Icons\mail.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\whatsapp.svg">
+      <PackagePath>Assets\Icons\whatsapp.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\x.svg">
+      <PackagePath>Assets\Icons\x.svg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -703,8 +733,23 @@
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.backup.png">
+      <PackagePath>Assets\StoreLogo.backup.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\StudySkill.png">
       <PackagePath>Assets\StudySkill.png</PackagePath>
