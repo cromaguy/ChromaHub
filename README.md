@@ -1,7 +1,7 @@
 # ChromaHub
 
 <div align="center">
-  <img src="Assets/Banner.png" alt="ChromaHub Logo" width="200" />
+  <img src="Assets/Logo.png" alt="ChromaHub Logo" width="200" />
   <h3>A Modern Portfolio Experience Built with WinUI 3</h3>
 </div>
 
