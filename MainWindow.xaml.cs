@@ -7,63 +7,148 @@ using Microsoft.UI.Windowing;
 using WinRT.Interop;
 using Microsoft.UI;
 using System.Threading.Tasks;
-using WinRT; // Added for proper WinRT interop
+using WinRT;
 using Windows.Storage;
 using ChromaHub;
 using System.Linq;
-using System.Reflection.Metadata;
+using Microsoft.UI.Xaml.Media.Animation;
+using System.Collections.Generic;
+using Microsoft.UI.Composition;
 
 namespace ChromaHub
 {
     public sealed partial class MainWindow : Window
     {
-        // Make the Frame accessible for navigation from other classes
         public Frame AppFrame => ContentFrame;
-
-        // Variables to track window backdrop
         private MicaController _micaController;
         private SystemBackdropConfiguration _backdropConfiguration;
-
-        // Is loading flag to prevent multiple navigation attempts during initialization
         private bool _isLoading = true;
-
-        // Track the window for maximize/restore functionality
         private AppWindow _appWindow;
         private bool _isMaximized = false;
         private WindowId _windowId;
-
-        // Backdrop type
         private string _currentBackdropType = "Mica";
-
-        // Variable to track if the window is closing
         private bool _isClosing = false;
+        private Storyboard _pulseAnimation;
+        private Storyboard _fadeInAnimation;
+        private Storyboard _fadeOutAnimation;
+        private Storyboard _buttonClickAnimation;
+        private Storyboard _loadingSpinnerAnimation;
 
         public MainWindow()
         {
             this.InitializeComponent();
-
-            // Set window properties
-            Title = "Anjishnu Nandi | Portfolio";
+            InitializeAnimations();
+            Title = "Anjishnu Nandi | ChromaHub";
             SetupWindow();
-
-            // Configure navigation
             NavView.ItemInvoked += NavView_ItemInvoked;
-
-            // Load backdrop setting
+            SetupSoundEffects();
             LoadBackdropSetting();
-
-            // Apply theme based on saved settings
             ApplyTheme(App.CurrentTheme);
-
-            // Initialize theme icon based on current theme
-            ElementTheme currentTheme = App.CurrentTheme;
-            UpdateThemeIcon(currentTheme);
-
-            // Initial navigation to splash screen
+            UpdateThemeIcon(App.CurrentTheme);
             ContentFrame.Navigate(typeof(SplashScreen));
-
-            // Set the loading flag to false once the UI is ready
             _isLoading = false;
+        }
+
+        private void InitializeAnimations()
+        {
+            try
+            {
+                // Load animations from resources dictionary
+                var resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault(d =>
+                    d.Source?.OriginalString.Contains("AnimationResources.xaml") == true);
+
+                if (resourceDictionary != null)
+                {
+                    _pulseAnimation = resourceDictionary["PulseAnimation"] as Storyboard;
+                    _fadeInAnimation = resourceDictionary["FadeInAnimation"] as Storyboard;
+                    _fadeOutAnimation = resourceDictionary["FadeOutAnimation"] as Storyboard;
+                    _buttonClickAnimation = resourceDictionary["ButtonClickAnimation"] as Storyboard;
+                    _loadingSpinnerAnimation = resourceDictionary["LoadingSpinnerAnimation"] as Storyboard;
+                }
+                else
+                {
+                    // Fallback to application resources
+                    _pulseAnimation = Application.Current.Resources["PulseAnimation"] as Storyboard;
+                    _fadeInAnimation = Application.Current.Resources["FadeInAnimation"] as Storyboard;
+                    _fadeOutAnimation = Application.Current.Resources["FadeOutAnimation"] as Storyboard;
+                    _buttonClickAnimation = Application.Current.Resources["ButtonClickAnimation"] as Storyboard;
+                    _loadingSpinnerAnimation = Application.Current.Resources["LoadingSpinnerAnimation"] as Storyboard;
+                }
+
+                if (RootGrid != null && RootGrid.RenderTransform == null)
+                {
+                    RootGrid.RenderTransform = new ScaleTransform();
+                    RootGrid.RenderTransformOrigin = new Windows.Foundation.Point(0.5, 0.5);
+                }
+
+                foreach (var button in FindVisualChildren<Button>(RootGrid))
+                {
+                    if (button.RenderTransform == null)
+                    {
+                        button.RenderTransform = new ScaleTransform();
+                        button.RenderTransformOrigin = new Windows.Foundation.Point(0.5, 0.5);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error initializing animations: {ex.Message}");
+            }
+        }
+
+        private void SetupSoundEffects()
+        {
+            if (NavView != null)
+            {
+                SoundEffectsHelper.AddSoundEffects(NavView);
+
+                foreach (var item in NavView.MenuItems)
+                {
+                    if (item is NavigationViewItem navItem)
+                    {
+                        SoundEffectsHelper.AddSoundEffects(navItem);
+                    }
+                }
+
+                foreach (var item in NavView.FooterMenuItems)
+                {
+                    if (item is NavigationViewItem navItem)
+                    {
+                        SoundEffectsHelper.AddSoundEffects(navItem);
+                    }
+                }
+            }
+            SoundEffectsHelper.AddSoundEffects(MinimizeButton);
+            SoundEffectsHelper.AddSoundEffects(MaximizeRestoreButton);
+            SoundEffectsHelper.AddSoundEffects(CloseButton);
+            SoundEffectsHelper.AddSoundEffects(ThemeButton);
+            SoundEffectsHelper.AddSoundEffects(NotificationsButton);
+            SoundEffectsHelper.AddHoverEffect(ThemeButton);
+            SoundEffectsHelper.AddHoverEffect(NotificationsButton);
+            SoundEffectsHelper.AddHoverEffect(MinimizeButton);
+            SoundEffectsHelper.AddHoverEffect(MaximizeRestoreButton);
+            SoundEffectsHelper.AddHoverEffect(CloseButton);
+        }
+
+        private IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
+        {
+            if (parent == null) yield break;
+
+            int childCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+
+                if (child is T t)
+                {
+                    yield return t;
+                }
+
+                foreach (var childOfChild in FindVisualChildren<T>(child))
+                {
+                    yield return childOfChild;
+                }
+            }
         }
 
         private void LoadBackdropSetting()
@@ -78,57 +163,34 @@ namespace ChromaHub
             }
             catch
             {
-                // Use default if settings cannot be read
                 _currentBackdropType = "Mica";
             }
         }
+
         private void SetupWindow()
         {
             try
             {
-                // Get window handle and app window
                 IntPtr hWnd = WindowNative.GetWindowHandle(this);
                 _windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
                 _appWindow = AppWindow.GetFromWindowId(_windowId);
-
-                // Remove the default title bar by extending into the caption area
-                // This is the key part to hide the default window controls
                 ExtendsContentIntoTitleBar = true;
-
-                // Set the draggable regions for the custom title bar
                 SetTitleBar(AppTitleBar);
-
-                // Get the AppWindowTitleBar
                 var titleBar = _appWindow.TitleBar;
-
-                // Hide default title bar completely
                 titleBar.ExtendsContentIntoTitleBar = true;
-
-                // Make default system title bar buttons invisible
                 titleBar.ButtonBackgroundColor = Colors.Transparent;
                 titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
                 titleBar.ButtonForegroundColor = Colors.Transparent;
                 titleBar.ButtonInactiveForegroundColor = Colors.Transparent;
-                var hWnd1 = WinRT.Interop.WindowNative.GetWindowHandle(this);
-                var windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd1);
-                var appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
-                var presenter = appWindow.Presenter as Microsoft.UI.Windowing.OverlappedPresenter;
-
-                // Hide both the border and the title bar (including system controls)
+                var presenter = _appWindow.Presenter as OverlappedPresenter;
                 presenter.SetBorderAndTitleBar(true, false);
-
-                // Set window size
                 _appWindow.Resize(new Windows.Graphics.SizeInt32 { Width = 1200, Height = 800 });
-
-                // Center the window
                 CenterWindow(_appWindow, _windowId);
-
-                // Apply backdrop based on saved setting
                 ApplyBackdrop(_currentBackdropType);
             }
             catch (Exception ex)
             {
-                // Fallback in case of failure
+                System.Diagnostics.Debug.WriteLine($"Error in SetupWindow: {ex.Message}");
                 if (RootGrid != null)
                 {
                     RootGrid.Background = new SolidColorBrush(
@@ -149,9 +211,9 @@ namespace ChromaHub
                     appWindow.Move(new Windows.Graphics.PointInt32(centerX, centerY));
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Silently handle any errors with window positioning
+                System.Diagnostics.Debug.WriteLine($"Error in CenterWindow: {ex.Message}");
             }
         }
 
@@ -161,7 +223,6 @@ namespace ChromaHub
 
             try
             {
-                // Clean up existing backdrop if any
                 CleanupBackdrop();
 
                 if (backdropType == "Mica")
@@ -173,9 +234,9 @@ namespace ChromaHub
                     ApplySolidColorBackdrop();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Fallback to solid color if requested backdrop fails
+                System.Diagnostics.Debug.WriteLine($"Error in ApplyBackdrop: {ex.Message}");
                 ApplySolidColorBackdrop();
             }
         }
@@ -190,7 +251,6 @@ namespace ChromaHub
 
             _backdropConfiguration = null;
 
-            // Ensure we have a background in case backdrop is removed
             ApplySolidColorBackdrop();
         }
 
@@ -198,29 +258,21 @@ namespace ChromaHub
         {
             try
             {
-                // Initialize the Mica controller
                 _micaController = new MicaController();
                 _backdropConfiguration = new SystemBackdropConfiguration();
-
-                // Configure backdrop
                 _micaController.Kind = MicaKind.BaseAlt;
                 _backdropConfiguration.IsInputActive = true;
-                _backdropConfiguration.Theme = (Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme)App.CurrentTheme;
-
-                // Apply the backdrop
-                // Fixed: Use proper COM interface casting with TryAs
-                _micaController.AddSystemBackdropTarget(this.As<Microsoft.UI.Composition.ICompositionSupportsSystemBackdrop>());
+                _backdropConfiguration.Theme = (SystemBackdropTheme)App.CurrentTheme;
+                _micaController.AddSystemBackdropTarget(this.As<ICompositionSupportsSystemBackdrop>());
                 _micaController.SetSystemBackdropConfiguration(_backdropConfiguration);
-
-                // Clear background to allow backdrop visibility
                 if (RootGrid != null)
                 {
                     RootGrid.Background = null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Fallback to solid color if Mica is not supported
+                System.Diagnostics.Debug.WriteLine($"Error in TryApplyMicaBackdrop: {ex.Message}");
                 ApplySolidColorBackdrop();
             }
         }
@@ -236,9 +288,9 @@ namespace ChromaHub
                         new SolidColorBrush(Colors.White);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Silently handle any errors with applying backdrop
+                System.Diagnostics.Debug.WriteLine($"Error in ApplySolidColorBackdrop: {ex.Message}");
             }
         }
 
@@ -255,6 +307,17 @@ namespace ChromaHub
             {
                 var tag = item.Tag?.ToString();
                 NavigateToPage(tag);
+            }
+        }
+
+        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            // Call App's PlayNavigateSound method
+            PlayNavigateSound();
+
+            if (args.SelectedItem is NavigationViewItem item && item.Tag != null)
+            {
+                NavigateToPage(item.Tag.ToString());
             }
         }
 
@@ -316,12 +379,10 @@ namespace ChromaHub
             {
                 bool shouldNavigate = false;
 
-                // For normal pages, check if we're navigating to a different page type
                 if (parameter == null)
                 {
                     shouldNavigate = (ContentFrame.CurrentSourcePageType != pageType || pageType == typeof(HomePage));
                 }
-                // For WebAppViewPage with a project parameter, always navigate to handle different web apps
                 else if (pageType == typeof(WebAppViewPage))
                 {
                     shouldNavigate = true;
@@ -329,10 +390,8 @@ namespace ChromaHub
 
                 if (shouldNavigate)
                 {
-                    // Show loading indicator
                     ShowLoading(true);
 
-                    // Navigate after a brief delay to allow UI to update
                     Task.Delay(100).ContinueWith(t => {
                         DispatcherQueue.TryEnqueue(() => {
                             if (parameter != null)
@@ -347,7 +406,6 @@ namespace ChromaHub
                         });
                     });
 
-                    // Update selected nav item
                     foreach (var navItem in NavView.MenuItems)
                     {
                         if (navItem is NavigationViewItem item && item.Tag?.ToString() == tag)
@@ -357,10 +415,11 @@ namespace ChromaHub
                         }
                     }
 
-                    // Handle settings selection specifically
                     if (tag == "Settings" || tag == "Tweaks")
                     {
-                        NavView.SelectedItem = NavView.SettingsItem;
+                        NavView.SelectedItem = NavView.FooterMenuItems.FirstOrDefault(
+                            item => item is NavigationViewItem navItem &&
+                            (navItem.Tag?.ToString() == "Settings" || navItem.Tag?.ToString() == "Tweaks"));
                     }
                 }
             }
@@ -370,84 +429,125 @@ namespace ChromaHub
         {
             if (LoadingOverlay != null)
             {
-                LoadingOverlay.Visibility = isLoading ? Visibility.Visible : Visibility.Collapsed;
+                if (isLoading)
+                {
+                    LoadingOverlay.Visibility = Visibility.Visible;
+
+                    if (_fadeInAnimation != null)
+                    {
+                        Storyboard.SetTarget(_fadeInAnimation, LoadingOverlay);
+                        _fadeInAnimation.Begin();
+                    }
+
+                    // Use LoadingProgress instead of LoadingSpinner
+                    if (LoadingProgress != null && _loadingSpinnerAnimation != null)
+                    {
+                        if (LoadingProgress.RenderTransform == null)
+                        {
+                            LoadingProgress.RenderTransform = new RotateTransform();
+                        }
+
+                        Storyboard.SetTarget(_loadingSpinnerAnimation, LoadingProgress);
+                        _loadingSpinnerAnimation.Begin();
+                    }
+                }
+                else
+                {
+                    if (_fadeOutAnimation != null)
+                    {
+                        Storyboard.SetTarget(_fadeOutAnimation, LoadingOverlay);
+                        _fadeOutAnimation.Begin();
+
+                        _fadeOutAnimation.Completed += (s, e) =>
+                        {
+                            LoadingOverlay.Visibility = Visibility.Collapsed;
+
+                            // Use LoadingProgress instead of LoadingSpinner
+                            if (LoadingProgress != null && _loadingSpinnerAnimation != null)
+                            {
+                                _loadingSpinnerAnimation.Stop();
+                            }
+                        };
+                    }
+                    else
+                    {
+                        LoadingOverlay.Visibility = Visibility.Collapsed;
+                    }
+                }
             }
         }
 
-        private void OpenSocialLinks()
+
+        private void NotificationsButton_Click(object sender, RoutedEventArgs e)
         {
-            // Display a flyout with social links
-            var flyout = new TeachingTip
+            if (NotificationPanel != null)
             {
-                Title = "Connect With Me",
-                PreferredPlacement = TeachingTipPlacementMode.Bottom,
-                CloseButtonContent = "Close",
-                IsLightDismissEnabled = true
-            };
+                if (NotificationPanel.Visibility == Visibility.Collapsed)
+                {
+                    NotificationPanel.Visibility = Visibility.Visible;
 
-            var panel = new StackPanel { Spacing = 12 };
+                    if (_fadeInAnimation != null)
+                    {
+                        Storyboard.SetTarget(_fadeInAnimation, NotificationPanel);
+                        _fadeInAnimation.Begin();
+                    }
 
-            AddSocialLink(panel, "LinkedIn", "Assets/Icons/linkedin.svg", "https://linkedin.com/in/anjishnu-nandi");
-            AddSocialLink(panel, "X", "Assets/Icons/x.svg", "https://x.com/AnjiCroma");
-            AddSocialLink(panel, "Instagram", "Assets/Icons/instagram.svg", "https://instagram.com/its.chroma.anji");
-            AddSocialLink(panel, "GitHub", "Assets/Icons/github.svg", "https://github.com/cromaguy");
-            AddSocialLink(panel, "Email", "Assets/Icons/mail.gif", "mailto:anjicroma@gmail.com"); // If you have an email SVG
+                    PlayNotificationSound();
+                }
+                else
+                {
+                    if (_fadeOutAnimation != null)
+                    {
+                        Storyboard.SetTarget(_fadeOutAnimation, NotificationPanel);
+                        _fadeOutAnimation.Begin();
 
-            flyout.Content = panel;
-
-            if (NavView.FooterMenuItems.Count > 0 && NavView.FooterMenuItems[0] is NavigationViewItem navItem)
-            {
-                flyout.Target = navItem;
-                flyout.IsOpen = true;
+                        _fadeOutAnimation.Completed += (s, args) =>
+                        {
+                            NotificationPanel.Visibility = Visibility.Collapsed;
+                        };
+                    }
+                    else
+                    {
+                        NotificationPanel.Visibility = Visibility.Collapsed;
+                    }
+                }
             }
         }
 
-        private void AddSocialLink(StackPanel panel, string name, string iconPath, string url)
+        private void MusicPlayPauseButton_Click(object sender, RoutedEventArgs e)
         {
-            var button = new Button
+            if (MusicPlayIcon.Glyph == "\xE769") // Play icon
             {
-                Content = new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    Spacing = 8,
-                    Children =
-            {
-                new Image
-                {
-                    Source = new Microsoft.UI.Xaml.Media.Imaging.BitmapImage(new Uri($"ms-appx:///{iconPath}")),
-                    Width = 24,
-                    Height = 24
-                },
-                new TextBlock { Text = name }
+                MusicPlayIcon.Glyph = "\xE768"; // Pause icon
+                PlayMusicStartSound();
+                SoundEffectsHelper.AddPulseEffect(MusicPlayerMini);
             }
-                },
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                HorizontalContentAlignment = HorizontalAlignment.Left,
-                Tag = url
-            };
-            button.Click += async (s, e) =>
+            else
             {
-                var uri = new Uri(url);
-                await Windows.System.Launcher.LaunchUriAsync(uri);
-            };
-            panel.Children.Add(button);
+                MusicPlayIcon.Glyph = "\xE769"; // Play icon
+                PlayMusicStopSound();
+                SoundEffectsHelper.AddPulseEffect(MusicPlayerMini, 1.0, 1.0);
+            }
         }
 
         private void ThemeButton_Click(object sender, RoutedEventArgs e)
         {
-            // Get current theme from RootGrid
+            PlayToggleSound();
             ElementTheme currentTheme = RootGrid.RequestedTheme;
-
-            // If Default, determine from application
             if (currentTheme == ElementTheme.Default)
             {
                 currentTheme = Application.Current.RequestedTheme == ApplicationTheme.Light
                     ? ElementTheme.Light
                     : ElementTheme.Dark;
             }
-
-            // Toggle theme
             ElementTheme newTheme = currentTheme == ElementTheme.Dark ? ElementTheme.Light : ElementTheme.Dark;
+
+            if (_pulseAnimation != null)
+            {
+                Storyboard.SetTarget(_pulseAnimation, RootGrid);
+                _pulseAnimation.Begin();
+            }
+
             ApplyTheme(newTheme);
             App.SaveThemePreference(newTheme);
         }
@@ -456,17 +556,13 @@ namespace ChromaHub
         {
             if (RootGrid != null)
             {
-                // Apply the theme to the current window first
                 RootGrid.RequestedTheme = theme;
-
-                // Update backdrop configuration if using Mica
                 if (_backdropConfiguration != null)
                 {
                     _backdropConfiguration.Theme = (Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme)theme;
                 }
                 else
                 {
-                    // Apply solid color background if not using backdrop
                     RootGrid.Background = theme == ElementTheme.Dark ?
                         new SolidColorBrush(Colors.Black) :
                         new SolidColorBrush(Colors.White);
@@ -478,13 +574,10 @@ namespace ChromaHub
 
         private void UpdateThemeIcon(ElementTheme? currentTheme = null)
         {
-            // Update theme icon based on current theme
             if (ThemeIcon != null)
             {
-                // Use the passed theme parameter or determine from RootGrid
                 ElementTheme theme = currentTheme ?? RootGrid.RequestedTheme;
 
-                // If Default, determine from application
                 if (theme == ElementTheme.Default)
                 {
                     theme = Application.Current.RequestedTheme == ApplicationTheme.Light
@@ -498,12 +591,12 @@ namespace ChromaHub
             }
         }
 
-        // Window control button handlers - FIXED with proper implementations
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
+            PlayClickSound();
+
             if (_appWindow != null)
             {
-                // Use Win32 window handle for minimize operation
                 IntPtr hwnd = WindowNative.GetWindowHandle(this);
                 PInvoke.User32.ShowWindow(hwnd, PInvoke.User32.WindowShowStyle.SW_MINIMIZE);
             }
@@ -511,6 +604,8 @@ namespace ChromaHub
 
         private void MaximizeRestoreButton_Click(object sender, RoutedEventArgs e)
         {
+            PlayClickSound();
+
             if (_appWindow != null)
             {
                 IntPtr hwnd = WindowNative.GetWindowHandle(this);
@@ -518,14 +613,12 @@ namespace ChromaHub
 
                 if (_isMaximized)
                 {
-                    // Restore window
                     PInvoke.User32.ShowWindow(hwnd, PInvoke.User32.WindowShowStyle.SW_RESTORE);
                     _isMaximized = false;
                     MaximizeRestoreIcon.Glyph = "\uE922"; // Maximize icon
                 }
                 else
                 {
-                    // Maximize window
                     PInvoke.User32.ShowWindow(hwnd, PInvoke.User32.WindowShowStyle.SW_MAXIMIZE);
                     _isMaximized = true;
                     MaximizeRestoreIcon.Glyph = "\uE923"; // Restore icon
@@ -535,11 +628,48 @@ namespace ChromaHub
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            PlayClickSound();
             Close();
+        }
+
+        // Sound methods
+        public void PlayNavigateSound()
+        {
+            App.PlayNavigateSound();
+        }
+
+        public void PlayClickSound()
+        {
+            App.PlayClickSound();
+        }
+
+        public void PlayToggleSound()
+        {
+            App.PlayToggleSound();
+        }
+
+        public void PlayMusicStartSound()
+        {
+            // Implement music start sound playback
+            // This should eventually be implemented in the App class
+            System.Diagnostics.Debug.WriteLine("Playing music start sound");
+        }
+
+        public void PlayMusicStopSound()
+        {
+            // Implement music stop sound playback
+            // This should eventually be implemented in the App class
+            System.Diagnostics.Debug.WriteLine("Playing music stop sound");
+        }
+
+        public void PlayNotificationSound()
+        {
+            // Implement notification sound playback
+            // This should eventually be implemented in the App class
+            System.Diagnostics.Debug.WriteLine("Playing notification sound");
         }
     }
 
-    // Add PInvoke helper for window operations
     internal static class PInvoke
     {
         internal static class User32

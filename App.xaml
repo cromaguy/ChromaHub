@@ -8,20 +8,68 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Other merged dictionaries here -->
+                <ResourceDictionary Source="ms-appx:///AnimationResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <!-- WinUI 3 styles -->
             <Style x:Key="SubtleButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Transitions">
+                    <Setter.Value>
+                        <TransitionCollection>
+                            <EntranceThemeTransition/>
+                        </TransitionCollection>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Enhanced Button Style -->
+            <Style x:Key="EnhancedButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="Transitions">
+                    <Setter.Value>
+                        <TransitionCollection>
+                            <EntranceThemeTransition/>
+                        </TransitionCollection>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Enhanced Accent Button Style -->
+            <Style x:Key="EnhancedAccentButtonStyle" TargetType="Button" BasedOn="{StaticResource AccentButtonStyle}">
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="Transitions">
+                    <Setter.Value>
+                        <TransitionCollection>
+                            <EntranceThemeTransition/>
+                        </TransitionCollection>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Padding" Value="16,8"/>
             </Style>
 
             <!-- BodyLargeTextBlockStyle -->
             <Style x:Key="BodyLargeTextBlockStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="FontWeight" Value="Bold" />
-                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource TextForegroundColor}" />
+                <Setter Property="Transitions">
+                    <Setter.Value>
+                        <TransitionCollection>
+                            <EntranceThemeTransition/>
+                        </TransitionCollection>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Modern Card Style -->
+            <Style x:Key="ModernCardStyle" TargetType="Grid">
+                <Setter Property="Background" Value="{ThemeResource CardBackgroundColor}"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource CardBorderColor}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Padding" Value="16"/>
             </Style>
 
             <!-- Custom Colors -->
@@ -36,9 +84,10 @@
                     <SolidColorBrush x:Key="CardBorderBrush" Color="#DDDDDD"/>
                     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#333333"/>
                     <SolidColorBrush x:Key="TextSecondaryBrush" Color="#666666"/>
-                    <SolidColorBrush x:Key="TextSecondaryForegroundThemeBrush" Color="#666666"/>
-                    <!-- Added -->
                     <SolidColorBrush x:Key="AccentBrush" Color="#0078D7"/>
+                    <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+                    <Color x:Key="CardBorderColor">#DDDDDD</Color>
+                    <Color x:Key="TextForegroundColor">#333333</Color>
                 </ResourceDictionary>
 
                 <!-- Dark Theme -->
@@ -47,13 +96,12 @@
                     <SolidColorBrush x:Key="CardBorderBrush" Color="#444444"/>
                     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#FFFFFF"/>
                     <SolidColorBrush x:Key="TextSecondaryBrush" Color="#AAAAAA"/>
-                    <SolidColorBrush x:Key="TextSecondaryForegroundThemeBrush" Color="#AAAAAA"/>
-                    <!-- Added -->
                     <SolidColorBrush x:Key="AccentBrush" Color="#4CC2FF"/>
+                    <Color x:Key="CardBackgroundColor">#2D2D2D</Color>
+                    <Color x:Key="CardBorderColor">#444444</Color>
+                    <Color x:Key="TextForegroundColor">#FFFFFF</Color>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
-
-            <!-- Add more custom styles here -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

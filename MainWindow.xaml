@@ -6,13 +6,19 @@
     xmlns:local="using:ChromaHub"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="using:Microsoft.UI.Xaml.Media"
+    xmlns:animations="using:Microsoft.UI.Xaml.Media.Animation"
+    xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     mc:Ignorable="d">
 
     <Grid x:Name="RootGrid">
         <Grid.Resources>
-            <TransitionCollection x:Key="TransitionCollection">
-                <EdgeUIThemeTransition Edge="Right" />
-            </TransitionCollection>
+            <ResourceDictionary>
+                <Color x:Key="PageBackgroundGradientStartColor">#1E1E1E</Color>
+                <Color x:Key="PageBackgroundGradientEndColor">#2D2D2D</Color>
+                <SolidColorBrush x:Key="PageBackgroundGradientStart" Color="{StaticResource PageBackgroundGradientStartColor}" />
+                <SolidColorBrush x:Key="PageBackgroundGradientEnd" Color="{StaticResource PageBackgroundGradientEndColor}" />
+            </ResourceDictionary>
         </Grid.Resources>
 
         <Grid.RowDefinitions>
@@ -20,25 +26,73 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Background Gradient Overlay -->
+        <Grid x:Name="BackgroundGrid" Grid.RowSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="{StaticResource PageBackgroundGradientStartColor}" Offset="0.0" />
+                    <GradientStop Color="{StaticResource PageBackgroundGradientEndColor}" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <!-- Particle Animation Canvas (for visual effects) -->
+        <Canvas x:Name="ParticleCanvas" Grid.RowSpan="2" Opacity="0.15" />
+
         <!-- App Header Bar with Window Controls -->
-        <Grid x:Name="AppTitleBar" Grid.Row="0" Height="48" Background="Transparent">
+        <Grid x:Name="AppTitleBar" Grid.Row="0" Height="48">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource PageBackgroundGradientStartColor}" Opacity="0.6"/>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="AN." 
-                       Style="{StaticResource TitleTextBlockStyle}" 
-                       FontWeight="Bold"
-                       VerticalAlignment="Center" 
-                       Margin="16,0,0,0"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,0,0">
+                <TextBlock Text="AN." 
+                           Style="{StaticResource TitleTextBlockStyle}" 
+                           FontWeight="Bold"
+                           VerticalAlignment="Center">
+                    <TextBlock.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition IsStaggeringEnabled="True" FromHorizontalOffset="-20"/>
+                        </TransitionCollection>
+                    </TextBlock.Transitions>
+                </TextBlock>
+
+                <TextBlock Text="Portfolio" 
+                           Foreground="{ThemeResource TextSecondaryBrush}"
+                           Style="{StaticResource CaptionTextBlockStyle}" 
+                           VerticalAlignment="Center"
+                           Margin="4,2,0,0">
+                    <TextBlock.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition IsStaggeringEnabled="True" FromHorizontalOffset="-20"/>
+                        </TransitionCollection>
+                    </TextBlock.Transitions>
+                </TextBlock>
+            </StackPanel>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" Margin="0,0,16,0">
+                <Button x:Name="NotificationsButton" 
+                        ToolTipService.ToolTip="Notifications" 
+                        Style="{StaticResource SubtleButtonStyle}"
+                        Click="NotificationsButton_Click">
+                    <FontIcon Glyph="&#xE7E7;" FontSize="16"/>
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Button.RenderTransform>
+                </Button>
+
                 <Button x:Name="ThemeButton" Click="ThemeButton_Click" 
                         ToolTipService.ToolTip="Toggle Theme" 
                         Style="{StaticResource SubtleButtonStyle}">
                     <FontIcon x:Name="ThemeIcon" Glyph="&#xE793;" FontSize="16"/>
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Button.RenderTransform>
                 </Button>
 
                 <!-- Modern Window Control Buttons -->
@@ -46,12 +100,18 @@
                         ToolTipService.ToolTip="Minimize"
                         Style="{StaticResource SubtleButtonStyle}">
                     <FontIcon Glyph="&#xE921;" FontSize="10"/>
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Button.RenderTransform>
                 </Button>
 
                 <Button x:Name="MaximizeRestoreButton" Click="MaximizeRestoreButton_Click"
                         ToolTipService.ToolTip="Maximize"
                         Style="{StaticResource SubtleButtonStyle}">
                     <FontIcon x:Name="MaximizeRestoreIcon" Glyph="&#xE922;" FontSize="10"/>
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Button.RenderTransform>
                 </Button>
 
                 <Button x:Name="CloseButton" Click="CloseButton_Click"
@@ -67,7 +127,9 @@
                         Grid.Row="1" 
                         IsSettingsVisible="False" 
                         IsBackButtonVisible="Collapsed"
-                        PaneDisplayMode="Auto">
+                        PaneDisplayMode="Auto"
+                        Background="Transparent"
+                        SelectionChanged="NavView_SelectionChanged">
 
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Home" Tag="Home">
@@ -115,24 +177,85 @@
 
             <Grid>
                 <!-- Page content -->
-                <Frame x:Name="ContentFrame" Padding="0" />
+                <Frame x:Name="ContentFrame" Padding="0" Background="Transparent">
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition>
+                                <DrillInNavigationTransitionInfo />
+                            </NavigationThemeTransition>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
 
                 <!-- Overlay loading indicator (Preloader) -->
                 <Grid x:Name="LoadingOverlay" 
                       Visibility="Collapsed"
-                      Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
-                      Opacity="0.8">
+                      Opacity="0">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#2D2D2D" Opacity="0.8"/>
+                    </Grid.Background>
                     <StackPanel VerticalAlignment="Center" 
                                 HorizontalAlignment="Center" 
                                 Spacing="16">
-                        <ProgressRing IsActive="True" 
-                                      Width="60" 
-                                      Height="60" />
+                        <ProgressRing x:Name="LoadingProgress" 
+                                     Width="120" 
+                                     Height="120"
+                                     IsActive="True">
+                            <ProgressRing.RenderTransform>
+                                <RotateTransform CenterX="60" CenterY="60" Angle="0"/>
+                            </ProgressRing.RenderTransform>
+                        </ProgressRing>
                         <TextBlock Text="Loading..." 
-                                   Style="{ThemeResource SubtitleTextBlockStyle}" />
+                                   Style="{ThemeResource SubtitleTextBlockStyle}" 
+                                   TextAlignment="Center"/>
                     </StackPanel>
                 </Grid>
+
+                <!-- Notification Toast Panel -->
+                <StackPanel x:Name="NotificationPanel" 
+                            VerticalAlignment="Top" 
+                            HorizontalAlignment="Right"
+                            Width="300"
+                            Margin="0,8,8,0"
+                            Spacing="8"
+                            Visibility="Collapsed"
+                            Opacity="0"/>
             </Grid>
         </NavigationView>
+
+        <!-- Music Player Control (Minimized) -->
+        <Grid x:Name="MusicPlayerMini" 
+              Grid.Row="1" 
+              VerticalAlignment="Bottom" 
+              HorizontalAlignment="Right"
+              Margin="0,0,16,16"
+              Width="300"
+              Height="64"
+              CornerRadius="32"
+              Visibility="Collapsed"
+              Padding="8"
+              Background="{ThemeResource CardBackgroundBrush}"
+              BorderBrush="{ThemeResource CardBorderBrush}"
+              BorderThickness="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <PersonPicture Width="48" Height="48" ProfilePicture="ms-appx:///Assets/music_profile.jpg"/>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="8,0">
+                <TextBlock Text="Now Playing" FontWeight="SemiBold" FontSize="12"/>
+                <TextBlock Text="Lofi Beats - Relaxing Music" TextTrimming="CharacterEllipsis" Opacity="0.7" FontSize="11"/>
+            </StackPanel>
+
+            <Button Grid.Column="2" 
+                    VerticalAlignment="Center" 
+                    Style="{StaticResource SubtleButtonStyle}"
+                    Click="MusicPlayPauseButton_Click">
+                <FontIcon x:Name="MusicPlayIcon" Glyph="&#xE769;" FontSize="16"/>
+            </Button>
+        </Grid>
     </Grid>
 </Window>
