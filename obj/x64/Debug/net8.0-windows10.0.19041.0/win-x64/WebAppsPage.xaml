@@ -16,29 +16,59 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}" Padding="24,32,24,24">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <!-- Header Section -->
+        <Grid Height="180">
+            <Grid.Background>
+                <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}" Opacity="0.5"/>
+            </Grid.Background>
 
-            <TextBlock Text="Web Apps" 
-                       Style="{ThemeResource DisplaySmallTextBlockStyle}"
-                       FontWeight="SemiBold"/>
+            <!-- Background accent circle -->
+            <Border x:ConnectionId='18' x:Name="AccentRect" 
+            Width="320" 
+            Height="320" 
+            CornerRadius="160"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0,0,-80,-140">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
+                        <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Opacity>0.15</Border.Opacity>
+            </Border>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="12" Margin="0,8,0,0">
-                <TextBlock Text="Explore my interactive web applications" 
-                           Style="{ThemeResource BodyLargeTextBlockStyle}"
-                           Opacity="0.8"/>
+            <!-- Subtle pattern overlay -->
+            <Canvas>
+                <Path x:ConnectionId='21' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
+              Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
+                <Path x:ConnectionId='22' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
+              Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+            </Canvas>
 
-                <controls:InfoBar Title="Web Apps"
-                         IsOpen="True"
-                         IsClosable="False"
-                         IsIconVisible="True"
-                         Message="Click 'Open in App' to view directly in ChromaHub"
-                         Severity="Informational"
-                         VerticalAlignment="Bottom"/>
-            </StackPanel>
+            <!-- Content layout -->
+            <Grid Margin="30,0,30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
+                    <TextBlock x:ConnectionId='19' Text="Explore my interactive web applicationss"
+                       Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                       FontSize="16"
+                       Opacity="0.9"
+                       FontWeight="SemiBold"
+                       x:Name="HeaderSubtitle"/>
+                    <TextBlock x:ConnectionId='20' Text="Web Apps"
+                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                       FontSize="36"
+                       FontWeight="Bold"
+                       x:Name="HeaderTitle"
+                       Margin="0,4,0,0"/>
+                </StackPanel>
+            </Grid>
         </Grid>
 
         <ScrollViewer Grid.Row="1" Margin="0,16,0,0">

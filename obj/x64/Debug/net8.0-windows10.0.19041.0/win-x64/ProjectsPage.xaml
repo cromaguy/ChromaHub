@@ -15,48 +15,59 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <!-- Header Section -->
+        <Grid Height="180">
+            <Grid.Background>
+                <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}" Opacity="0.5"/>
+            </Grid.Background>
 
-        <!-- Header with animation and modern design -->
-        <Grid Grid.Row="0" Margin="0,0,0,24">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+            <!-- Background accent circle -->
+            <Border x:ConnectionId='18' x:Name="AccentRect" 
+            Width="320" 
+            Height="320" 
+            CornerRadius="160"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0,0,-80,-140">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
+                        <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Opacity>0.15</Border.Opacity>
+            </Border>
 
-            <!-- Decorative accent element -->
-            <Rectangle x:ConnectionId='19' x:Name="AccentRect" 
-                       Grid.Row="0" 
-                       Height="4" 
-                       HorizontalAlignment="Left"
-                       Width="64" 
-                       Margin="24,8,0,16"
-                       Fill="{ThemeResource AccentFillColorDefaultBrush}">
-                <Rectangle.OpacityTransition>
-                    <ScalarTransition />
-                </Rectangle.OpacityTransition>
-            </Rectangle>
+            <!-- Subtle pattern overlay -->
+            <Canvas>
+                <Path x:ConnectionId='21' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
+              Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
+                <Path x:ConnectionId='22' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
+              Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+            </Canvas>
 
-            <!-- Main Header -->
-            <StackPanel Grid.Row="1" Margin="24,0,24,0">
-                <TextBlock x:ConnectionId='20' x:Name="HeaderTitle" 
-                          Text="Featured Projects" 
-                          Style="{ThemeResource TitleLargeTextBlockStyle}"
-                          FontWeight="SemiBold">
-                    <TextBlock.OpacityTransition>
-                        <ScalarTransition />
-                    </TextBlock.OpacityTransition>
-                </TextBlock>
+            <!-- Content layout -->
+            <Grid Margin="30,0,30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-                <TextBlock x:ConnectionId='21' x:Name="HeaderSubtitle" 
-                          Text="Showcasing my latest work and experiments" 
-                          Style="{ThemeResource BodyLargeTextBlockStyle}"
-                          Opacity="0.8"
-                          Margin="0,8,0,0">
-                    <TextBlock.OpacityTransition>
-                        <ScalarTransition />
-                    </TextBlock.OpacityTransition>
-                </TextBlock>
-            </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
+                    <TextBlock x:ConnectionId='19' Text="Showcasing my latest work and experiments"
+                       Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                       FontSize="16"
+                       Opacity="0.9"
+                       FontWeight="SemiBold"
+                       x:Name="HeaderSubtitle"/>
+                    <TextBlock x:ConnectionId='20' Text="Featured Projects"
+                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                       FontSize="36"
+                       FontWeight="Bold"
+                       x:Name="HeaderTitle"
+                       Margin="0,4,0,0"/>
+                </StackPanel>
+            </Grid>
         </Grid>
 
         <!-- Content Area -->
@@ -67,9 +78,9 @@
             </Grid.RowDefinitions>
 
             <!-- Filter Controls -->
-            <Grid Grid.Row="0" Margin="24,0,24,16">
+            <Grid Grid.Row="0" Margin="24,0,50,16">
                 <StackPanel Orientation="Horizontal" Spacing="12">
-                    <ComboBox x:ConnectionId='17' x:Name="FilterComboBox" 
+                    <ComboBox x:ConnectionId='16' x:Name="FilterComboBox" 
                               PlaceholderText="Filter by technology" 
                               Width="200"
                                                                                 >
@@ -78,11 +89,11 @@
                         <ComboBoxItem Content="HTML/CSS" Tag="HTML"/>
                         <ComboBoxItem Content="API Projects" Tag="API"/>
                     </ComboBox>
-                    <AutoSuggestBox x:ConnectionId='18' x:Name="SearchBox" 
-                                   PlaceholderText="Search projects..." 
-                                   Width="280"
-                                   QueryIcon="Find"
-                                                                      />
+                    <AutoSuggestBox x:ConnectionId='17' x:Name="SearchBox" 
+                                    PlaceholderText="Search projects..." 
+                                    Width="280"
+                                    QueryIcon="Find"
+                                                                       />
                 </StackPanel>
             </Grid>
 
@@ -91,31 +102,26 @@
                 <ItemsRepeater x:ConnectionId='4' x:Name="ProjectsRepeater"                                        >
                     <ItemsRepeater.Layout>
                         <UniformGridLayout MinItemWidth="380" 
-                                         MinItemHeight="360"
-                                         MinRowSpacing="24"
-                                         MinColumnSpacing="24"/>
+                                           MinItemHeight="360"
+                                           MinRowSpacing="24"
+                                           MinColumnSpacing="24"/>
                     </ItemsRepeater.Layout>
                     <ItemsRepeater.ItemTemplate>
                         <DataTemplate                               >
                             <Grid x:ConnectionId='6' CornerRadius="8" 
                                   BorderThickness="1"
                                   BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
-                                  Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                                  Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="180"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
-                                <!-- Shadow Effect -->
-                                <Grid.Shadow>
-                                    <ThemeShadow />
-                                </Grid.Shadow>
-
                                 <!-- Project Image -->
                                 <Grid Grid.Row="0">
-                                    <Image x:ConnectionId='12'                            
-                                         Stretch="UniformToFill">
+                                    <Image x:ConnectionId='11'                            
+                                           Stretch="UniformToFill">
                                         <Image.Transitions>
                                             <TransitionCollection>
                                                 <EntranceThemeTransition IsStaggeringEnabled="True"/>
@@ -123,26 +129,25 @@
                                         </Image.Transitions>
                                     </Image>
 
-                                    <!-- Overlay for better readability -->
                                     <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Opacity="0.1"/>
 
                                     <!-- Technology Badges -->
-                                    <ItemsRepeater x:ConnectionId='13'                                    
-                                                  HorizontalAlignment="Right"
-                                                  VerticalAlignment="Top"
-                                                  Margin="0,12,12,0">
+                                    <ItemsRepeater x:ConnectionId='12'                                    
+                                                   HorizontalAlignment="Right"
+                                                   VerticalAlignment="Top"
+                                                   Margin="0,12,12,0">
                                         <ItemsRepeater.Layout>
                                             <StackLayout Orientation="Horizontal" Spacing="8"/>
                                         </ItemsRepeater.Layout>
                                         <ItemsRepeater.ItemTemplate>
                                             <DataTemplate                      >
-                                                <Border x:ConnectionId='15' Background="{ThemeResource AccentFillColorDefaultBrush}" 
-                                                      CornerRadius="4"
-                                                      Padding="8,4">
-                                                    <TextBlock x:ConnectionId='16'                 
-                                                             FontSize="11" 
-                                                             FontWeight="SemiBold"
-                                                             Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"/>
+                                                <Border x:ConnectionId='14' Background="{ThemeResource AccentFillColorDefaultBrush}" 
+                                                        CornerRadius="4"
+                                                        Padding="8,4">
+                                                    <TextBlock x:ConnectionId='15'                 
+                                                               FontSize="11" 
+                                                               FontWeight="SemiBold"
+                                                               Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"/>
                                                 </Border>
                                             </DataTemplate>
                                         </ItemsRepeater.ItemTemplate>
@@ -157,60 +162,34 @@
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
 
-                                    <!-- Title -->
-                                    <TextBlock x:ConnectionId='8' Grid.Row="0" 
-                                                                   
-                                             Style="{ThemeResource SubtitleTextBlockStyle}" 
-                                             FontWeight="SemiBold"/>
+                                    <TextBlock x:ConnectionId='7' Grid.Row="0" 
+                                                                     
+                                               Style="{ThemeResource SubtitleTextBlockStyle}" 
+                                               FontWeight="SemiBold"/>
 
-                                    <!-- Description -->
-                                    <TextBlock x:ConnectionId='9' Grid.Row="1" 
-                                                                         
-                                             Style="{ThemeResource BodyTextBlockStyle}" 
-                                             TextWrapping="Wrap"
-                                             Margin="0,8,0,0"
-                                             Opacity="0.8"/>
+                                    <TextBlock x:ConnectionId='8' Grid.Row="1" 
+                                                                           
+                                               Style="{ThemeResource BodyTextBlockStyle}" 
+                                               TextWrapping="Wrap"
+                                               Margin="0,8,0,0"
+                                               Opacity="0.8"/>
 
-                                    <!-- Actions -->
                                     <StackPanel Grid.Row="2" 
-                                              Orientation="Horizontal" 
-                                              Spacing="8"
-                                              Margin="0,12,0,0"
-                                              HorizontalAlignment="Right">
-                                        <Button x:ConnectionId='10' Content="Source"
+                                                Orientation="Horizontal" 
+                                                Spacing="8"
+                                                Margin="0,12,0,0"
+                                                HorizontalAlignment="Right">
+                                        <Button x:ConnectionId='9' Content="Source"
                                                 Style="{StaticResource AccentButtonStyle}"
                                                                                  
                                                                               
-                                                                        >
-                                            <Button.ContentTransitions>
-                                                <TransitionCollection>
-                                                    <EntranceThemeTransition />
-                                                </TransitionCollection>
-                                            </Button.ContentTransitions>
-                                        </Button>
-                                        <Button x:ConnectionId='11' Content="View Live"
+                                                                        />
+                                        <Button x:ConnectionId='10' Content="View Live"
                                                                                
                                                                             
-                                                                      >
-                                            <Button.ContentTransitions>
-                                                <TransitionCollection>
-                                                    <EntranceThemeTransition />
-                                                </TransitionCollection>
-                                            </Button.ContentTransitions>
-                                        </Button>
+                                                                      />
                                     </StackPanel>
                                 </Grid>
-
-                                <!-- Highlight border effect on hover -->
-                                <Border x:Name="HighlightBorder" 
-                                       CornerRadius="8"
-                                       BorderThickness="2"
-                                       BorderBrush="{ThemeResource AccentFillColorDefaultBrush}"
-                                       Opacity="0">
-                                    <Border.OpacityTransition>
-                                        <ScalarTransition />
-                                    </Border.OpacityTransition>
-                                </Border>
                             </Grid>
                         </DataTemplate>
                     </ItemsRepeater.ItemTemplate>
@@ -219,25 +198,25 @@
 
             <!-- Empty state message -->
             <Grid x:ConnectionId='2' x:Name="EmptyStateGrid" 
-                 Grid.Row="1" 
-                 Visibility="Collapsed"
-                 VerticalAlignment="Center"
-                 HorizontalAlignment="Center"
-                 Margin="0,40,0,0">
+                  Grid.Row="1" 
+                  Visibility="Collapsed"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Margin="0,40,0,0">
                 <StackPanel HorizontalAlignment="Center" Spacing="16">
                     <FontIcon Glyph="&#xE9CE;" 
-                             FontSize="48" 
-                             Foreground="{ThemeResource TextSecondaryForegroundThemeBrush}"/>
+                              FontSize="48" 
+                              Foreground="{ThemeResource TextSecondaryForegroundThemeBrush}"/>
                     <TextBlock Text="No projects found" 
-                              Style="{ThemeResource SubtitleTextBlockStyle}"
-                              TextAlignment="Center"/>
+                               Style="{ThemeResource SubtitleTextBlockStyle}"
+                               TextAlignment="Center"/>
                     <TextBlock Text="Try changing your filter or search criteria" 
-                              Style="{ThemeResource BodyTextBlockStyle}"
-                              TextAlignment="Center"
-                              Opacity="0.7"/>
+                               Style="{ThemeResource BodyTextBlockStyle}"
+                               TextAlignment="Center"
+                               Opacity="0.7"/>
                     <Button x:ConnectionId='3' Content="Show all projects"
-                                                        
-                           Margin="0,12,0,0"/>
+                                                         
+                            Margin="0,12,0,0"/>
                 </StackPanel>
             </Grid>
         </Grid>

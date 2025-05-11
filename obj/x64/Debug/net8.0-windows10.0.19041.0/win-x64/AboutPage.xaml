@@ -11,9 +11,61 @@
 
     <ScrollViewer>
         <StackPanel Spacing="24" Padding="24">
-            <TextBlock Text="About Me" 
-                       Style="{ThemeResource TitleLargeTextBlockStyle}" 
-                       FontWeight="SemiBold"/>
+
+            <!-- Header Section -->
+            <Grid Height="180">
+                <Grid.Background>
+                    <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}" Opacity="0.5" />
+                </Grid.Background>
+
+                <!-- Background accent circle -->
+                <Border x:ConnectionId='6' x:Name="AccentRect" 
+            Width="320" 
+            Height="320" 
+            CornerRadius="160"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0,0,-80,-140">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
+                            <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Opacity>0.15</Border.Opacity>
+                </Border>
+
+                <!-- Subtle pattern overlay -->
+                <Canvas>
+                    <Path x:ConnectionId='9' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
+              Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
+                    <Path x:ConnectionId='10' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
+              Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+                </Canvas>
+
+                <!-- Content layout -->
+                <Grid Margin="30,0,30,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
+                        <TextBlock x:ConnectionId='7' Text=""
+                       Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                       FontSize="16"
+                       Opacity="0.9"
+                       FontWeight="SemiBold"
+                       x:Name="HeaderSubtitle"/>
+                        <TextBlock x:ConnectionId='8' Text="About Me"
+                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                       FontSize="36"
+                       FontWeight="Bold"
+                       x:Name="HeaderTitle"
+                       Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
 
             <Grid>
                 <Grid.ColumnDefinitions>
