@@ -54,13 +54,16 @@ ChromaHub is not just a portfolio - it's an immersive Windows desktop experience
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="Assets/Screenshots/1.png" alt="HomePage Dark Mode" width="45%" />
-  <img src="Assets/Screenshots/2.png" alt="HomePage Light Mode" width="45%" />
+  <img src="Assets/Screenshots/1.png" alt="HomePage" width="45%" />
+  <img src="Assets/Screenshots/2.png" alt="AboutPage" width="45%" />
   <br /><br />
-  <img src="Assets/Screenshots/3.png" alt="Settings Page" width="45%" />
-  <img src="Assets/Screenshots/4.png" alt="Projects Page" width="45%" />
+  <img src="Assets/Screenshots/3.png" alt="ContactPage" width="45%" />
+  <img src="Assets/Screenshots/4.png" alt="WebView Loader" width="45%" />
   <br /><br />
   <img src="Assets/Screenshots/5.png" alt="WebApps Page" width="45%" />
+  <img src="Assets/Screenshots/6.png" alt="Settings Page" width="45%" />
+  <br /><br />
+  <img src="Assets/Screenshots/7.png" alt="Projects Page" width="45%" />
 </div>
 
 <br>
