@@ -14,18 +14,22 @@
 
             <!-- Header Section -->
             <Grid Height="180">
-                <Grid.Background>
-                    <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}" Opacity="0.5" />
-                </Grid.Background>
+                <Border Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}"
+                CornerRadius="14"
+                Padding="10"
+                Margin="20"
+                HorizontalAlignment="Stretch">
+                </Border>
+
 
                 <!-- Background accent circle -->
                 <Border x:ConnectionId='6' x:Name="AccentRect" 
-            Width="320" 
-            Height="320" 
-            CornerRadius="160"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Margin="0,0,-80,-140">
+                Width="320" 
+                Height="320" 
+                CornerRadius="160"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,-80,-140">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
