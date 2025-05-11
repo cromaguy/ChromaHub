@@ -2,14 +2,11 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using Windows.Storage;
-using System.Threading.Tasks;
-using Microsoft.UI.Xaml.Automation;
 
 namespace ChromaHub
 {
     public sealed partial class SettingsPage : Page
     {
-        // Constant key strings for settings
         private const string THEME_SETTING = "AppTheme";
         private const string BACKDROP_SETTING = "BackdropType";
         private const string ANIMATIONS_SETTING = "EnableAnimations";
@@ -17,8 +14,6 @@ namespace ChromaHub
         public SettingsPage()
         {
             this.InitializeComponent();
-
-            // Load current settings to UI
             LoadCurrentSettings();
         }
 
@@ -26,7 +21,6 @@ namespace ChromaHub
         {
             try
             {
-                // Load theme setting
                 ElementTheme currentTheme = App.CurrentTheme;
                 switch (currentTheme)
                 {
@@ -41,26 +35,23 @@ namespace ChromaHub
                         break;
                 }
 
-                // Load backdrop setting
                 var backdropSetting = GetSetting(BACKDROP_SETTING, "Mica");
                 BackdropRadioButtons.SelectedIndex = backdropSetting == "Mica" ? 0 : 1;
 
-                // Load animations setting
                 bool enableAnimations = GetSetting(ANIMATIONS_SETTING, "True") == "True";
                 EnableAnimationsToggle.IsOn = enableAnimations;
             }
             catch (Exception)
             {
-                // Recover gracefully if settings fail to load
                 SetDefaultSettings();
             }
         }
 
         private void SetDefaultSettings()
         {
-            ThemeRadioButtons.SelectedIndex = 2; // Default theme
-            BackdropRadioButtons.SelectedIndex = 0; // Mica backdrop
-            EnableAnimationsToggle.IsOn = true; // Enable animations
+            ThemeRadioButtons.SelectedIndex = 2;
+            BackdropRadioButtons.SelectedIndex = 0;
+            EnableAnimationsToggle.IsOn = true;
         }
 
         private void ThemeRadioButtons_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,7 +73,6 @@ namespace ChromaHub
                         break;
                 }
 
-                // Apply and save theme
                 ApplyTheme(selectedTheme);
             }
         }
@@ -91,10 +81,7 @@ namespace ChromaHub
         {
             if (BackdropRadioButtons.SelectedItem is RadioButton rb && rb.Tag is string backdropType)
             {
-                // Save backdrop preference
                 SaveSetting(BACKDROP_SETTING, backdropType);
-
-                // Apply backdrop change
                 ApplyBackdropChange(backdropType);
             }
         }
@@ -104,11 +91,36 @@ namespace ChromaHub
             bool enableAnimations = EnableAnimationsToggle.IsOn;
             SaveSetting(ANIMATIONS_SETTING, enableAnimations.ToString());
             ApplyAnimationSettings(enableAnimations);
+
+            ShowAnimationInfoBar();
+        }
+
+        private async void ShowAnimationInfoBar()
+        {
+            // Add null check to avoid NullReferenceException
+            if (AnimationInfoBar == null)
+            {
+                return;
+            }
+
+            // Now it's safe to set the Message property
+            AnimationInfoBar.Message = EnableAnimationsToggle.IsOn ?
+                "Animations enabled for better visual experience" :
+                "Animations disabled for performance optimization";
+
+            AnimationInfoBar.IsOpen = true;
+
+            await System.Threading.Tasks.Task.Delay(3000);
+
+            // Check again in case the control was disposed during the delay
+            if (AnimationInfoBar != null)
+            {
+                AnimationInfoBar.IsOpen = false;
+            }
         }
 
         private void ResetSettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            // Confirm reset
             ShowResetConfirmation();
         }
 
@@ -133,38 +145,32 @@ namespace ChromaHub
 
         private void ResetAllSettings()
         {
-            // Clear all settings
             try
             {
                 ApplicationData.Current.LocalSettings.Values.Remove(THEME_SETTING);
                 ApplicationData.Current.LocalSettings.Values.Remove(BACKDROP_SETTING);
                 ApplicationData.Current.LocalSettings.Values.Remove(ANIMATIONS_SETTING);
 
-                // Apply default settings
                 App.SaveThemePreference(ElementTheme.Default);
                 SaveSetting(BACKDROP_SETTING, "Mica");
                 SaveSetting(ANIMATIONS_SETTING, "True");
 
-                // Reload UI
                 LoadCurrentSettings();
 
-                // Apply changes to window
                 ApplyTheme(ElementTheme.Default);
                 ApplyBackdropChange("Mica");
                 ApplyAnimationSettings(true);
             }
             catch (Exception)
             {
-                // Handle reset errors gracefully
+                // Handle errors silently
             }
         }
 
         private void ApplyTheme(ElementTheme theme)
         {
-            // Save theme preference
             App.SaveThemePreference(theme);
 
-            // Apply theme to window
             if (App.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.ApplyTheme(theme);
@@ -173,7 +179,6 @@ namespace ChromaHub
 
         private void ApplyBackdropChange(string backdropType)
         {
-            // Apply backdrop to window
             if (App.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.ApplyBackdrop(backdropType);
@@ -182,11 +187,60 @@ namespace ChromaHub
 
         private void ApplyAnimationSettings(bool enableAnimations)
         {
-            // This could be expanded to actually toggle animations in the app
-            // For now, we just save the setting
+            UpdateApplicationAnimations(enableAnimations);
         }
 
-        #region Settings Helpers
+        private void UpdateApplicationAnimations(bool enable)
+        {
+            if (App.Current.Resources.TryGetValue("ContentPageTransitionDuration", out object durationObj))
+            {
+                var resources = App.Current.Resources;
+
+                if (enable)
+                {
+                    resources["ContentPageTransitionDuration"] = TimeSpan.FromMilliseconds(300);
+
+                    if (App.MainWindow is MainWindow mainWindow)
+                    {
+                        var rootGrid = mainWindow.Content as Grid;
+                        if (rootGrid != null && rootGrid.FindName("NavView") is NavigationView navView)
+                        {
+                            if (navView.Content is Grid contentGrid &&
+                                contentGrid.FindName("ContentFrame") is Frame contentFrame)
+                            {
+                                contentFrame.ContentTransitions = new Microsoft.UI.Xaml.Media.Animation.TransitionCollection
+{
+                                new Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition()
+                            };
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    resources["ContentPageTransitionDuration"] = TimeSpan.FromMilliseconds(0);
+
+                    if (App.MainWindow is MainWindow mainWindow)
+                    {
+                        var rootGrid = mainWindow.Content as Grid;
+                        if (rootGrid != null && rootGrid.FindName("NavView") is NavigationView navView)
+                        {
+                            if (navView.Content is Grid contentGrid &&
+                                contentGrid.FindName("ContentFrame") is Frame contentFrame)
+                            {
+                                contentFrame.ContentTransitions = null;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // If resource doesn't exist, create it
+                App.Current.Resources["ContentPageTransitionDuration"] =
+                    enable ? TimeSpan.FromMilliseconds(300) : TimeSpan.FromMilliseconds(0);
+            }
+        }
 
         private string GetSetting(string key, string defaultValue)
         {
@@ -210,7 +264,5 @@ namespace ChromaHub
             }
             catch { }
         }
-
-        #endregion
     }
 }

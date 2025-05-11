@@ -6,54 +6,133 @@
     xmlns:local="using:ChromaHub"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
-    Background="Transparent">
+    Background="Transparent"
+    NavigationCacheMode="Required">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Padding="16" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-            <StackPanel Spacing="8">
-                <TextBlock x:ConnectionId='3' x:Name="ProjectTitle" 
+        <Grid Grid.Row="0" Background="{ThemeResource LayerFillColorDefaultBrush}" Padding="16" BorderThickness="0,0,0,1" BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:ConnectionId='13' Style="{StaticResource SubtleButtonStyle}" 
+                                            
+                    Grid.Column="0"
+                    Padding="8">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon Glyph="&#xE72B;" FontSize="16"/>
+                    <TextBlock Text="Back"/>
+                </StackPanel>
+            </Button>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="16,0">
+                <TextBlock x:ConnectionId='17' x:Name="ProjectTitle" 
                                                          
-                           Style="{ThemeResource TitleLargeTextBlockStyle}"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"
+                           FontWeight="SemiBold"/>
+                <TextBlock x:ConnectionId='18' x:Name="ProjectUrl" 
+                                                       
+                           Style="{ThemeResource CaptionTextBlockStyle}"
+                           Opacity="0.7"/>
+            </StackPanel>
+
+            <CommandBar Grid.Column="2" 
+                        Background="Transparent" 
+                        DefaultLabelPosition="Right"
+                        HorizontalContentAlignment="Right">
+                <AppBarButton x:ConnectionId='14' Label="Reload" Icon="Refresh"                           />
+                <AppBarButton x:ConnectionId='15' Label="Open in Browser" Icon="Globe"                                  />
+                <AppBarButton x:ConnectionId='16' Label="Full Details" Icon="More"                                />
+            </CommandBar>
+        </Grid>
+
+        <WebView2 x:ConnectionId='2' x:Name="ProjectWebView" Grid.Row="1"/>
+
+        <TeachingTip x:ConnectionId='3' x:Name="LoadingTip"
+                     Title="Loading Web App"
+                     IsLightDismissEnabled="True"
+                     PreferredPlacement="Top">
+            <ProgressRing IsActive="True" Width="20" Height="20"/>
+        </TeachingTip>
+
+        <TeachingTip x:ConnectionId='4' x:Name="DetailsTip"
+                                                  
+                    IsLightDismissEnabled="True"
+                    PreferredPlacement="Bottom"
+                    CloseButtonContent="Close">
+            <Grid MinWidth="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:ConnectionId='8'                                    
+                           TextWrapping="Wrap"
+                           Grid.Row="0"
+                           Style="{ThemeResource BodyTextBlockStyle}"
+                           Margin="0,0,0,12"/>
+
+                <TextBlock Text="Technologies:" 
+                           Grid.Row="1"
+                           Style="{ThemeResource CaptionTextBlockStyle}"
                            FontWeight="SemiBold"/>
 
-                <TextBlock x:ConnectionId='4' x:Name="ProjectDescription" 
-                                                               
-                           Style="{ThemeResource BodyTextBlockStyle}"
-                           TextWrapping="Wrap"
-                           Opacity="0.8"/>
-
-                <ItemsRepeater x:ConnectionId='5'                                            >
+                <ItemsRepeater x:ConnectionId='9' Grid.Row="2" 
+                                                                          
+                               Margin="0,8,0,0">
                     <ItemsRepeater.Layout>
                         <StackLayout Orientation="Horizontal" Spacing="8"/>
                     </ItemsRepeater.Layout>
                     <ItemsRepeater.ItemTemplate>
                         <DataTemplate                      >
-                            <Border x:ConnectionId='10' Background="{ThemeResource AccentFillColorDefaultBrush}" 
+                            <Border x:ConnectionId='11' Background="{ThemeResource AccentFillColorDefaultBrush}" 
                                     CornerRadius="4"
                                     Padding="8,2">
-                                <TextBlock x:ConnectionId='11'                 
+                                <TextBlock x:ConnectionId='12'                 
                                            FontSize="12" 
                                            Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"/>
                             </Border>
                         </DataTemplate>
                     </ItemsRepeater.ItemTemplate>
                 </ItemsRepeater>
+            </Grid>
+        </TeachingTip>
 
-                <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,12,0,0">
-                    <Button x:ConnectionId='6' Content="Back"                         />
-                    <Button x:ConnectionId='7' Content="Open in Browser"                                  />
-                    <Button x:ConnectionId='8' Content="Reload"                           />
-                </StackPanel>
-            </StackPanel>
+        <Grid x:ConnectionId='5' x:Name="StatusBar" 
+              Grid.Row="2" 
+              Background="{ThemeResource LayerFillColorDefaultBrush}" 
+              Height="28"
+              BorderThickness="0,1,0,0" 
+              BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:ConnectionId='6' x:Name="StatusText" 
+                       Text="Loading..." 
+                       Margin="16,0" 
+                       VerticalAlignment="Center"
+                       Style="{ThemeResource CaptionTextBlockStyle}"/>
+
+            <ProgressRing x:ConnectionId='7' x:Name="StatusProgressRing" 
+                          IsActive="True" 
+                          Width="16" 
+                          Height="16" 
+                          Grid.Column="1"
+                          Margin="0,0,16,0"/>
         </Grid>
-        <WebView2 x:ConnectionId='2' x:Name="ProjectWebView" Grid.Row="1"/>
-        <ProgressRing IsActive="True" Background="LightGray"/>
     </Grid>
 </Page>
 

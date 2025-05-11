@@ -9,75 +9,127 @@
     mc:Ignorable="d"
     Background="Transparent">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel Padding="24" Spacing="24">
-            <!-- Settings Header -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Page Header -->
+        <Grid Grid.Row="0" Margin="24,12,24,0">
             <TextBlock Text="Settings" 
-                      Style="{ThemeResource TitleLargeTextBlockStyle}" 
-                      FontWeight="SemiBold"/>
+                     Style="{ThemeResource TitleLargeTextBlockStyle}" 
+                     FontWeight="SemiBold"/>
+        </Grid>
 
-            <!-- Theme Settings -->
-            <Expander Header="Appearance" IsExpanded="True">
-                <StackPanel Spacing="16" Margin="0,8,0,0">
-                    <!-- Theme Selection -->
-                    <StackPanel>
-                        <TextBlock Text="Theme" 
-                                  Style="{ThemeResource SubtitleTextBlockStyle}"
-                                  Margin="0,0,0,8"/>
+        <!-- Settings Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,8,0,0">
+            <StackPanel Padding="24,12,24,24" Spacing="16">
+                <!-- Divider -->
+                <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" Margin="0,0,0,8"/>
 
-                        <RadioButtons x:ConnectionId='5' x:Name="ThemeRadioButtons" 
-                                                                                          >
-                            <RadioButton Content="Light" Tag="Light"/>
-                            <RadioButton Content="Dark" Tag="Dark"/>
-                            <RadioButton Content="Use system setting" Tag="Default"/>
-                        </RadioButtons>
+                <!-- Theme Settings -->
+                <StackPanel>
+                    <TextBlock Text="Personalization" 
+                             Style="{ThemeResource SubtitleTextBlockStyle}"
+                             FontWeight="SemiBold"
+                             Margin="0,0,0,12"/>
+
+                    <StackPanel Spacing="16">
+                        <!-- Theme Selection -->
+                        <StackPanel>
+                            <TextBlock Text="Theme" 
+                                     Style="{ThemeResource BodyStrongTextBlockStyle}"
+                                     Margin="0,0,0,8"/>
+
+                            <RadioButtons x:ConnectionId='6' x:Name="ThemeRadioButtons" 
+                                                                                             
+                                        MaxColumns="3">
+                                <RadioButton Content="Light" Tag="Light"/>
+                                <RadioButton Content="Dark" Tag="Dark"/>
+                                <RadioButton Content="Use system setting" Tag="Default"/>
+                            </RadioButtons>
+                        </StackPanel>
+
+                        <!-- Backdrop Settings -->
+                        <StackPanel>
+                            <TextBlock Text="Window backdrop" 
+                                     Style="{ThemeResource BodyStrongTextBlockStyle}"
+                                     Margin="0,0,0,8"/>
+
+                            <RadioButtons x:ConnectionId='5' x:Name="BackdropRadioButtons"
+                                                                                                
+                                        MaxColumns="2">
+                                <RadioButton Content="Mica effect" Tag="Mica"/>
+                                <RadioButton Content="Solid color" Tag="Solid"/>
+                            </RadioButtons>
+                        </StackPanel>
                     </StackPanel>
+                </StackPanel>
 
-                    <!-- Backdrop Settings -->
-                    <StackPanel>
-                        <TextBlock Text="Window backdrop" 
-                                  Style="{ThemeResource SubtitleTextBlockStyle}"
-                                  Margin="0,0,0,8"/>
+                <!-- Divider -->
+                <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" Margin="0,8,0,8"/>
 
-                        <RadioButtons x:ConnectionId='4' x:Name="BackdropRadioButtons"
-                                                                                             >
-                            <RadioButton Content="Mica effect" Tag="Mica"/>
-                            <RadioButton Content="Solid color" Tag="Solid"/>
-                        </RadioButtons>
+                <!-- Animation Settings -->
+                <StackPanel>
+                    <TextBlock Text="Animation" 
+                             Style="{ThemeResource SubtitleTextBlockStyle}"
+                             FontWeight="SemiBold"
+                             Margin="0,0,0,12"/>
+
+                    <StackPanel Spacing="16">
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleSwitch x:ConnectionId='3' x:Name="EnableAnimationsToggle"
+                                        Header="Enable animations"
+                                        IsOn="True"
+                                                                                />
+
+                            <InfoBar x:ConnectionId='4' x:Name="AnimationInfoBar"
+                                    IsOpen="False"
+                                    Title="Changes applied"
+                                    Message="Animation settings have been updated"
+                                    Severity="Success"
+                                    IsClosable="True"
+                                    Margin="12,0,0,0"/>
+                        </StackPanel>
+
+                        <TextBlock Text="Toggle animations throughout the application. Changes will apply immediately."
+                                 Style="{ThemeResource CaptionTextBlockStyle}"
+                                 Opacity="0.7"
+                                 TextWrapping="Wrap"/>
                     </StackPanel>
                 </StackPanel>
-            </Expander>
 
-            <!-- Animation Settings -->
-            <Expander Header="Animations">
-                <StackPanel Spacing="16" Margin="0,8,0,0">
-                    <ToggleSwitch x:ConnectionId='3' x:Name="EnableAnimationsToggle"
-                                 Header="Enable animations"
-                                 IsOn="True"
-                                                                         />
+                <!-- Divider -->
+                <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" Margin="0,8,0,8"/>
+
+                <!-- About Section -->
+                <StackPanel>
+                    <TextBlock Text="About" 
+                             Style="{ThemeResource SubtitleTextBlockStyle}"
+                             FontWeight="SemiBold"
+                             Margin="0,0,0,12"/>
+
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Chroma Hub" 
+                                 Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                        <TextBlock Text="Version 1.3.0" 
+                                 Style="{ThemeResource CaptionTextBlockStyle}"
+                                 Opacity="0.7"/>
+                        <TextBlock Text="© 2025 Anjishnu Nandi. All rights reserved."
+                                 Style="{ThemeResource CaptionTextBlockStyle}"
+                                 Opacity="0.7"
+                                 Margin="0,8,0,0"/>
+                    </StackPanel>
                 </StackPanel>
-            </Expander>
 
-            <!-- About Section -->
-            <Expander Header="About" IsExpanded="True">
-                <StackPanel Spacing="8" Margin="0,8,0,0">
-                    <TextBlock Text="Chroma Hub" 
-                              Style="{ThemeResource BodyStrongTextBlockStyle}"/>
-                    <TextBlock Text="Version 1.0.0" 
-                              Style="{ThemeResource CaptionTextBlockStyle}"
-                              Opacity="0.7"/>
-                    <TextBlock Text="© 2025 Anjishnu Nandi. All rights reserved."
-                              Style="{ThemeResource CaptionTextBlockStyle}"
-                              Opacity="0.7"
-                              Margin="0,8,0,0"/>
-                </StackPanel>
-            </Expander>
-
-            <!-- Reset Button -->
-            <Button x:ConnectionId='2' Content="Reset all settings"
-                                                    
-                   Margin="0,16,0,0"/>
-        </StackPanel>
-    </ScrollViewer>
+                <!-- Reset Button -->
+                <Button x:ConnectionId='2' Content="Reset all settings"
+                                                       
+                      Margin="0,16,0,0"
+                      Style="{ThemeResource AccentButtonStyle}"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
 </Page>
 

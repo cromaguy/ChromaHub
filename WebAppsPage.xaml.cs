@@ -2,6 +2,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
+using Microsoft.UI.Xaml.Media.Animation;
 
 namespace ChromaHub
 {
@@ -21,7 +22,7 @@ namespace ChromaHub
 
             if (project != null)
             {
-                Frame.Navigate(typeof(WebAppViewPage), project);
+                Frame.Navigate(typeof(WebAppViewPage), project, new DrillInNavigationTransitionInfo());
             }
         }
 
@@ -33,6 +34,14 @@ namespace ChromaHub
             if (!string.IsNullOrEmpty(url))
             {
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+            }
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (e.ClickedItem is WebAppProject project)
+            {
+                Frame.Navigate(typeof(WebAppViewPage), project, new DrillInNavigationTransitionInfo());
             }
         }
     }

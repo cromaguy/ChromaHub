@@ -66,6 +66,23 @@ namespace ChromaHub
             _isLoading = false;
         }
 
+        public void ApplyAnimationSettings(bool enableAnimations)
+        {
+            if (ContentFrame != null)
+            {
+                if (enableAnimations)
+                {
+                    ContentFrame.ContentTransitions = new Microsoft.UI.Xaml.Media.Animation.TransitionCollection
+            {
+                new Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition()
+            };
+                }
+                else
+                {
+                    ContentFrame.ContentTransitions = null;
+                }
+            }
+        }
         private void LoadBackdropSetting()
         {
             try
@@ -316,12 +333,10 @@ namespace ChromaHub
             {
                 bool shouldNavigate = false;
 
-                // For normal pages, check if we're navigating to a different page type
                 if (parameter == null)
                 {
                     shouldNavigate = (ContentFrame.CurrentSourcePageType != pageType || pageType == typeof(HomePage));
                 }
-                // For WebAppViewPage with a project parameter, always navigate to handle different web apps
                 else if (pageType == typeof(WebAppViewPage))
                 {
                     shouldNavigate = true;
@@ -329,11 +344,25 @@ namespace ChromaHub
 
                 if (shouldNavigate)
                 {
+                    // Get animation setting
+                    bool animationsEnabled = true;
+                    try
+                    {
+                        if (Windows.Storage.ApplicationData.Current.LocalSettings.Values.TryGetValue("EnableAnimations", out object value) &&
+                            value is string stringValue)
+                        {
+                            animationsEnabled = stringValue == "True";
+                        }
+                    }
+                    catch { }
+
                     // Show loading indicator
                     ShowLoading(true);
 
-                    // Navigate after a brief delay to allow UI to update
-                    Task.Delay(100).ContinueWith(t => {
+                    // Apply animation setting for this navigation
+                    TimeSpan delay = animationsEnabled ? TimeSpan.FromMilliseconds(100) : TimeSpan.Zero;
+
+                    Task.Delay(delay).ContinueWith(t => {
                         DispatcherQueue.TryEnqueue(() => {
                             if (parameter != null)
                             {
@@ -357,7 +386,6 @@ namespace ChromaHub
                         }
                     }
 
-                    // Handle settings selection specifically
                     if (tag == "Settings" || tag == "Tweaks")
                     {
                         NavView.SelectedItem = NavView.SettingsItem;
