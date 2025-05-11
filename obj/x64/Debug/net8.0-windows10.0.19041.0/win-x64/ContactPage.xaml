@@ -8,140 +8,143 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="Transparent">
-    
-    <Grid Padding="10">
-        <StackPanel Spacing="24" MaxWidth="800" HorizontalAlignment="Center">
-            <!-- Header Section -->
-            <Grid Height="180">
-                <Border Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}"
-                CornerRadius="14"
-                Padding="10"
-                Margin="20"
-                HorizontalAlignment="Stretch">
-                </Border>
 
-                <!-- Background accent circle -->
-                <Border x:ConnectionId='8' x:Name="AccentRect" 
-            Width="320" 
-            Height="320" 
-            CornerRadius="160"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Margin="0,0,-80,-140">
-                    <Border.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                            <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
-                            <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Border.Background>
-                    <Border.Opacity>0.15</Border.Opacity>
-                </Border>
+    <Grid>
+        <!-- Main Content Grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Content -->
+        </Grid.RowDefinitions>
 
-                <!-- Subtle pattern overlay -->
-                <Canvas>
-                    <Path x:ConnectionId='11' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
-              Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
-                    <Path x:ConnectionId='12' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
-              Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
-                </Canvas>
+        <!-- Header Section - Row 0 -->
+        <Grid Grid.Row="0" Height="180">
+            <Grid.Background>
+                <SolidColorBrush Color="Transparent"/>
+            </Grid.Background>
 
-                <!-- Content layout -->
-                <Grid Margin="30,0,30,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+            <!-- Background accent elements -->
+            <Border x:ConnectionId='8' x:Name="AccentRect" 
+                Width="320" 
+                Height="320" 
+                CornerRadius="160"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,-80,-140">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
+                        <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Opacity>0.15</Border.Opacity>
+            </Border>
 
-                    <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
-                        <TextBlock x:ConnectionId='9' Text=""
-                       Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
-                       FontSize="16"
-                       Opacity="0.9"
-                       FontWeight="SemiBold"
-                       x:Name="HeaderSubtitle"/>
-                        <TextBlock x:ConnectionId='10' Text="Get in touch"
-                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
-                       FontSize="36"
-                       FontWeight="Bold"
-                       x:Name="HeaderTitle"
-                       Margin="0,4,0,0"/>
-                    </StackPanel>
-                </Grid>
-            </Grid>
+            <!-- Header pattern -->
+            <Canvas>
+                <Path x:ConnectionId='11' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                    Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
+                <Path x:ConnectionId='12' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                    Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+                <Path x:ConnectionId='13' x:Name="PatternPath3" Stroke="{ThemeResource SystemAccentColorDark1}" StrokeThickness="0.5" Opacity="0.15" 
+                    Data="M20,90 C90,70 170,100 250,80" Canvas.Left="520" Canvas.Top="100" />
+            </Canvas>
 
-            <TextBlock Text="Whether you have an exciting project in mind or just want to connect, feel free to reach out! I'm always open to interesting collaborations and tech discussions."
+            <!-- Header content -->
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="30,0,30,35">
+                <TextBlock x:ConnectionId='9' Text="Feel free to apprach me"
+                           Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                           FontSize="16"
+                           Opacity="0.9"
+                           FontWeight="SemiBold"
+                           x:Name="HeaderSubtitle"/>
+                <TextBlock x:ConnectionId='10' Text="Get in touch"
+                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                           FontSize="36"
+                           FontWeight="Bold"
+                           x:Name="HeaderTitle"
+                           Margin="0,4,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Content Section - Row 1 -->
+        <ScrollViewer Grid.Row="1" Padding="24,0,24,24">
+            <StackPanel Spacing="24" MaxWidth="800" HorizontalAlignment="Center">
+                <!-- Intro Text -->
+                <TextBlock Text="Whether you have an exciting project in mind or just want to connect, feel free to reach out! I'm always open to interesting collaborations and tech discussions."
                        TextWrapping="Wrap"
                        Style="{ThemeResource BodyTextBlockStyle}"
                        Opacity="0.8"
                        Margin="0,0,0,12"/>
 
-            <Button x:ConnectionId='2' Content="Say Hello" 
-                    Style="{StaticResource AccentButtonStyle}"
-                                             
-                    HorizontalAlignment="Center"
-                    Padding="20,8"
-                    FontWeight="SemiBold"/>
+                <!-- Email Button -->
+                <Button x:ConnectionId='2' Content="Say Hello" 
+                        Style="{StaticResource AccentButtonStyle}"
+                                                 
+                        HorizontalAlignment="Center"
+                        Padding="20,8"
+                        FontWeight="SemiBold"/>
 
-            <Grid Margin="0,24,0,0">
-                <!-- Updated Contact Links Section -->
-                <ItemsRepeater x:ConnectionId='3'                                     HorizontalAlignment="Center">
-                    <ItemsRepeater.Layout>
-                        <StackLayout Orientation="Vertical" Spacing="12"/>
-                    </ItemsRepeater.Layout>
-                    <ItemsRepeater.ItemTemplate>
-                        <DataTemplate                                   >
-                            <Button x:ConnectionId='5'                             
-                                                      
-                                    HorizontalAlignment="Stretch"
-                                    MinWidth="240"
-                                    Padding="16,12"
-                                    CornerRadius="6">
-                                <StackPanel Orientation="Horizontal" Spacing="16">
-                                    <Image x:ConnectionId='6'                            Width="28" Height="28"/>
-                                    <TextBlock x:ConnectionId='7'                      
-                                               VerticalAlignment="Center"
-                                               FontWeight="SemiBold"/>
-                                </StackPanel>
-                                <Button.Resources>
-                                    <ResourceDictionary>
-                                        <ResourceDictionary.ThemeDictionaries>
-                                            <ResourceDictionary x:Key="Light">
-                                                <SolidColorBrush x:Key="ButtonBackground" Color="#F0F0F0"/>
-                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#E0E0E0"/>
-                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#D0D0D0"/>
-                                            </ResourceDictionary>
-                                            <ResourceDictionary x:Key="Dark">
-                                                <SolidColorBrush x:Key="ButtonBackground" Color="#2D2D2D"/>
-                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3D3D3D"/>
-                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4D4D4D"/>
-                                            </ResourceDictionary>
-                                        </ResourceDictionary.ThemeDictionaries>
-                                    </ResourceDictionary>
-                                </Button.Resources>
-                            </Button>
-                        </DataTemplate>
-                    </ItemsRepeater.ItemTemplate>
-                </ItemsRepeater>
-            </Grid>
+                <!-- Contact Links -->
+                <Grid Margin="0,12,0,0">
+                    <ItemsRepeater x:ConnectionId='3'                                     HorizontalAlignment="Center">
+                        <ItemsRepeater.Layout>
+                            <StackLayout Orientation="Vertical" Spacing="12"/>
+                        </ItemsRepeater.Layout>
+                        <ItemsRepeater.ItemTemplate>
+                            <DataTemplate                                   >
+                                <Button x:ConnectionId='5'                             
+                                                          
+                                        HorizontalAlignment="Stretch"
+                                        MinWidth="240"
+                                        Padding="16,12"
+                                        CornerRadius="6">
+                                    <StackPanel Orientation="Horizontal" Spacing="16">
+                                        <Image x:ConnectionId='6'                            Width="28" Height="28"/>
+                                        <TextBlock x:ConnectionId='7'                      
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                    <Button.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#F0F0F0"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#E0E0E0"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#D0D0D0"/>
+                                                </ResourceDictionary>
+                                                <ResourceDictionary x:Key="Dark">
+                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#2D2D2D"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3D3D3D"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4D4D4D"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </Button.Resources>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                </Grid>
 
-            <InfoBar Title="Don't be a stranger!"
-                     Message="I'm always looking forward to meeting new people and exploring exciting collaborations."
-                     IsOpen="True"
-                     Severity="Success"
-                     IsClosable="False"
-                     Margin="0,24,0,0"/>
+                <!-- Info Bar -->
+                <InfoBar Title="Don't be a stranger!"
+                         Message="I'm always looking forward to meeting new people and exploring exciting collaborations."
+                         IsOpen="True"
+                         Severity="Success"
+                         IsClosable="False"
+                         Margin="0,12,0,0"/>
 
-            <Image Source="ms-appx:///Assets/contact.png" 
-                   Height="200" 
-                   Stretch="Uniform" 
-                   HorizontalAlignment="Center"
-                   Margin="0,24,0,0"/>
 
-            <TextBlock Text="&quot;Code is like humor. When you have to explain it, it's bad.&quot; 🚀"
-                       Style="{ThemeResource BodyStrongTextBlockStyle}"
-                       HorizontalAlignment="Center"
-                       Opacity="0.8"/>
-        </StackPanel>
+                <!-- Quote -->
+                <TextBlock Text="&quot;Code is like humor. When you have to explain it, it's bad.&quot; 🚀"
+                           Style="{ThemeResource BodyStrongTextBlockStyle}"
+                           HorizontalAlignment="Center"
+                           Opacity="0.8"
+                           Margin="0,0,0,24"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
 

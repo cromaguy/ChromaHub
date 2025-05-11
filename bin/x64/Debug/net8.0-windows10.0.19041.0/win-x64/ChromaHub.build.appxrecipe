@@ -736,6 +736,12 @@
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\5.png">
       <PackagePath>Assets\Screenshots\5.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\6.png">
+      <PackagePath>Assets\Screenshots\6.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\7.png">
+      <PackagePath>Assets\Screenshots\7.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>

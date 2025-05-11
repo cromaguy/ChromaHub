@@ -18,36 +18,36 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>4D8956714242BD115F35ABE954E6D1A4BC71EF09986009F1956350C01CD1870E</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>chromahub_1.2.27.0_x64__kyaa8gfbwxqqg</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>C94B1269390A830C14501DFA80322EB27E25788DAF843E2C67E2AB94DF9EDDF6</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>chromahub_1.3.67.0_x64__kyaa8gfbwxqqg</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>chromahub_kyaa8gfbwxqqg!App</RegisteredUserModeAppID>
     <RegisteredPackageID>chromahub</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Anjishnu Nandi</RegisteredPackagePublisher>
-    <RegisteredVersion>1.2.27.0</RegisteredVersion>
+    <RegisteredVersion>1.3.67.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-05-11T06:02:50.383</Modified>
+      <Modified>2025-05-11T11:46:40.943</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-05-11T06:02:50.154</Modified>
+      <Modified>2025-05-11T11:46:40.785</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChromaHub.runtimeconfig.json">
       <PackagePath>ChromaHub.runtimeconfig.json</PackagePath>
-      <Modified>2025-05-09T11:18:18.256</Modified>
+      <Modified>2025-05-11T06:08:30.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChromaHub.dll">
       <PackagePath>ChromaHub.dll</PackagePath>
-      <Modified>2025-05-11T06:02:49.759</Modified>
+      <Modified>2025-05-11T11:46:40.532</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>ChromaHub.exe</PackagePath>
-      <Modified>2025-05-11T06:02:50.016</Modified>
+      <Modified>2025-05-11T11:46:40.552</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -887,7 +887,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChromaHub.deps.json">
       <PackagePath>ChromaHub.deps.json</PackagePath>
-      <Modified>2025-05-09T11:18:18.252</Modified>
+      <Modified>2025-05-11T06:08:30.163</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\anji.png">
       <PackagePath>Assets\anji.png</PackagePath>
@@ -963,23 +963,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\1.png">
       <PackagePath>Assets\Screenshots\1.png</PackagePath>
-      <Modified>2025-05-09T17:28:55.858</Modified>
+      <Modified>2025-05-11T07:04:29.999</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\2.png">
       <PackagePath>Assets\Screenshots\2.png</PackagePath>
-      <Modified>2025-05-09T17:33:21.936</Modified>
+      <Modified>2025-05-11T07:03:48.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\3.png">
       <PackagePath>Assets\Screenshots\3.png</PackagePath>
-      <Modified>2025-05-09T17:29:53.653</Modified>
+      <Modified>2025-05-11T07:03:13.359</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\4.png">
       <PackagePath>Assets\Screenshots\4.png</PackagePath>
-      <Modified>2025-05-09T17:30:32.042</Modified>
+      <Modified>2025-05-11T07:01:30.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\5.png">
       <PackagePath>Assets\Screenshots\5.png</PackagePath>
-      <Modified>2025-05-09T17:31:43.420</Modified>
+      <Modified>2025-05-11T07:02:30.799</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\6.png">
+      <PackagePath>Assets\Screenshots\6.png</PackagePath>
+      <Modified>2025-05-11T07:00:54.184</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Screenshots\7.png">
+      <PackagePath>Assets\Screenshots\7.png</PackagePath>
+      <Modified>2025-05-11T07:00:36.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>

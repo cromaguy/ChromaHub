@@ -97,13 +97,11 @@ namespace ChromaHub
 
         private async void ShowAnimationInfoBar()
         {
-            // Add null check to avoid NullReferenceException
             if (AnimationInfoBar == null)
             {
                 return;
             }
 
-            // Now it's safe to set the Message property
             AnimationInfoBar.Message = EnableAnimationsToggle.IsOn ?
                 "Animations enabled for better visual experience" :
                 "Animations disabled for performance optimization";
@@ -112,7 +110,6 @@ namespace ChromaHub
 
             await System.Threading.Tasks.Task.Delay(3000);
 
-            // Check again in case the control was disposed during the delay
             if (AnimationInfoBar != null)
             {
                 AnimationInfoBar.IsOpen = false;
@@ -209,9 +206,9 @@ namespace ChromaHub
                                 contentGrid.FindName("ContentFrame") is Frame contentFrame)
                             {
                                 contentFrame.ContentTransitions = new Microsoft.UI.Xaml.Media.Animation.TransitionCollection
-{
-                                new Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition()
-                            };
+                                {
+                                    new Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition()
+                                };
                             }
                         }
                     }
@@ -236,7 +233,6 @@ namespace ChromaHub
             }
             else
             {
-                // If resource doesn't exist, create it
                 App.Current.Resources["ContentPageTransitionDuration"] =
                     enable ? TimeSpan.FromMilliseconds(300) : TimeSpan.FromMilliseconds(0);
             }

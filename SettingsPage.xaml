@@ -9,6 +9,34 @@
     mc:Ignorable="d"
     Background="Transparent">
 
+    <Page.Resources>
+        <AcrylicBrush x:Key="CardAcrylicBrush"
+                     TintColor="{ThemeResource SolidBackgroundFillColorBase}"
+                     TintOpacity="0.6"
+                     TintLuminosityOpacity="0.8" 
+                     FallbackColor="{ThemeResource SolidBackgroundFillColorBase}"/>
+
+        <Style x:Key="SettingsCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource CardAcrylicBrush}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="20"/>
+        </Style>
+
+        <Style x:Key="SettingsTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,16"/>
+        </Style>
+
+        <Style x:Key="SettingsSectionStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,19 +44,15 @@
         </Grid.RowDefinitions>
 
         <!-- Header Section -->
-        <Grid Height="180">
-            <Grid.Background>
-                <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}" Opacity="0.5"/>
-            </Grid.Background>
-
-            <!-- Background accent circle -->
+        <Grid Height="180" Background="Transparent">
+            <!-- Background accent elements -->
             <Border x:Name="AccentRect" 
-            Width="320" 
-            Height="320" 
-            CornerRadius="160"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Margin="0,0,-80,-140">
+                    Width="320" 
+                    Height="320" 
+                    CornerRadius="160"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,-80,-140">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
@@ -38,146 +62,256 @@
                 <Border.Opacity>0.15</Border.Opacity>
             </Border>
 
-            <!-- Subtle pattern overlay -->
+            <!-- Header pattern -->
             <Canvas>
-                <Path x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
-              Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
-                <Path x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.1" 
-              Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+                <Path x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                      Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
+                <Path x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                      Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+                <Path x:Name="PatternPath3" Stroke="{ThemeResource SystemAccentColorDark1}" StrokeThickness="0.5" Opacity="0.15" 
+                      Data="M20,90 C90,70 170,100 250,80" Canvas.Left="520" Canvas.Top="100" />
             </Canvas>
 
-            <!-- Content layout -->
-            <Grid Margin="30,0,30,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
-                    <TextBlock Text=""
-                       Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
-                       FontSize="16"
-                       Opacity="0.9"
-                       FontWeight="SemiBold"
-                       x:Name="HeaderSubtitle"/>
-                    <TextBlock Text="Settings"
-                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
-                       FontSize="36"
-                       FontWeight="Bold"
-                       x:Name="HeaderTitle"
-                       Margin="0,4,0,0"/>
-                </StackPanel>
-            </Grid>
+            <!-- Header content -->
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="30,0,30,35">
+                <TextBlock Text="Customize your experience"
+                           Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                           FontSize="16"
+                           Opacity="0.9"
+                           FontWeight="SemiBold"
+                           x:Name="HeaderSubtitle"/>
+                <TextBlock Text="Settings"
+                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                           FontSize="36"
+                           FontWeight="Bold"
+                           x:Name="HeaderTitle"
+                           Margin="0,4,0,0"/>
+            </StackPanel>
         </Grid>
-
 
         <!-- Settings Content -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,8,0,0">
-            <StackPanel Padding="24,12,24,24" Spacing="16">
-                <!-- Divider -->
-                <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" Margin="0,0,0,8"/>
+            <StackPanel Padding="24,12,24,24" Spacing="20">
 
-                <!-- Theme Settings -->
-                <StackPanel>
-                    <TextBlock Text="Personalization" 
-                             Style="{ThemeResource SubtitleTextBlockStyle}"
-                             FontWeight="SemiBold"
-                             Margin="0,0,0,12"/>
+                <!-- Personalization Card -->
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Expander HorizontalAlignment="Stretch" 
+                              HorizontalContentAlignment="Stretch"
+                              ExpandDirection="Down"
+                              IsExpanded="True">
+                        <Expander.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <FontIcon Grid.Column="0" Glyph="&#xE771;" 
+                                          FontSize="20" 
+                                          Margin="0,0,12,0"
+                                          Foreground="{ThemeResource SystemAccentColor}"/>
+                                <TextBlock Grid.Column="1" 
+                                           Text="Personalization" 
+                                           Style="{StaticResource SettingsTitleStyle}"
+                                           VerticalAlignment="Center"
+                                           Margin="0"/>
+                            </Grid>
+                        </Expander.Header>
+                        <Expander.Content>
+                            <StackPanel Spacing="24" Margin="0,12,0,0">
+                                <!-- Theme Selection -->
+                                <StackPanel>
+                                    <Grid Margin="0,0,0,12">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Theme" 
+                                                   Style="{ThemeResource BodyStrongTextBlockStyle}"
+                                                   VerticalAlignment="Center"/>
+                                        <FontIcon Grid.Column="1" 
+                                                  Glyph="&#xE706;"
+                                                  Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                                    </Grid>
 
-                    <StackPanel Spacing="16">
-                        <!-- Theme Selection -->
-                        <StackPanel>
-                            <TextBlock Text="Theme" 
-                                     Style="{ThemeResource BodyStrongTextBlockStyle}"
-                                     Margin="0,0,0,8"/>
+                                    <RadioButtons x:Name="ThemeRadioButtons" 
+                                                SelectionChanged="ThemeRadioButtons_SelectionChanged"
+                                                MaxColumns="3">
+                                        <RadioButton Content="Light" Tag="Light"/>
+                                        <RadioButton Content="Dark" Tag="Dark"/>
+                                        <RadioButton Content="Use system" Tag="Default"/>
+                                    </RadioButtons>
+                                </StackPanel>
 
-                            <RadioButtons x:Name="ThemeRadioButtons" 
-                                        SelectionChanged="ThemeRadioButtons_SelectionChanged"
-                                        MaxColumns="3">
-                                <RadioButton Content="Light" Tag="Light"/>
-                                <RadioButton Content="Dark" Tag="Dark"/>
-                                <RadioButton Content="Use system setting" Tag="Default"/>
-                            </RadioButtons>
+                                <!-- Backdrop Settings -->
+                                <StackPanel>
+                                    <Grid Margin="0,0,0,12">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Window backdrop" 
+                                                 Style="{ThemeResource BodyStrongTextBlockStyle}"
+                                                 VerticalAlignment="Center"/>
+                                        <FontIcon Grid.Column="1" 
+                                                  Glyph="&#xE81E;"
+                                                  Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                                    </Grid>
+
+                                    <RadioButtons x:Name="BackdropRadioButtons"
+                                                SelectionChanged="BackdropRadioButtons_SelectionChanged"
+                                                MaxColumns="2">
+                                        <RadioButton Content="Mica effect" Tag="Mica"/>
+                                        <RadioButton Content="Solid color" Tag="Solid"/>
+                                    </RadioButtons>
+                                </StackPanel>
+                            </StackPanel>
+                        </Expander.Content>
+                    </Expander>
+                </Border>
+
+                <!-- Animation Card -->
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Expander HorizontalAlignment="Stretch" 
+                              HorizontalContentAlignment="Stretch"
+                              ExpandDirection="Down"
+                              IsExpanded="True">
+                        <Expander.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <FontIcon Grid.Column="0" Glyph="&#xE805;" 
+                                          FontSize="20" 
+                                          Margin="0,0,12,0"
+                                          Foreground="{ThemeResource SystemAccentColor}"/>
+                                <TextBlock Grid.Column="1" 
+                                           Text="Animation" 
+                                           Style="{StaticResource SettingsTitleStyle}"
+                                           VerticalAlignment="Center"
+                                           Margin="0"/>
+                            </Grid>
+                        </Expander.Header>
+                        <Expander.Content>
+                            <StackPanel Spacing="12" Margin="0,12,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Enable animations" 
+                                                   Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                                        <TextBlock Text="Toggle animations throughout the application"
+                                                  Style="{ThemeResource CaptionTextBlockStyle}"
+                                                  Opacity="0.7"
+                                                  TextWrapping="Wrap"
+                                                  Margin="0,4,0,0"/>
+                                    </StackPanel>
+
+                                    <ToggleSwitch Grid.Column="1" 
+                                                  x:Name="EnableAnimationsToggle"
+                                                  Toggled="EnableAnimationsToggle_Toggled"
+                                                  OnContent=""
+                                                  OffContent=""
+                                                  IsOn="True"/>
+                                </Grid>
+
+                                <InfoBar x:Name="AnimationInfoBar"
+                                        IsOpen="False"
+                                        Title="Changes applied"
+                                        Message="Animation settings have been updated"
+                                        Severity="Success"
+                                        IsClosable="True"/>
+                            </StackPanel>
+                        </Expander.Content>
+                    </Expander>
+                </Border>
+
+                <!-- About Card -->
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Expander HorizontalAlignment="Stretch" 
+                              HorizontalContentAlignment="Stretch"
+                              ExpandDirection="Down"
+                              IsExpanded="True">
+                        <Expander.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <FontIcon Grid.Column="0" Glyph="&#xE946;" 
+                                          FontSize="20" 
+                                          Margin="0,0,12,0"
+                                          Foreground="{ThemeResource SystemAccentColor}"/>
+                                <TextBlock Grid.Column="1" 
+                                           Text="About" 
+                                           Style="{StaticResource SettingsTitleStyle}"
+                                           VerticalAlignment="Center"
+                                           Margin="0"/>
+                            </Grid>
+                        </Expander.Header>
+                        <Expander.Content>
+                            <StackPanel Spacing="8" Margin="0,12,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Chroma Hub" 
+                                                   Style="{ThemeResource TitleTextBlockStyle}"/>
+                                        <TextBlock Text="Version 1.3.0" 
+                                                   Style="{ThemeResource CaptionTextBlockStyle}"
+                                                   Opacity="0.7"
+                                                   Margin="0,4,0,0"/>
+                                    </StackPanel>
+
+                                    <Image Grid.Column="1" 
+                                           Source="ms-appx:///Assets/AN.png" 
+                                           Width="40" 
+                                           Height="40"
+                                           VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <TextBlock Text="© 2025 Anjishnu Nandi. All rights reserved."
+                                           Style="{ThemeResource CaptionTextBlockStyle}"
+                                           Opacity="0.7"
+                                           Margin="0,16,0,0"/>
+                            </StackPanel>
+                        </Expander.Content>
+                    </Expander>
+                </Border>
+
+                <!-- Reset Button with Card -->
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Reset settings" 
+                                       Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                            <TextBlock Text="Reset all settings to their default values"
+                                      Style="{ThemeResource CaptionTextBlockStyle}"
+                                      Opacity="0.7"
+                                      TextWrapping="Wrap"
+                                      Margin="0,4,0,0"/>
                         </StackPanel>
 
-                        <!-- Backdrop Settings -->
-                        <StackPanel>
-                            <TextBlock Text="Window backdrop" 
-                                     Style="{ThemeResource BodyStrongTextBlockStyle}"
-                                     Margin="0,0,0,8"/>
-
-                            <RadioButtons x:Name="BackdropRadioButtons"
-                                        SelectionChanged="BackdropRadioButtons_SelectionChanged"
-                                        MaxColumns="2">
-                                <RadioButton Content="Mica effect" Tag="Mica"/>
-                                <RadioButton Content="Solid color" Tag="Solid"/>
-                            </RadioButtons>
-                        </StackPanel>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Divider -->
-                <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" Margin="0,8,0,8"/>
-
-                <!-- Animation Settings -->
-                <StackPanel>
-                    <TextBlock Text="Animation" 
-                             Style="{ThemeResource SubtitleTextBlockStyle}"
-                             FontWeight="SemiBold"
-                             Margin="0,0,0,12"/>
-
-                    <StackPanel Spacing="16">
-                        <StackPanel Orientation="Horizontal">
-                            <ToggleSwitch x:Name="EnableAnimationsToggle"
-                                        Header="Enable animations"
-                                        IsOn="True"
-                                        Toggled="EnableAnimationsToggle_Toggled"/>
-
-                            <InfoBar x:Name="AnimationInfoBar"
-                                    IsOpen="False"
-                                    Title="Changes applied"
-                                    Message="Animation settings have been updated"
-                                    Severity="Success"
-                                    IsClosable="True"
-                                    Margin="12,0,0,0"/>
-                        </StackPanel>
-
-                        <TextBlock Text="Toggle animations throughout the application. Changes will apply immediately."
-                                 Style="{ThemeResource CaptionTextBlockStyle}"
-                                 Opacity="0.7"
-                                 TextWrapping="Wrap"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Divider -->
-                <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" Margin="0,8,0,8"/>
-
-                <!-- About Section -->
-                <StackPanel>
-                    <TextBlock Text="About" 
-                             Style="{ThemeResource SubtitleTextBlockStyle}"
-                             FontWeight="SemiBold"
-                             Margin="0,0,0,12"/>
-
-                    <StackPanel Spacing="8">
-                        <TextBlock Text="Chroma Hub" 
-                                 Style="{ThemeResource BodyStrongTextBlockStyle}"/>
-                        <TextBlock Text="Version 1.3.0" 
-                                 Style="{ThemeResource CaptionTextBlockStyle}"
-                                 Opacity="0.7"/>
-                        <TextBlock Text="© 2025 Anjishnu Nandi. All rights reserved."
-                                 Style="{ThemeResource CaptionTextBlockStyle}"
-                                 Opacity="0.7"
-                                 Margin="0,8,0,0"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Reset Button -->
-                <Button Content="Reset all settings"
-                      Click="ResetSettingsButton_Click"
-                      Margin="0,16,0,0"
-                      Style="{ThemeResource AccentButtonStyle}"/>
+                        <Button Grid.Column="1"
+                                Content="Reset"
+                                Click="ResetSettingsButton_Click"
+                                Style="{ThemeResource AccentButtonStyle}"/>
+                    </Grid>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>
 </Page>
+
+

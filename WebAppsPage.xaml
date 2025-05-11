@@ -18,9 +18,6 @@
 
         <!-- Header Section -->
         <Grid Height="180">
-            <Grid.Background>
-                <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}" Opacity="0.5"/>
-            </Grid.Background>
 
             <!-- Background accent circle -->
             <Border x:Name="AccentRect" 

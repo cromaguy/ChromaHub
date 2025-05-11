@@ -226,7 +226,7 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[106];
+            _typeNameTable = new string[110];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -311,30 +311,34 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
             _typeNameTable[81] = "System.Collections.Generic.List`1<String>";
             _typeNameTable[82] = "System.Collections.ObjectModel.ObservableCollection`1<ChromaHub.ProjectItem>";
             _typeNameTable[83] = "System.Collections.ObjectModel.Collection`1<ChromaHub.ProjectItem>";
-            _typeNameTable[84] = "Microsoft.UI.Xaml.Controls.RadioButtons";
-            _typeNameTable[85] = "ChromaHub.SettingsPage";
-            _typeNameTable[86] = "Microsoft.UI.Xaml.Controls.ProgressRing";
-            _typeNameTable[87] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
-            _typeNameTable[88] = "ChromaHub.SplashScreen";
-            _typeNameTable[89] = "ChromaHub.EmptyPage";
-            _typeNameTable[90] = "ChromaHub.WebAppsPage";
-            _typeNameTable[91] = "System.Collections.Generic.List`1<ChromaHub.WebAppProject>";
-            _typeNameTable[92] = "ChromaHub.WebAppProject";
-            _typeNameTable[93] = "System.DateTime";
-            _typeNameTable[94] = "Microsoft.UI.Xaml.Controls.WebView2";
-            _typeNameTable[95] = "Microsoft.Web.WebView2.Core.CoreWebView2";
-            _typeNameTable[96] = "System.Uri";
-            _typeNameTable[97] = "Microsoft.UI.Xaml.Controls.TeachingTip";
-            _typeNameTable[98] = "Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode";
-            _typeNameTable[99] = "Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode";
-            _typeNameTable[100] = "Microsoft.UI.Xaml.Thickness";
-            _typeNameTable[101] = "Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility";
-            _typeNameTable[102] = "Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings";
-            _typeNameTable[103] = "ChromaHub.WebAppViewPage";
-            _typeNameTable[104] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[105] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[84] = "Microsoft.UI.Xaml.Media.AcrylicBrush";
+            _typeNameTable[85] = "Microsoft.UI.Xaml.Media.XamlCompositionBrushBase";
+            _typeNameTable[86] = "System.Nullable`1<Double>";
+            _typeNameTable[87] = "TimeSpan";
+            _typeNameTable[88] = "Microsoft.UI.Xaml.Controls.RadioButtons";
+            _typeNameTable[89] = "ChromaHub.SettingsPage";
+            _typeNameTable[90] = "Microsoft.UI.Xaml.Controls.ProgressRing";
+            _typeNameTable[91] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
+            _typeNameTable[92] = "ChromaHub.SplashScreen";
+            _typeNameTable[93] = "ChromaHub.EmptyPage";
+            _typeNameTable[94] = "ChromaHub.WebAppsPage";
+            _typeNameTable[95] = "System.Collections.Generic.List`1<ChromaHub.WebAppProject>";
+            _typeNameTable[96] = "ChromaHub.WebAppProject";
+            _typeNameTable[97] = "System.DateTime";
+            _typeNameTable[98] = "Microsoft.UI.Xaml.Controls.WebView2";
+            _typeNameTable[99] = "Microsoft.Web.WebView2.Core.CoreWebView2";
+            _typeNameTable[100] = "System.Uri";
+            _typeNameTable[101] = "Microsoft.UI.Xaml.Controls.TeachingTip";
+            _typeNameTable[102] = "Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode";
+            _typeNameTable[103] = "Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode";
+            _typeNameTable[104] = "Microsoft.UI.Xaml.Thickness";
+            _typeNameTable[105] = "Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility";
+            _typeNameTable[106] = "Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings";
+            _typeNameTable[107] = "ChromaHub.WebAppViewPage";
+            _typeNameTable[108] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[109] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[106];
+            _typeTable = new global::System.Type[110];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -419,28 +423,32 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
             _typeTable[81] = typeof(global::System.Collections.Generic.List<global::System.String>);
             _typeTable[82] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::ChromaHub.ProjectItem>);
             _typeTable[83] = typeof(global::System.Collections.ObjectModel.Collection<global::ChromaHub.ProjectItem>);
-            _typeTable[84] = typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons);
-            _typeTable[85] = typeof(global::ChromaHub.SettingsPage);
-            _typeTable[86] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
-            _typeTable[87] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
-            _typeTable[88] = typeof(global::ChromaHub.SplashScreen);
-            _typeTable[89] = typeof(global::ChromaHub.EmptyPage);
-            _typeTable[90] = typeof(global::ChromaHub.WebAppsPage);
-            _typeTable[91] = typeof(global::System.Collections.Generic.List<global::ChromaHub.WebAppProject>);
-            _typeTable[92] = typeof(global::ChromaHub.WebAppProject);
-            _typeTable[93] = typeof(global::System.DateTime);
-            _typeTable[94] = typeof(global::Microsoft.UI.Xaml.Controls.WebView2);
-            _typeTable[95] = typeof(global::Microsoft.Web.WebView2.Core.CoreWebView2);
-            _typeTable[96] = typeof(global::System.Uri);
-            _typeTable[97] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip);
-            _typeTable[98] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode);
-            _typeTable[99] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode);
-            _typeTable[100] = typeof(global::Microsoft.UI.Xaml.Thickness);
-            _typeTable[101] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility);
-            _typeTable[102] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings);
-            _typeTable[103] = typeof(global::ChromaHub.WebAppViewPage);
-            _typeTable[104] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[105] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[84] = typeof(global::Microsoft.UI.Xaml.Media.AcrylicBrush);
+            _typeTable[85] = typeof(global::Microsoft.UI.Xaml.Media.XamlCompositionBrushBase);
+            _typeTable[86] = typeof(global::System.Nullable<global::System.Double>);
+            _typeTable[87] = typeof(global::System.TimeSpan);
+            _typeTable[88] = typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons);
+            _typeTable[89] = typeof(global::ChromaHub.SettingsPage);
+            _typeTable[90] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
+            _typeTable[91] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
+            _typeTable[92] = typeof(global::ChromaHub.SplashScreen);
+            _typeTable[93] = typeof(global::ChromaHub.EmptyPage);
+            _typeTable[94] = typeof(global::ChromaHub.WebAppsPage);
+            _typeTable[95] = typeof(global::System.Collections.Generic.List<global::ChromaHub.WebAppProject>);
+            _typeTable[96] = typeof(global::ChromaHub.WebAppProject);
+            _typeTable[97] = typeof(global::System.DateTime);
+            _typeTable[98] = typeof(global::Microsoft.UI.Xaml.Controls.WebView2);
+            _typeTable[99] = typeof(global::Microsoft.Web.WebView2.Core.CoreWebView2);
+            _typeTable[100] = typeof(global::System.Uri);
+            _typeTable[101] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip);
+            _typeTable[102] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode);
+            _typeTable[103] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode);
+            _typeTable[104] = typeof(global::Microsoft.UI.Xaml.Thickness);
+            _typeTable[105] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility);
+            _typeTable[106] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings);
+            _typeTable[107] = typeof(global::ChromaHub.WebAppViewPage);
+            _typeTable[108] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[109] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -508,19 +516,20 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
         private object Activate_81_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
         private object Activate_82_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::ChromaHub.ProjectItem>(); }
         private object Activate_83_Collection() { return new global::System.Collections.ObjectModel.Collection<global::ChromaHub.ProjectItem>(); }
-        private object Activate_84_RadioButtons() { return new global::Microsoft.UI.Xaml.Controls.RadioButtons(); }
-        private object Activate_85_SettingsPage() { return new global::ChromaHub.SettingsPage(); }
-        private object Activate_86_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
-        private object Activate_88_SplashScreen() { return new global::ChromaHub.SplashScreen(); }
-        private object Activate_89_EmptyPage() { return new global::ChromaHub.EmptyPage(); }
-        private object Activate_90_WebAppsPage() { return new global::ChromaHub.WebAppsPage(); }
-        private object Activate_91_List() { return new global::System.Collections.Generic.List<global::ChromaHub.WebAppProject>(); }
-        private object Activate_92_WebAppProject() { return new global::ChromaHub.WebAppProject(); }
-        private object Activate_94_WebView2() { return new global::Microsoft.UI.Xaml.Controls.WebView2(); }
-        private object Activate_97_TeachingTip() { return new global::Microsoft.UI.Xaml.Controls.TeachingTip(); }
-        private object Activate_102_TeachingTipTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings(); }
-        private object Activate_103_WebAppViewPage() { return new global::ChromaHub.WebAppViewPage(); }
-        private object Activate_104_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_84_AcrylicBrush() { return new global::Microsoft.UI.Xaml.Media.AcrylicBrush(); }
+        private object Activate_88_RadioButtons() { return new global::Microsoft.UI.Xaml.Controls.RadioButtons(); }
+        private object Activate_89_SettingsPage() { return new global::ChromaHub.SettingsPage(); }
+        private object Activate_90_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
+        private object Activate_92_SplashScreen() { return new global::ChromaHub.SplashScreen(); }
+        private object Activate_93_EmptyPage() { return new global::ChromaHub.EmptyPage(); }
+        private object Activate_94_WebAppsPage() { return new global::ChromaHub.WebAppsPage(); }
+        private object Activate_95_List() { return new global::System.Collections.Generic.List<global::ChromaHub.WebAppProject>(); }
+        private object Activate_96_WebAppProject() { return new global::ChromaHub.WebAppProject(); }
+        private object Activate_98_WebView2() { return new global::Microsoft.UI.Xaml.Controls.WebView2(); }
+        private object Activate_101_TeachingTip() { return new global::Microsoft.UI.Xaml.Controls.TeachingTip(); }
+        private object Activate_106_TeachingTipTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings(); }
+        private object Activate_107_WebAppViewPage() { return new global::ChromaHub.WebAppViewPage(); }
+        private object Activate_108_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_Color() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Color).TypeHandle);
         private void StaticInitializer_5_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
@@ -578,28 +587,31 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
         private void StaticInitializer_81_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::System.String>).TypeHandle);
         private void StaticInitializer_82_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::ChromaHub.ProjectItem>).TypeHandle);
         private void StaticInitializer_83_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::ChromaHub.ProjectItem>).TypeHandle);
-        private void StaticInitializer_84_RadioButtons() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons).TypeHandle);
-        private void StaticInitializer_85_SettingsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.SettingsPage).TypeHandle);
-        private void StaticInitializer_86_ProgressRing() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing).TypeHandle);
-        private void StaticInitializer_87_ProgressRingTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings).TypeHandle);
-        private void StaticInitializer_88_SplashScreen() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.SplashScreen).TypeHandle);
-        private void StaticInitializer_89_EmptyPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.EmptyPage).TypeHandle);
-        private void StaticInitializer_90_WebAppsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.WebAppsPage).TypeHandle);
-        private void StaticInitializer_91_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::ChromaHub.WebAppProject>).TypeHandle);
-        private void StaticInitializer_92_WebAppProject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.WebAppProject).TypeHandle);
-        private void StaticInitializer_93_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
-        private void StaticInitializer_94_WebView2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.WebView2).TypeHandle);
-        private void StaticInitializer_95_CoreWebView2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Web.WebView2.Core.CoreWebView2).TypeHandle);
-        private void StaticInitializer_96_Uri() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Uri).TypeHandle);
-        private void StaticInitializer_97_TeachingTip() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip).TypeHandle);
-        private void StaticInitializer_98_TeachingTipPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode).TypeHandle);
-        private void StaticInitializer_99_TeachingTipHeroContentPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode).TypeHandle);
-        private void StaticInitializer_100_Thickness() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Thickness).TypeHandle);
-        private void StaticInitializer_101_TeachingTipTailVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility).TypeHandle);
-        private void StaticInitializer_102_TeachingTipTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings).TypeHandle);
-        private void StaticInitializer_103_WebAppViewPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.WebAppViewPage).TypeHandle);
-        private void StaticInitializer_104_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_105_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_84_AcrylicBrush() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.AcrylicBrush).TypeHandle);
+        private void StaticInitializer_86_Nullable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Nullable<global::System.Double>).TypeHandle);
+        private void StaticInitializer_87_TimeSpan() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.TimeSpan).TypeHandle);
+        private void StaticInitializer_88_RadioButtons() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons).TypeHandle);
+        private void StaticInitializer_89_SettingsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.SettingsPage).TypeHandle);
+        private void StaticInitializer_90_ProgressRing() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing).TypeHandle);
+        private void StaticInitializer_91_ProgressRingTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings).TypeHandle);
+        private void StaticInitializer_92_SplashScreen() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.SplashScreen).TypeHandle);
+        private void StaticInitializer_93_EmptyPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.EmptyPage).TypeHandle);
+        private void StaticInitializer_94_WebAppsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.WebAppsPage).TypeHandle);
+        private void StaticInitializer_95_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::ChromaHub.WebAppProject>).TypeHandle);
+        private void StaticInitializer_96_WebAppProject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.WebAppProject).TypeHandle);
+        private void StaticInitializer_97_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
+        private void StaticInitializer_98_WebView2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.WebView2).TypeHandle);
+        private void StaticInitializer_99_CoreWebView2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Web.WebView2.Core.CoreWebView2).TypeHandle);
+        private void StaticInitializer_100_Uri() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Uri).TypeHandle);
+        private void StaticInitializer_101_TeachingTip() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip).TypeHandle);
+        private void StaticInitializer_102_TeachingTipPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode).TypeHandle);
+        private void StaticInitializer_103_TeachingTipHeroContentPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode).TypeHandle);
+        private void StaticInitializer_104_Thickness() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Thickness).TypeHandle);
+        private void StaticInitializer_105_TeachingTipTailVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility).TypeHandle);
+        private void StaticInitializer_106_TeachingTipTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings).TypeHandle);
+        private void StaticInitializer_107_WebAppViewPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ChromaHub.WebAppViewPage).TypeHandle);
+        private void StaticInitializer_108_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_109_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -655,13 +667,13 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
             var newItem = (global::ChromaHub.ProjectItem)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_91_List(object instance, object item)
+        private void VectorAdd_95_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::ChromaHub.WebAppProject>)instance;
             var newItem = (global::ChromaHub.WebAppProject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_105_IList(object instance, object item)
+        private void VectorAdd_109_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -1370,10 +1382,42 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 84:   //  Microsoft.UI.Xaml.Controls.RadioButtons
+            case 84:   //  Microsoft.UI.Xaml.Media.AcrylicBrush
+                userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Media.XamlCompositionBrushBase"));
+                userType.Activator = Activate_84_AcrylicBrush;
+                userType.StaticInitializer = StaticInitializer_84_AcrylicBrush;
+                userType.AddMemberName("TintColor");
+                userType.AddMemberName("TintOpacity");
+                userType.AddMemberName("TintLuminosityOpacity");
+                userType.AddMemberName("AlwaysUseFallback");
+                userType.AddMemberName("TintTransitionDuration");
+                xamlType = userType;
+                break;
+
+            case 85:   //  Microsoft.UI.Xaml.Media.XamlCompositionBrushBase
+                xamlType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 86:   //  System.Nullable`1<Double>
+                userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetBoxedType(GetXamlTypeByName("Double"));
+                userType.BoxInstance = userType.BoxType<global::System.Double>;
+                userType.StaticInitializer = StaticInitializer_86_Nullable;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 87:   //  TimeSpan
+                userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.StaticInitializer = StaticInitializer_87_TimeSpan;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 88:   //  Microsoft.UI.Xaml.Controls.RadioButtons
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_84_RadioButtons;
-                userType.StaticInitializer = StaticInitializer_84_RadioButtons;
+                userType.Activator = Activate_88_RadioButtons;
+                userType.StaticInitializer = StaticInitializer_88_RadioButtons;
                 userType.SetContentPropertyName("Microsoft.UI.Xaml.Controls.RadioButtons.Items");
                 userType.AddMemberName("Items");
                 userType.AddMemberName("MaxColumns");
@@ -1386,18 +1430,18 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 85:   //  ChromaHub.SettingsPage
+            case 89:   //  ChromaHub.SettingsPage
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_85_SettingsPage;
-                userType.StaticInitializer = StaticInitializer_85_SettingsPage;
+                userType.Activator = Activate_89_SettingsPage;
+                userType.StaticInitializer = StaticInitializer_89_SettingsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 86:   //  Microsoft.UI.Xaml.Controls.ProgressRing
+            case 90:   //  Microsoft.UI.Xaml.Controls.ProgressRing
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_86_ProgressRing;
-                userType.StaticInitializer = StaticInitializer_86_ProgressRing;
+                userType.Activator = Activate_90_ProgressRing;
+                userType.StaticInitializer = StaticInitializer_90_ProgressRing;
                 userType.AddMemberName("IsActive");
                 userType.AddMemberName("IsIndeterminate");
                 userType.AddMemberName("Maximum");
@@ -1407,50 +1451,50 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 87:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
+            case 91:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_87_ProgressRingTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_91_ProgressRingTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 88:   //  ChromaHub.SplashScreen
+            case 92:   //  ChromaHub.SplashScreen
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_88_SplashScreen;
-                userType.StaticInitializer = StaticInitializer_88_SplashScreen;
+                userType.Activator = Activate_92_SplashScreen;
+                userType.StaticInitializer = StaticInitializer_92_SplashScreen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 89:   //  ChromaHub.EmptyPage
+            case 93:   //  ChromaHub.EmptyPage
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_89_EmptyPage;
-                userType.StaticInitializer = StaticInitializer_89_EmptyPage;
+                userType.Activator = Activate_93_EmptyPage;
+                userType.StaticInitializer = StaticInitializer_93_EmptyPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 90:   //  ChromaHub.WebAppsPage
+            case 94:   //  ChromaHub.WebAppsPage
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_90_WebAppsPage;
-                userType.StaticInitializer = StaticInitializer_90_WebAppsPage;
+                userType.Activator = Activate_94_WebAppsPage;
+                userType.StaticInitializer = StaticInitializer_94_WebAppsPage;
                 userType.AddMemberName("WebApps");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 91:   //  System.Collections.Generic.List`1<ChromaHub.WebAppProject>
+            case 95:   //  System.Collections.Generic.List`1<ChromaHub.WebAppProject>
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_91_List;
-                userType.CollectionAdd = VectorAdd_91_List;
+                userType.StaticInitializer = StaticInitializer_95_List;
+                userType.CollectionAdd = VectorAdd_95_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 92:   //  ChromaHub.WebAppProject
+            case 96:   //  ChromaHub.WebAppProject
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_92_WebAppProject;
-                userType.StaticInitializer = StaticInitializer_92_WebAppProject;
+                userType.Activator = Activate_96_WebAppProject;
+                userType.StaticInitializer = StaticInitializer_96_WebAppProject;
                 userType.AddMemberName("Title");
                 userType.AddMemberName("Description");
                 userType.AddMemberName("Url");
@@ -1462,17 +1506,17 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 93:   //  System.DateTime
+            case 97:   //  System.DateTime
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_93_DateTime;
+                userType.StaticInitializer = StaticInitializer_97_DateTime;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 94:   //  Microsoft.UI.Xaml.Controls.WebView2
+            case 98:   //  Microsoft.UI.Xaml.Controls.WebView2
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.FrameworkElement"));
-                userType.Activator = Activate_94_WebView2;
-                userType.StaticInitializer = StaticInitializer_94_WebView2;
+                userType.Activator = Activate_98_WebView2;
+                userType.StaticInitializer = StaticInitializer_98_WebView2;
                 userType.AddMemberName("CanGoBack");
                 userType.AddMemberName("CanGoForward");
                 userType.AddMemberName("CoreWebView2");
@@ -1481,24 +1525,24 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 95:   //  Microsoft.Web.WebView2.Core.CoreWebView2
+            case 99:   //  Microsoft.Web.WebView2.Core.CoreWebView2
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_95_CoreWebView2;
+                userType.StaticInitializer = StaticInitializer_99_CoreWebView2;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 96:   //  System.Uri
+            case 100:   //  System.Uri
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_96_Uri;
+                userType.StaticInitializer = StaticInitializer_100_Uri;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 97:   //  Microsoft.UI.Xaml.Controls.TeachingTip
+            case 101:   //  Microsoft.UI.Xaml.Controls.TeachingTip
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_97_TeachingTip;
-                userType.StaticInitializer = StaticInitializer_97_TeachingTip;
+                userType.Activator = Activate_101_TeachingTip;
+                userType.StaticInitializer = StaticInitializer_101_TeachingTip;
                 userType.AddMemberName("Title");
                 userType.AddMemberName("IsLightDismissEnabled");
                 userType.AddMemberName("PreferredPlacement");
@@ -1523,9 +1567,9 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 98:   //  Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode
+            case 102:   //  Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_98_TeachingTipPlacementMode;
+                userType.StaticInitializer = StaticInitializer_102_TeachingTipPlacementMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode.Auto);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode.Top);
                 userType.AddEnumValue("Bottom", global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode.Bottom);
@@ -1543,51 +1587,51 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 99:   //  Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode
+            case 103:   //  Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_99_TeachingTipHeroContentPlacementMode;
+                userType.StaticInitializer = StaticInitializer_103_TeachingTipHeroContentPlacementMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode.Auto);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode.Top);
                 userType.AddEnumValue("Bottom", global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode.Bottom);
                 xamlType = userType;
                 break;
 
-            case 100:   //  Microsoft.UI.Xaml.Thickness
+            case 104:   //  Microsoft.UI.Xaml.Thickness
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_100_Thickness;
+                userType.StaticInitializer = StaticInitializer_104_Thickness;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 101:   //  Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility
+            case 105:   //  Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_101_TeachingTipTailVisibility;
+                userType.StaticInitializer = StaticInitializer_105_TeachingTipTailVisibility;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility.Auto);
                 userType.AddEnumValue("Visible", global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility.Visible);
                 userType.AddEnumValue("Collapsed", global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility.Collapsed);
                 xamlType = userType;
                 break;
 
-            case 102:   //  Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings
+            case 106:   //  Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_102_TeachingTipTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_106_TeachingTipTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 103:   //  ChromaHub.WebAppViewPage
+            case 107:   //  ChromaHub.WebAppViewPage
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_103_WebAppViewPage;
-                userType.StaticInitializer = StaticInitializer_103_WebAppViewPage;
+                userType.Activator = Activate_107_WebAppViewPage;
+                userType.StaticInitializer = StaticInitializer_107_WebAppViewPage;
                 userType.AddMemberName("Project");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 104:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 108:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_104_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_104_TreeViewNode;
+                userType.Activator = Activate_108_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_108_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -1599,10 +1643,10 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 105:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 109:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_105_IList;
-                userType.CollectionAdd = VectorAdd_105_IList;
+                userType.StaticInitializer = StaticInitializer_109_IList;
+                userType.CollectionAdd = VectorAdd_109_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -2985,512 +3029,562 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
             var that = (global::ChromaHub.ProjectsPage)instance;
             return that.FilteredProjects;
         }
-        private object get_143_RadioButtons_Items(object instance)
+        private object get_143_AcrylicBrush_TintColor(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            return that.TintColor;
+        }
+        private void set_143_AcrylicBrush_TintColor(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            that.TintColor = (global::Windows.UI.Color)Value;
+        }
+        private object get_144_AcrylicBrush_TintOpacity(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            return that.TintOpacity;
+        }
+        private void set_144_AcrylicBrush_TintOpacity(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            that.TintOpacity = (global::System.Double)Value;
+        }
+        private object get_145_AcrylicBrush_TintLuminosityOpacity(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            return that.TintLuminosityOpacity;
+        }
+        private void set_145_AcrylicBrush_TintLuminosityOpacity(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            that.TintLuminosityOpacity = (global::System.Nullable<global::System.Double>)Value;
+        }
+        private object get_146_AcrylicBrush_AlwaysUseFallback(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            return that.AlwaysUseFallback;
+        }
+        private void set_146_AcrylicBrush_AlwaysUseFallback(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            that.AlwaysUseFallback = (global::System.Boolean)Value;
+        }
+        private object get_147_AcrylicBrush_TintTransitionDuration(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            return that.TintTransitionDuration;
+        }
+        private void set_147_AcrylicBrush_TintTransitionDuration(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Media.AcrylicBrush)instance;
+            that.TintTransitionDuration = (global::System.TimeSpan)Value;
+        }
+        private object get_148_RadioButtons_Items(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.Items;
         }
-        private object get_144_RadioButtons_MaxColumns(object instance)
+        private object get_149_RadioButtons_MaxColumns(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.MaxColumns;
         }
-        private void set_144_RadioButtons_MaxColumns(object instance, object Value)
+        private void set_149_RadioButtons_MaxColumns(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.MaxColumns = (global::System.Int32)Value;
         }
-        private object get_145_RadioButtons_Header(object instance)
+        private object get_150_RadioButtons_Header(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.Header;
         }
-        private void set_145_RadioButtons_Header(object instance, object Value)
+        private void set_150_RadioButtons_Header(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.Header = (global::System.Object)Value;
         }
-        private object get_146_RadioButtons_HeaderTemplate(object instance)
+        private object get_151_RadioButtons_HeaderTemplate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.HeaderTemplate;
         }
-        private void set_146_RadioButtons_HeaderTemplate(object instance, object Value)
+        private void set_151_RadioButtons_HeaderTemplate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.HeaderTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
         }
-        private object get_147_RadioButtons_ItemTemplate(object instance)
+        private object get_152_RadioButtons_ItemTemplate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.ItemTemplate;
         }
-        private void set_147_RadioButtons_ItemTemplate(object instance, object Value)
+        private void set_152_RadioButtons_ItemTemplate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.ItemTemplate = (global::System.Object)Value;
         }
-        private object get_148_RadioButtons_ItemsSource(object instance)
+        private object get_153_RadioButtons_ItemsSource(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.ItemsSource;
         }
-        private void set_148_RadioButtons_ItemsSource(object instance, object Value)
+        private void set_153_RadioButtons_ItemsSource(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.ItemsSource = (global::System.Object)Value;
         }
-        private object get_149_RadioButtons_SelectedIndex(object instance)
+        private object get_154_RadioButtons_SelectedIndex(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.SelectedIndex;
         }
-        private void set_149_RadioButtons_SelectedIndex(object instance, object Value)
+        private void set_154_RadioButtons_SelectedIndex(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.SelectedIndex = (global::System.Int32)Value;
         }
-        private object get_150_RadioButtons_SelectedItem(object instance)
+        private object get_155_RadioButtons_SelectedItem(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.SelectedItem;
         }
-        private void set_150_RadioButtons_SelectedItem(object instance, object Value)
+        private void set_155_RadioButtons_SelectedItem(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.SelectedItem = (global::System.Object)Value;
         }
-        private object get_151_ProgressRing_IsActive(object instance)
+        private object get_156_ProgressRing_IsActive(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.IsActive;
         }
-        private void set_151_ProgressRing_IsActive(object instance, object Value)
+        private void set_156_ProgressRing_IsActive(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.IsActive = (global::System.Boolean)Value;
         }
-        private object get_152_ProgressRing_IsIndeterminate(object instance)
+        private object get_157_ProgressRing_IsIndeterminate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.IsIndeterminate;
         }
-        private void set_152_ProgressRing_IsIndeterminate(object instance, object Value)
+        private void set_157_ProgressRing_IsIndeterminate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.IsIndeterminate = (global::System.Boolean)Value;
         }
-        private object get_153_ProgressRing_Maximum(object instance)
+        private object get_158_ProgressRing_Maximum(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.Maximum;
         }
-        private void set_153_ProgressRing_Maximum(object instance, object Value)
+        private void set_158_ProgressRing_Maximum(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.Maximum = (global::System.Double)Value;
         }
-        private object get_154_ProgressRing_Minimum(object instance)
+        private object get_159_ProgressRing_Minimum(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.Minimum;
         }
-        private void set_154_ProgressRing_Minimum(object instance, object Value)
+        private void set_159_ProgressRing_Minimum(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.Minimum = (global::System.Double)Value;
         }
-        private object get_155_ProgressRing_TemplateSettings(object instance)
+        private object get_160_ProgressRing_TemplateSettings(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.TemplateSettings;
         }
-        private object get_156_ProgressRing_Value(object instance)
+        private object get_161_ProgressRing_Value(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.Value;
         }
-        private void set_156_ProgressRing_Value(object instance, object Value)
+        private void set_161_ProgressRing_Value(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.Value = (global::System.Double)Value;
         }
-        private object get_157_WebAppsPage_WebApps(object instance)
+        private object get_162_WebAppsPage_WebApps(object instance)
         {
             var that = (global::ChromaHub.WebAppsPage)instance;
             return that.WebApps;
         }
-        private object get_158_WebAppProject_Title(object instance)
+        private object get_163_WebAppProject_Title(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.Title;
         }
-        private void set_158_WebAppProject_Title(object instance, object Value)
+        private void set_163_WebAppProject_Title(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.Title = (global::System.String)Value;
         }
-        private object get_159_WebAppProject_Description(object instance)
+        private object get_164_WebAppProject_Description(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.Description;
         }
-        private void set_159_WebAppProject_Description(object instance, object Value)
+        private void set_164_WebAppProject_Description(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.Description = (global::System.String)Value;
         }
-        private object get_160_WebAppProject_Url(object instance)
+        private object get_165_WebAppProject_Url(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.Url;
         }
-        private void set_160_WebAppProject_Url(object instance, object Value)
+        private void set_165_WebAppProject_Url(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.Url = (global::System.String)Value;
         }
-        private object get_161_WebAppProject_ImageUrl(object instance)
+        private object get_166_WebAppProject_ImageUrl(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.ImageUrl;
         }
-        private void set_161_WebAppProject_ImageUrl(object instance, object Value)
+        private void set_166_WebAppProject_ImageUrl(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.ImageUrl = (global::System.String)Value;
         }
-        private object get_162_WebAppProject_Technologies(object instance)
+        private object get_167_WebAppProject_Technologies(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.Technologies;
         }
-        private void set_162_WebAppProject_Technologies(object instance, object Value)
+        private void set_167_WebAppProject_Technologies(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.Technologies = (global::System.Collections.Generic.List<global::System.String>)Value;
         }
-        private object get_163_WebAppProject_LastUpdated(object instance)
+        private object get_168_WebAppProject_LastUpdated(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.LastUpdated;
         }
-        private void set_163_WebAppProject_LastUpdated(object instance, object Value)
+        private void set_168_WebAppProject_LastUpdated(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.LastUpdated = (global::System.DateTime)Value;
         }
-        private object get_164_WebAppProject_Status(object instance)
+        private object get_169_WebAppProject_Status(object instance)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             return that.Status;
         }
-        private void set_164_WebAppProject_Status(object instance, object Value)
+        private void set_169_WebAppProject_Status(object instance, object Value)
         {
             var that = (global::ChromaHub.WebAppProject)instance;
             that.Status = (global::System.String)Value;
         }
-        private object get_165_WebView2_CanGoBack(object instance)
+        private object get_170_WebView2_CanGoBack(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             return that.CanGoBack;
         }
-        private void set_165_WebView2_CanGoBack(object instance, object Value)
+        private void set_170_WebView2_CanGoBack(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             that.CanGoBack = (global::System.Boolean)Value;
         }
-        private object get_166_WebView2_CanGoForward(object instance)
+        private object get_171_WebView2_CanGoForward(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             return that.CanGoForward;
         }
-        private void set_166_WebView2_CanGoForward(object instance, object Value)
+        private void set_171_WebView2_CanGoForward(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             that.CanGoForward = (global::System.Boolean)Value;
         }
-        private object get_167_WebView2_CoreWebView2(object instance)
+        private object get_172_WebView2_CoreWebView2(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             return that.CoreWebView2;
         }
-        private object get_168_WebView2_DefaultBackgroundColor(object instance)
+        private object get_173_WebView2_DefaultBackgroundColor(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             return that.DefaultBackgroundColor;
         }
-        private void set_168_WebView2_DefaultBackgroundColor(object instance, object Value)
+        private void set_173_WebView2_DefaultBackgroundColor(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             that.DefaultBackgroundColor = (global::Windows.UI.Color)Value;
         }
-        private object get_169_WebView2_Source(object instance)
+        private object get_174_WebView2_Source(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             return that.Source;
         }
-        private void set_169_WebView2_Source(object instance, object Value)
+        private void set_174_WebView2_Source(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.WebView2)instance;
             that.Source = (global::System.Uri)Value;
         }
-        private object get_170_TeachingTip_Title(object instance)
+        private object get_175_TeachingTip_Title(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.Title;
         }
-        private void set_170_TeachingTip_Title(object instance, object Value)
+        private void set_175_TeachingTip_Title(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.Title = (global::System.String)Value;
         }
-        private object get_171_TeachingTip_IsLightDismissEnabled(object instance)
+        private object get_176_TeachingTip_IsLightDismissEnabled(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.IsLightDismissEnabled;
         }
-        private void set_171_TeachingTip_IsLightDismissEnabled(object instance, object Value)
+        private void set_176_TeachingTip_IsLightDismissEnabled(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.IsLightDismissEnabled = (global::System.Boolean)Value;
         }
-        private object get_172_TeachingTip_PreferredPlacement(object instance)
+        private object get_177_TeachingTip_PreferredPlacement(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.PreferredPlacement;
         }
-        private void set_172_TeachingTip_PreferredPlacement(object instance, object Value)
+        private void set_177_TeachingTip_PreferredPlacement(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.PreferredPlacement = (global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode)Value;
         }
-        private object get_173_TeachingTip_CloseButtonContent(object instance)
+        private object get_178_TeachingTip_CloseButtonContent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.CloseButtonContent;
         }
-        private void set_173_TeachingTip_CloseButtonContent(object instance, object Value)
+        private void set_178_TeachingTip_CloseButtonContent(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.CloseButtonContent = (global::System.Object)Value;
         }
-        private object get_174_TeachingTip_ActionButtonCommand(object instance)
+        private object get_179_TeachingTip_ActionButtonCommand(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.ActionButtonCommand;
         }
-        private void set_174_TeachingTip_ActionButtonCommand(object instance, object Value)
+        private void set_179_TeachingTip_ActionButtonCommand(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.ActionButtonCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_175_TeachingTip_ActionButtonCommandParameter(object instance)
+        private object get_180_TeachingTip_ActionButtonCommandParameter(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.ActionButtonCommandParameter;
         }
-        private void set_175_TeachingTip_ActionButtonCommandParameter(object instance, object Value)
+        private void set_180_TeachingTip_ActionButtonCommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.ActionButtonCommandParameter = (global::System.Object)Value;
         }
-        private object get_176_TeachingTip_ActionButtonContent(object instance)
+        private object get_181_TeachingTip_ActionButtonContent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.ActionButtonContent;
         }
-        private void set_176_TeachingTip_ActionButtonContent(object instance, object Value)
+        private void set_181_TeachingTip_ActionButtonContent(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.ActionButtonContent = (global::System.Object)Value;
         }
-        private object get_177_TeachingTip_ActionButtonStyle(object instance)
+        private object get_182_TeachingTip_ActionButtonStyle(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.ActionButtonStyle;
         }
-        private void set_177_TeachingTip_ActionButtonStyle(object instance, object Value)
+        private void set_182_TeachingTip_ActionButtonStyle(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.ActionButtonStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_178_TeachingTip_CloseButtonCommand(object instance)
+        private object get_183_TeachingTip_CloseButtonCommand(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.CloseButtonCommand;
         }
-        private void set_178_TeachingTip_CloseButtonCommand(object instance, object Value)
+        private void set_183_TeachingTip_CloseButtonCommand(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.CloseButtonCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_179_TeachingTip_CloseButtonCommandParameter(object instance)
+        private object get_184_TeachingTip_CloseButtonCommandParameter(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.CloseButtonCommandParameter;
         }
-        private void set_179_TeachingTip_CloseButtonCommandParameter(object instance, object Value)
+        private void set_184_TeachingTip_CloseButtonCommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.CloseButtonCommandParameter = (global::System.Object)Value;
         }
-        private object get_180_TeachingTip_CloseButtonStyle(object instance)
+        private object get_185_TeachingTip_CloseButtonStyle(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.CloseButtonStyle;
         }
-        private void set_180_TeachingTip_CloseButtonStyle(object instance, object Value)
+        private void set_185_TeachingTip_CloseButtonStyle(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.CloseButtonStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_181_TeachingTip_HeroContent(object instance)
+        private object get_186_TeachingTip_HeroContent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.HeroContent;
         }
-        private void set_181_TeachingTip_HeroContent(object instance, object Value)
+        private void set_186_TeachingTip_HeroContent(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.HeroContent = (global::Microsoft.UI.Xaml.UIElement)Value;
         }
-        private object get_182_TeachingTip_HeroContentPlacement(object instance)
+        private object get_187_TeachingTip_HeroContentPlacement(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.HeroContentPlacement;
         }
-        private void set_182_TeachingTip_HeroContentPlacement(object instance, object Value)
+        private void set_187_TeachingTip_HeroContentPlacement(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.HeroContentPlacement = (global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode)Value;
         }
-        private object get_183_TeachingTip_IconSource(object instance)
+        private object get_188_TeachingTip_IconSource(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.IconSource;
         }
-        private void set_183_TeachingTip_IconSource(object instance, object Value)
+        private void set_188_TeachingTip_IconSource(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.IconSource = (global::Microsoft.UI.Xaml.Controls.IconSource)Value;
         }
-        private object get_184_TeachingTip_IsOpen(object instance)
+        private object get_189_TeachingTip_IsOpen(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.IsOpen;
         }
-        private void set_184_TeachingTip_IsOpen(object instance, object Value)
+        private void set_189_TeachingTip_IsOpen(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.IsOpen = (global::System.Boolean)Value;
         }
-        private object get_185_TeachingTip_PlacementMargin(object instance)
+        private object get_190_TeachingTip_PlacementMargin(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.PlacementMargin;
         }
-        private void set_185_TeachingTip_PlacementMargin(object instance, object Value)
+        private void set_190_TeachingTip_PlacementMargin(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.PlacementMargin = (global::Microsoft.UI.Xaml.Thickness)Value;
         }
-        private object get_186_TeachingTip_ShouldConstrainToRootBounds(object instance)
+        private object get_191_TeachingTip_ShouldConstrainToRootBounds(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.ShouldConstrainToRootBounds;
         }
-        private void set_186_TeachingTip_ShouldConstrainToRootBounds(object instance, object Value)
+        private void set_191_TeachingTip_ShouldConstrainToRootBounds(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.ShouldConstrainToRootBounds = (global::System.Boolean)Value;
         }
-        private object get_187_TeachingTip_Subtitle(object instance)
+        private object get_192_TeachingTip_Subtitle(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.Subtitle;
         }
-        private void set_187_TeachingTip_Subtitle(object instance, object Value)
+        private void set_192_TeachingTip_Subtitle(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.Subtitle = (global::System.String)Value;
         }
-        private object get_188_TeachingTip_TailVisibility(object instance)
+        private object get_193_TeachingTip_TailVisibility(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.TailVisibility;
         }
-        private void set_188_TeachingTip_TailVisibility(object instance, object Value)
+        private void set_193_TeachingTip_TailVisibility(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.TailVisibility = (global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility)Value;
         }
-        private object get_189_TeachingTip_Target(object instance)
+        private object get_194_TeachingTip_Target(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.Target;
         }
-        private void set_189_TeachingTip_Target(object instance, object Value)
+        private void set_194_TeachingTip_Target(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             that.Target = (global::Microsoft.UI.Xaml.FrameworkElement)Value;
         }
-        private object get_190_TeachingTip_TemplateSettings(object instance)
+        private object get_195_TeachingTip_TemplateSettings(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TeachingTip)instance;
             return that.TemplateSettings;
         }
-        private object get_191_WebAppViewPage_Project(object instance)
+        private object get_196_WebAppViewPage_Project(object instance)
         {
             var that = (global::ChromaHub.WebAppViewPage)instance;
             return that.Project;
         }
-        private object get_192_TreeViewNode_Children(object instance)
+        private object get_197_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_193_TreeViewNode_Content(object instance)
+        private object get_198_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_193_TreeViewNode_Content(object instance, object Value)
+        private void set_198_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_194_TreeViewNode_Depth(object instance)
+        private object get_199_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_195_TreeViewNode_HasChildren(object instance)
+        private object get_200_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_196_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_201_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_196_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_201_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_197_TreeViewNode_IsExpanded(object instance)
+        private object get_202_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_197_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_202_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_198_TreeViewNode_Parent(object instance)
+        private object get_203_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -4472,382 +4566,417 @@ namespace ChromaHub.ChromaHub_XamlTypeInfo
                 xamlMember.Getter = get_142_ProjectsPage_FilteredProjects;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "Microsoft.UI.Xaml.Media.AcrylicBrush.TintColor":
+                userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.AcrylicBrush");
+                xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TintColor", "Windows.UI.Color");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_143_AcrylicBrush_TintColor;
+                xamlMember.Setter = set_143_AcrylicBrush_TintColor;
+                break;
+            case "Microsoft.UI.Xaml.Media.AcrylicBrush.TintOpacity":
+                userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.AcrylicBrush");
+                xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TintOpacity", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_144_AcrylicBrush_TintOpacity;
+                xamlMember.Setter = set_144_AcrylicBrush_TintOpacity;
+                break;
+            case "Microsoft.UI.Xaml.Media.AcrylicBrush.TintLuminosityOpacity":
+                userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.AcrylicBrush");
+                xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TintLuminosityOpacity", "System.Nullable`1<Double>");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_145_AcrylicBrush_TintLuminosityOpacity;
+                xamlMember.Setter = set_145_AcrylicBrush_TintLuminosityOpacity;
+                break;
+            case "Microsoft.UI.Xaml.Media.AcrylicBrush.AlwaysUseFallback":
+                userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.AcrylicBrush");
+                xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "AlwaysUseFallback", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_146_AcrylicBrush_AlwaysUseFallback;
+                xamlMember.Setter = set_146_AcrylicBrush_AlwaysUseFallback;
+                break;
+            case "Microsoft.UI.Xaml.Media.AcrylicBrush.TintTransitionDuration":
+                userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.AcrylicBrush");
+                xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TintTransitionDuration", "TimeSpan");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_147_AcrylicBrush_TintTransitionDuration;
+                xamlMember.Setter = set_147_AcrylicBrush_TintTransitionDuration;
+                break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.Items":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Items", "System.Collections.Generic.IList`1<Object>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_143_RadioButtons_Items;
+                xamlMember.Getter = get_148_RadioButtons_Items;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.MaxColumns":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "MaxColumns", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_144_RadioButtons_MaxColumns;
-                xamlMember.Setter = set_144_RadioButtons_MaxColumns;
+                xamlMember.Getter = get_149_RadioButtons_MaxColumns;
+                xamlMember.Setter = set_149_RadioButtons_MaxColumns;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.Header":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_145_RadioButtons_Header;
-                xamlMember.Setter = set_145_RadioButtons_Header;
+                xamlMember.Getter = get_150_RadioButtons_Header;
+                xamlMember.Setter = set_150_RadioButtons_Header;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.HeaderTemplate":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Microsoft.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_146_RadioButtons_HeaderTemplate;
-                xamlMember.Setter = set_146_RadioButtons_HeaderTemplate;
+                xamlMember.Getter = get_151_RadioButtons_HeaderTemplate;
+                xamlMember.Setter = set_151_RadioButtons_HeaderTemplate;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.ItemTemplate":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_147_RadioButtons_ItemTemplate;
-                xamlMember.Setter = set_147_RadioButtons_ItemTemplate;
+                xamlMember.Getter = get_152_RadioButtons_ItemTemplate;
+                xamlMember.Setter = set_152_RadioButtons_ItemTemplate;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.ItemsSource":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_148_RadioButtons_ItemsSource;
-                xamlMember.Setter = set_148_RadioButtons_ItemsSource;
+                xamlMember.Getter = get_153_RadioButtons_ItemsSource;
+                xamlMember.Setter = set_153_RadioButtons_ItemsSource;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.SelectedIndex":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_149_RadioButtons_SelectedIndex;
-                xamlMember.Setter = set_149_RadioButtons_SelectedIndex;
+                xamlMember.Getter = get_154_RadioButtons_SelectedIndex;
+                xamlMember.Setter = set_154_RadioButtons_SelectedIndex;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.SelectedItem":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_150_RadioButtons_SelectedItem;
-                xamlMember.Setter = set_150_RadioButtons_SelectedItem;
+                xamlMember.Getter = get_155_RadioButtons_SelectedItem;
+                xamlMember.Setter = set_155_RadioButtons_SelectedItem;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.IsActive":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "IsActive", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_151_ProgressRing_IsActive;
-                xamlMember.Setter = set_151_ProgressRing_IsActive;
+                xamlMember.Getter = get_156_ProgressRing_IsActive;
+                xamlMember.Setter = set_156_ProgressRing_IsActive;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.IsIndeterminate":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "IsIndeterminate", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_152_ProgressRing_IsIndeterminate;
-                xamlMember.Setter = set_152_ProgressRing_IsIndeterminate;
+                xamlMember.Getter = get_157_ProgressRing_IsIndeterminate;
+                xamlMember.Setter = set_157_ProgressRing_IsIndeterminate;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.Maximum":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Maximum", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_153_ProgressRing_Maximum;
-                xamlMember.Setter = set_153_ProgressRing_Maximum;
+                xamlMember.Getter = get_158_ProgressRing_Maximum;
+                xamlMember.Setter = set_158_ProgressRing_Maximum;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.Minimum":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Minimum", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_154_ProgressRing_Minimum;
-                xamlMember.Setter = set_154_ProgressRing_Minimum;
+                xamlMember.Getter = get_159_ProgressRing_Minimum;
+                xamlMember.Setter = set_159_ProgressRing_Minimum;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.TemplateSettings":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings");
-                xamlMember.Getter = get_155_ProgressRing_TemplateSettings;
+                xamlMember.Getter = get_160_ProgressRing_TemplateSettings;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.Value":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Value", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_156_ProgressRing_Value;
-                xamlMember.Setter = set_156_ProgressRing_Value;
+                xamlMember.Getter = get_161_ProgressRing_Value;
+                xamlMember.Setter = set_161_ProgressRing_Value;
                 break;
             case "ChromaHub.WebAppsPage.WebApps":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppsPage");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "WebApps", "System.Collections.Generic.List`1<ChromaHub.WebAppProject>");
-                xamlMember.Getter = get_157_WebAppsPage_WebApps;
+                xamlMember.Getter = get_162_WebAppsPage_WebApps;
                 xamlMember.SetIsReadOnly();
                 break;
             case "ChromaHub.WebAppProject.Title":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Title", "String");
-                xamlMember.Getter = get_158_WebAppProject_Title;
-                xamlMember.Setter = set_158_WebAppProject_Title;
+                xamlMember.Getter = get_163_WebAppProject_Title;
+                xamlMember.Setter = set_163_WebAppProject_Title;
                 break;
             case "ChromaHub.WebAppProject.Description":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Description", "String");
-                xamlMember.Getter = get_159_WebAppProject_Description;
-                xamlMember.Setter = set_159_WebAppProject_Description;
+                xamlMember.Getter = get_164_WebAppProject_Description;
+                xamlMember.Setter = set_164_WebAppProject_Description;
                 break;
             case "ChromaHub.WebAppProject.Url":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Url", "String");
-                xamlMember.Getter = get_160_WebAppProject_Url;
-                xamlMember.Setter = set_160_WebAppProject_Url;
+                xamlMember.Getter = get_165_WebAppProject_Url;
+                xamlMember.Setter = set_165_WebAppProject_Url;
                 break;
             case "ChromaHub.WebAppProject.ImageUrl":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ImageUrl", "String");
-                xamlMember.Getter = get_161_WebAppProject_ImageUrl;
-                xamlMember.Setter = set_161_WebAppProject_ImageUrl;
+                xamlMember.Getter = get_166_WebAppProject_ImageUrl;
+                xamlMember.Setter = set_166_WebAppProject_ImageUrl;
                 break;
             case "ChromaHub.WebAppProject.Technologies":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Technologies", "System.Collections.Generic.List`1<String>");
-                xamlMember.Getter = get_162_WebAppProject_Technologies;
-                xamlMember.Setter = set_162_WebAppProject_Technologies;
+                xamlMember.Getter = get_167_WebAppProject_Technologies;
+                xamlMember.Setter = set_167_WebAppProject_Technologies;
                 break;
             case "ChromaHub.WebAppProject.LastUpdated":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "LastUpdated", "System.DateTime");
-                xamlMember.Getter = get_163_WebAppProject_LastUpdated;
-                xamlMember.Setter = set_163_WebAppProject_LastUpdated;
+                xamlMember.Getter = get_168_WebAppProject_LastUpdated;
+                xamlMember.Setter = set_168_WebAppProject_LastUpdated;
                 break;
             case "ChromaHub.WebAppProject.Status":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppProject");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Status", "String");
-                xamlMember.Getter = get_164_WebAppProject_Status;
-                xamlMember.Setter = set_164_WebAppProject_Status;
+                xamlMember.Getter = get_169_WebAppProject_Status;
+                xamlMember.Setter = set_169_WebAppProject_Status;
                 break;
             case "Microsoft.UI.Xaml.Controls.WebView2.CanGoBack":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.WebView2");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CanGoBack", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_165_WebView2_CanGoBack;
-                xamlMember.Setter = set_165_WebView2_CanGoBack;
+                xamlMember.Getter = get_170_WebView2_CanGoBack;
+                xamlMember.Setter = set_170_WebView2_CanGoBack;
                 break;
             case "Microsoft.UI.Xaml.Controls.WebView2.CanGoForward":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.WebView2");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CanGoForward", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_166_WebView2_CanGoForward;
-                xamlMember.Setter = set_166_WebView2_CanGoForward;
+                xamlMember.Getter = get_171_WebView2_CanGoForward;
+                xamlMember.Setter = set_171_WebView2_CanGoForward;
                 break;
             case "Microsoft.UI.Xaml.Controls.WebView2.CoreWebView2":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.WebView2");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CoreWebView2", "Microsoft.Web.WebView2.Core.CoreWebView2");
-                xamlMember.Getter = get_167_WebView2_CoreWebView2;
+                xamlMember.Getter = get_172_WebView2_CoreWebView2;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.WebView2.DefaultBackgroundColor":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.WebView2");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "DefaultBackgroundColor", "Windows.UI.Color");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_168_WebView2_DefaultBackgroundColor;
-                xamlMember.Setter = set_168_WebView2_DefaultBackgroundColor;
+                xamlMember.Getter = get_173_WebView2_DefaultBackgroundColor;
+                xamlMember.Setter = set_173_WebView2_DefaultBackgroundColor;
                 break;
             case "Microsoft.UI.Xaml.Controls.WebView2.Source":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.WebView2");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Source", "System.Uri");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_169_WebView2_Source;
-                xamlMember.Setter = set_169_WebView2_Source;
+                xamlMember.Getter = get_174_WebView2_Source;
+                xamlMember.Setter = set_174_WebView2_Source;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.Title":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Title", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_170_TeachingTip_Title;
-                xamlMember.Setter = set_170_TeachingTip_Title;
+                xamlMember.Getter = get_175_TeachingTip_Title;
+                xamlMember.Setter = set_175_TeachingTip_Title;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.IsLightDismissEnabled":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "IsLightDismissEnabled", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_171_TeachingTip_IsLightDismissEnabled;
-                xamlMember.Setter = set_171_TeachingTip_IsLightDismissEnabled;
+                xamlMember.Getter = get_176_TeachingTip_IsLightDismissEnabled;
+                xamlMember.Setter = set_176_TeachingTip_IsLightDismissEnabled;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.PreferredPlacement":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "PreferredPlacement", "Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_172_TeachingTip_PreferredPlacement;
-                xamlMember.Setter = set_172_TeachingTip_PreferredPlacement;
+                xamlMember.Getter = get_177_TeachingTip_PreferredPlacement;
+                xamlMember.Setter = set_177_TeachingTip_PreferredPlacement;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.CloseButtonContent":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CloseButtonContent", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_173_TeachingTip_CloseButtonContent;
-                xamlMember.Setter = set_173_TeachingTip_CloseButtonContent;
+                xamlMember.Getter = get_178_TeachingTip_CloseButtonContent;
+                xamlMember.Setter = set_178_TeachingTip_CloseButtonContent;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.ActionButtonCommand":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ActionButtonCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_174_TeachingTip_ActionButtonCommand;
-                xamlMember.Setter = set_174_TeachingTip_ActionButtonCommand;
+                xamlMember.Getter = get_179_TeachingTip_ActionButtonCommand;
+                xamlMember.Setter = set_179_TeachingTip_ActionButtonCommand;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.ActionButtonCommandParameter":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ActionButtonCommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_175_TeachingTip_ActionButtonCommandParameter;
-                xamlMember.Setter = set_175_TeachingTip_ActionButtonCommandParameter;
+                xamlMember.Getter = get_180_TeachingTip_ActionButtonCommandParameter;
+                xamlMember.Setter = set_180_TeachingTip_ActionButtonCommandParameter;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.ActionButtonContent":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ActionButtonContent", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_176_TeachingTip_ActionButtonContent;
-                xamlMember.Setter = set_176_TeachingTip_ActionButtonContent;
+                xamlMember.Getter = get_181_TeachingTip_ActionButtonContent;
+                xamlMember.Setter = set_181_TeachingTip_ActionButtonContent;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.ActionButtonStyle":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ActionButtonStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_177_TeachingTip_ActionButtonStyle;
-                xamlMember.Setter = set_177_TeachingTip_ActionButtonStyle;
+                xamlMember.Getter = get_182_TeachingTip_ActionButtonStyle;
+                xamlMember.Setter = set_182_TeachingTip_ActionButtonStyle;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.CloseButtonCommand":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CloseButtonCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_178_TeachingTip_CloseButtonCommand;
-                xamlMember.Setter = set_178_TeachingTip_CloseButtonCommand;
+                xamlMember.Getter = get_183_TeachingTip_CloseButtonCommand;
+                xamlMember.Setter = set_183_TeachingTip_CloseButtonCommand;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.CloseButtonCommandParameter":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CloseButtonCommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_179_TeachingTip_CloseButtonCommandParameter;
-                xamlMember.Setter = set_179_TeachingTip_CloseButtonCommandParameter;
+                xamlMember.Getter = get_184_TeachingTip_CloseButtonCommandParameter;
+                xamlMember.Setter = set_184_TeachingTip_CloseButtonCommandParameter;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.CloseButtonStyle":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "CloseButtonStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_180_TeachingTip_CloseButtonStyle;
-                xamlMember.Setter = set_180_TeachingTip_CloseButtonStyle;
+                xamlMember.Getter = get_185_TeachingTip_CloseButtonStyle;
+                xamlMember.Setter = set_185_TeachingTip_CloseButtonStyle;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.HeroContent":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "HeroContent", "Microsoft.UI.Xaml.UIElement");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_181_TeachingTip_HeroContent;
-                xamlMember.Setter = set_181_TeachingTip_HeroContent;
+                xamlMember.Getter = get_186_TeachingTip_HeroContent;
+                xamlMember.Setter = set_186_TeachingTip_HeroContent;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.HeroContentPlacement":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "HeroContentPlacement", "Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_182_TeachingTip_HeroContentPlacement;
-                xamlMember.Setter = set_182_TeachingTip_HeroContentPlacement;
+                xamlMember.Getter = get_187_TeachingTip_HeroContentPlacement;
+                xamlMember.Setter = set_187_TeachingTip_HeroContentPlacement;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.IconSource":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "IconSource", "Microsoft.UI.Xaml.Controls.IconSource");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_183_TeachingTip_IconSource;
-                xamlMember.Setter = set_183_TeachingTip_IconSource;
+                xamlMember.Getter = get_188_TeachingTip_IconSource;
+                xamlMember.Setter = set_188_TeachingTip_IconSource;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.IsOpen":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "IsOpen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_184_TeachingTip_IsOpen;
-                xamlMember.Setter = set_184_TeachingTip_IsOpen;
+                xamlMember.Getter = get_189_TeachingTip_IsOpen;
+                xamlMember.Setter = set_189_TeachingTip_IsOpen;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.PlacementMargin":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "PlacementMargin", "Microsoft.UI.Xaml.Thickness");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_185_TeachingTip_PlacementMargin;
-                xamlMember.Setter = set_185_TeachingTip_PlacementMargin;
+                xamlMember.Getter = get_190_TeachingTip_PlacementMargin;
+                xamlMember.Setter = set_190_TeachingTip_PlacementMargin;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.ShouldConstrainToRootBounds":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "ShouldConstrainToRootBounds", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_186_TeachingTip_ShouldConstrainToRootBounds;
-                xamlMember.Setter = set_186_TeachingTip_ShouldConstrainToRootBounds;
+                xamlMember.Getter = get_191_TeachingTip_ShouldConstrainToRootBounds;
+                xamlMember.Setter = set_191_TeachingTip_ShouldConstrainToRootBounds;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.Subtitle":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Subtitle", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_187_TeachingTip_Subtitle;
-                xamlMember.Setter = set_187_TeachingTip_Subtitle;
+                xamlMember.Getter = get_192_TeachingTip_Subtitle;
+                xamlMember.Setter = set_192_TeachingTip_Subtitle;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.TailVisibility":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TailVisibility", "Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_188_TeachingTip_TailVisibility;
-                xamlMember.Setter = set_188_TeachingTip_TailVisibility;
+                xamlMember.Getter = get_193_TeachingTip_TailVisibility;
+                xamlMember.Setter = set_193_TeachingTip_TailVisibility;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.Target":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Target", "Microsoft.UI.Xaml.FrameworkElement");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_189_TeachingTip_Target;
-                xamlMember.Setter = set_189_TeachingTip_Target;
+                xamlMember.Getter = get_194_TeachingTip_Target;
+                xamlMember.Setter = set_194_TeachingTip_Target;
                 break;
             case "Microsoft.UI.Xaml.Controls.TeachingTip.TemplateSettings":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TeachingTip");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_190_TeachingTip_TemplateSettings;
+                xamlMember.Getter = get_195_TeachingTip_TemplateSettings;
                 xamlMember.SetIsReadOnly();
                 break;
             case "ChromaHub.WebAppViewPage.Project":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ChromaHub.WebAppViewPage");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Project", "ChromaHub.WebAppProject");
-                xamlMember.Getter = get_191_WebAppViewPage_Project;
+                xamlMember.Getter = get_196_WebAppViewPage_Project;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_192_TreeViewNode_Children;
+                xamlMember.Getter = get_197_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_193_TreeViewNode_Content;
-                xamlMember.Setter = set_193_TreeViewNode_Content;
+                xamlMember.Getter = get_198_TreeViewNode_Content;
+                xamlMember.Setter = set_198_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_194_TreeViewNode_Depth;
+                xamlMember.Getter = get_199_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_195_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_200_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_196_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_196_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_201_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_201_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_197_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_197_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_202_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_202_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::ChromaHub.ChromaHub_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ChromaHub.ChromaHub_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_198_TreeViewNode_Parent;
+                xamlMember.Getter = get_203_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }
