@@ -52,7 +52,6 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-
         <WebView2 x:Name="ProjectWebView" Grid.Row="1"/>
     </Grid>
 </Page>

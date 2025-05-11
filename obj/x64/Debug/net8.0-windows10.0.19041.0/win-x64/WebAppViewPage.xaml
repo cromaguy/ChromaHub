@@ -52,8 +52,8 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-
         <WebView2 x:ConnectionId='2' x:Name="ProjectWebView" Grid.Row="1"/>
+        <ProgressRing IsActive="True" Background="LightGray"/>
     </Grid>
 </Page>
 

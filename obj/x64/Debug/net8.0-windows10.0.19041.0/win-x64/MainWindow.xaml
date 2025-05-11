@@ -34,6 +34,12 @@
                        VerticalAlignment="Center" 
                        Margin="16,0,0,0"/>
 
+            <TextBlock Text="Chroma Hub ALPHA" 
+                       Style="{StaticResource BaseTextBlockStyle}" 
+                       FontWeight="Normal"
+                       VerticalAlignment="Center" 
+                       Margin="75,0,0,0"/>
+
             <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" Margin="0,0,16,0">
                 <Button x:ConnectionId='7' x:Name="ThemeButton"                           
                         ToolTipService.ToolTip="Toggle Theme" 
@@ -44,18 +50,21 @@
                 <!-- Modern Window Control Buttons -->
                 <Button x:ConnectionId='8' x:Name="MinimizeButton"                             
                         ToolTipService.ToolTip="Minimize"
+                        CornerRadius="5"
                         Style="{StaticResource SubtleButtonStyle}">
                     <FontIcon Glyph="&#xE921;" FontSize="10"/>
                 </Button>
 
                 <Button x:ConnectionId='9' x:Name="MaximizeRestoreButton"                                    
                         ToolTipService.ToolTip="Maximize"
+                        CornerRadius="5"
                         Style="{StaticResource SubtleButtonStyle}">
                     <FontIcon x:ConnectionId='11' x:Name="MaximizeRestoreIcon" Glyph="&#xE922;" FontSize="10"/>
                 </Button>
 
                 <Button x:ConnectionId='10' x:Name="CloseButton"                          
                         ToolTipService.ToolTip="Close"
+                        CornerRadius="5"
                         Style="{StaticResource SubtleButtonStyle}">
                     <FontIcon Glyph="&#xE8BB;" FontSize="10"/>
                 </Button>
@@ -122,14 +131,10 @@
                       Visibility="Collapsed"
                       Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
                       Opacity="0.8">
-                    <StackPanel VerticalAlignment="Center" 
+                    <StackPanel VerticalAlignment="Top" 
                                 HorizontalAlignment="Center" 
                                 Spacing="16">
-                        <ProgressRing IsActive="True" 
-                                      Width="60" 
-                                      Height="60" />
-                        <TextBlock Text="Loading..." 
-                                   Style="{ThemeResource SubtitleTextBlockStyle}" />
+                        <ProgressBar Width="990" IsIndeterminate="True" ShowPaused="False" ShowError="False" />
                     </StackPanel>
                 </Grid>
             </Grid>
