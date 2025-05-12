@@ -676,6 +676,12 @@
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\beta.png">
       <PackagePath>Assets\beta.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\ChromaLogo_Dark.png">
+      <PackagePath>Assets\ChromaLogo_Dark.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\ChromaLogo_Light.png">
+      <PackagePath>Assets\ChromaLogo_Light.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Feel.png">
       <PackagePath>Assets\Feel.png</PackagePath>
     </AppxPackagedFile>

@@ -217,6 +217,8 @@
 "C:\Users\KIIT0001\source\repos\ChromaHub\Assets\anji.png" "Assets\anji.png"
 "C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Banner.png" "Assets\Banner.png"
 "C:\Users\KIIT0001\source\repos\ChromaHub\Assets\beta.png" "Assets\beta.png"
+"C:\Users\KIIT0001\source\repos\ChromaHub\Assets\ChromaLogo_Dark.png" "Assets\ChromaLogo_Dark.png"
+"C:\Users\KIIT0001\source\repos\ChromaHub\Assets\ChromaLogo_Light.png" "Assets\ChromaLogo_Light.png"
 "C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Feel.png" "Assets\Feel.png"
 "C:\Users\KIIT0001\source\repos\ChromaHub\Assets\GoalGuru.png" "Assets\GoalGuru.png"
 "C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\github.png" "Assets\Icons\github.png"

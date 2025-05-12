@@ -10,18 +10,33 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
-            <TextBlock Text="AN." 
-                       FontSize="72" 
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="24">
+            <!-- Logo Image with theme-aware capability -->
+            <Grid>
+                <Image x:Name="LogoImage" 
+                       Source="ms-appx:///Assets/ChromaLogo_Light.png"
+                       Width="150" 
+                       Height="150" 
+                       Visibility="{x:Bind LightThemeVisibility, Mode=OneWay}"/>
 
-            <ProgressRing x:Name="LoadingRing" IsActive="True" Width="50" Height="50"/>
+                <Image x:Name="LogoDarkImage" 
+                       Source="ms-appx:///Assets/ChromaLogo_Dark.png"
+                       Width="150" 
+                       Height="150"
+                       Visibility="{x:Bind DarkThemeVisibility, Mode=OneWay}"/>
+            </Grid>
+
+            <ProgressRing x:Name="LoadingRing" 
+                         IsActive="True" 
+                         Width="40" 
+                         Height="40"
+                         Margin="0,20,0,0"/>
 
             <TextBlock Text="Loading..." 
-                       Style="{ThemeResource SubtitleTextBlockStyle}" 
-                       HorizontalAlignment="Center"
-                       FontWeight="SemiBold"/>
+                      Style="{StaticResource SubtitleLargeTextBlockStyle}" 
+                      HorizontalAlignment="Center"
+                      Opacity="0.7"
+                      Margin="0,10,0,0"/>
         </StackPanel>
     </Grid>
 </Page>
