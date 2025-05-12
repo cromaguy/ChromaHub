@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-05-12T04:27:45.261</Modified>
+      <Modified>2025-05-12T04:43:41.891</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChromaHub.dll">
       <PackagePath>ChromaHub.dll</PackagePath>
-      <Modified>2025-05-12T04:27:44.856</Modified>
+      <Modified>2025-05-12T04:43:41.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>ChromaHub.exe</PackagePath>
-      <Modified>2025-05-12T04:27:45.036</Modified>
+      <Modified>2025-05-12T04:43:41.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.15\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -915,7 +915,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\github.svg">
       <PackagePath>Assets\Icons\github.svg</PackagePath>
-      <Modified>2025-05-09T10:50:22.980</Modified>
+      <Modified>2025-05-12T04:43:11.385</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\KIIT0001\source\repos\ChromaHub\Assets\Icons\instagram.svg">
       <PackagePath>Assets\Icons\instagram.svg</PackagePath>

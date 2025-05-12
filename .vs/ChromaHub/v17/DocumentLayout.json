@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\webappspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:webappspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -45,14 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\webappproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:webappproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62544043-99D5-4019-A29C-F2AA91A81402}|ChromaHub.csproj|c:\\users\\kiit0001\\source\\repos\\chromahub\\contactpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,37 +114,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WebAppsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml.cs",
-              "RelativeDocumentMoniker": "WebAppsPage.xaml.cs",
-              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml.cs",
-              "RelativeToolTip": "WebAppsPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:22:40.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WebAppViewPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml.cs",
-              "RelativeDocumentMoniker": "WebAppViewPage.xaml.cs",
-              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml.cs",
-              "RelativeToolTip": "WebAppViewPage.xaml.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAgwKkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:22:55.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "HomePage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\HomePage.xaml.cs",
               "RelativeDocumentMoniker": "HomePage.xaml.cs",
@@ -152,12 +126,11 @@
               "RelativeToolTip": "HomePage.xaml.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCAAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T05:47:14.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T05:47:14.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "App.g.i.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
               "RelativeDocumentMoniker": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
@@ -165,12 +138,11 @@
               "RelativeToolTip": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAQwEQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T14:35:37.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T14:35:37.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "WebAppsPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml",
               "RelativeDocumentMoniker": "WebAppsPage.xaml",
@@ -183,7 +155,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0CAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T17:27:06.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAYwHQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-10T17:13:54.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WebAppViewPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml.cs",
+              "RelativeDocumentMoniker": "WebAppViewPage.xaml.cs",
+              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml.cs",
+              "RelativeToolTip": "WebAppViewPage.xaml.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAgwKkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T17:22:55.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WebAppsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml.cs",
+              "RelativeDocumentMoniker": "WebAppsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppsPage.xaml.cs",
+              "RelativeToolTip": "WebAppsPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T17:22:40.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "WebAppProject.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppProject.cs",
               "RelativeDocumentMoniker": "WebAppProject.cs",
@@ -195,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ProjectsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ProjectsPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjectsPage.xaml.cs",
@@ -203,12 +225,11 @@
               "RelativeToolTip": "ProjectsPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:23:22.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-10T17:23:22.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ProjectsPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ProjectsPage.xaml",
               "RelativeDocumentMoniker": "ProjectsPage.xaml",
@@ -216,12 +237,11 @@
               "RelativeToolTip": "ProjectsPage.xaml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-11T03:56:24.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T03:56:24.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ProjectItemClasses.cs",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\ProjectItemClasses.cs",
               "RelativeDocumentMoniker": "ProjectItemClasses.cs",
@@ -229,12 +249,11 @@
               "RelativeToolTip": "ProjectItemClasses.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T14:40:38.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T14:40:38.697Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "HomePage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\HomePage.xaml",
               "RelativeDocumentMoniker": "HomePage.xaml",
@@ -242,12 +261,11 @@
               "RelativeToolTip": "HomePage.xaml",
               "ViewState": "AgIAADMBAAAAAAAAAAAiwFYBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-11T05:47:14.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T05:47:14.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "WebAppViewPage.xaml",
               "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\WebAppViewPage.xaml",
               "RelativeDocumentMoniker": "WebAppViewPage.xaml",
@@ -256,30 +274,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-10T17:34:16.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAOcAAAAAAAAAAAAgwHUBAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:27:06.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\KIIT0001\\source\\repos\\ChromaHub\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAYwHQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-10T17:13:54.708Z"
             },
             {
               "$type": "Document",
