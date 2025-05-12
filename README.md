@@ -1,7 +1,7 @@
 # ChromaHub 🎨
 
 <div align="center">
-  <img src="Assets/beta.png" alt="ChromaHub Logo" width="200" />
+  <img src="Assets/ChromaLogo_Dark.png" alt="ChromaHub Logo" width="200" />
   <h2>Where Design Meets Technology</h2>
   <p><i>A modern personal portfolio built with WinUI 3</i></p>
   
