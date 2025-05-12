@@ -46,7 +46,7 @@
         <!-- Header Section -->
         <Grid Height="180" Background="Transparent">
             <!-- Background accent elements -->
-            <Border x:ConnectionId='7' x:Name="AccentRect" 
+            <Border x:ConnectionId='8' x:Name="AccentRect" 
                     Width="320" 
                     Height="320" 
                     CornerRadius="160"
@@ -64,23 +64,23 @@
 
             <!-- Header pattern -->
             <Canvas>
-                <Path x:ConnectionId='10' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                <Path x:ConnectionId='11' x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
                       Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
-                <Path x:ConnectionId='11' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                <Path x:ConnectionId='12' x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
                       Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
-                <Path x:ConnectionId='12' x:Name="PatternPath3" Stroke="{ThemeResource SystemAccentColorDark1}" StrokeThickness="0.5" Opacity="0.15" 
+                <Path x:ConnectionId='13' x:Name="PatternPath3" Stroke="{ThemeResource SystemAccentColorDark1}" StrokeThickness="0.5" Opacity="0.15" 
                       Data="M20,90 C90,70 170,100 250,80" Canvas.Left="520" Canvas.Top="100" />
             </Canvas>
 
             <!-- Header content -->
             <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="30,0,30,35">
-                <TextBlock x:ConnectionId='8' Text="Customize your experience"
+                <TextBlock x:ConnectionId='9' Text="Customize your experience"
                            Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
                            FontSize="16"
                            Opacity="0.9"
                            FontWeight="SemiBold"
                            x:Name="HeaderSubtitle"/>
-                <TextBlock x:ConnectionId='9' Text="Settings"
+                <TextBlock x:ConnectionId='10' Text="Settings"
                            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
                            FontSize="36"
                            FontWeight="Bold"
@@ -133,7 +133,7 @@
                                                   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
                                     </Grid>
 
-                                    <RadioButtons x:ConnectionId='6' x:Name="ThemeRadioButtons" 
+                                    <RadioButtons x:ConnectionId='7' x:Name="ThemeRadioButtons" 
                                                                                                      
                                                 MaxColumns="3">
                                         <RadioButton Content="Light" Tag="Light"/>
@@ -157,7 +157,7 @@
                                                   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
                                     </Grid>
 
-                                    <RadioButtons x:ConnectionId='5' x:Name="BackdropRadioButtons"
+                                    <RadioButtons x:ConnectionId='6' x:Name="BackdropRadioButtons"
                                                                                                         
                                                 MaxColumns="2">
                                         <RadioButton Content="Mica effect" Tag="Mica"/>
@@ -210,7 +210,7 @@
                                                   Margin="0,4,0,0"/>
                                     </StackPanel>
 
-                                    <ToggleSwitch x:ConnectionId='4' Grid.Column="1" 
+                                    <ToggleSwitch x:ConnectionId='5' Grid.Column="1" 
                                                   x:Name="EnableAnimationsToggle"
                                                                                           
                                                   OnContent=""
@@ -218,7 +218,7 @@
                                                   IsOn="True"/>
                                 </Grid>
 
-                                <InfoBar x:ConnectionId='3' x:Name="AnimationInfoBar"
+                                <InfoBar x:ConnectionId='4' x:Name="AnimationInfoBar"
                                         IsOpen="False"
                                         Title="Changes applied"
                                         Message="Animation settings have been updated"
@@ -285,6 +285,32 @@
                     </Expander>
                 </Border>
 
+                <!-- Check for Updates Card -->
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Check for updates" 
+                       Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                            <TextBlock Text="Check for the latest version of Chroma Hub and update the app"
+                      Style="{ThemeResource CaptionTextBlockStyle}"
+                      Opacity="0.7"
+                      TextWrapping="Wrap"
+                      Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <Button x:ConnectionId='3' Grid.Column="1"
+                Content="Check"
+                                                   
+                Style="{ThemeResource AccentButtonStyle}"/>
+                    </Grid>
+                </Border>
+
+                
                 <!-- Reset Button with Card -->
                 <Border Style="{StaticResource SettingsCardStyle}">
                     <Grid>

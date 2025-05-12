@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml.Navigation;
 using Microsoft.Web.WebView2.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.UI.Xaml.Media.Animation;
 
 namespace ChromaHub
@@ -11,6 +12,7 @@ namespace ChromaHub
     public sealed partial class WebAppViewPage : Page
     {
         public WebAppProject Project { get; private set; }
+        private ProjectItem ProjectDetails { get; set; }
 
         public WebAppViewPage()
         {
@@ -25,12 +27,27 @@ namespace ChromaHub
             {
                 Project = project;
 
+                // Try to find matching project details
+                ProjectDetails = FindProjectDetails(project);
+
                 // Update UI elements with project information
                 UpdateProjectInfo();
 
                 // Load the project into WebView
                 LoadProject();
             }
+        }
+
+        private ProjectItem FindProjectDetails(WebAppProject webAppProject)
+        {
+            // Get the projects list from ProjectsPage
+            var projectsPage = new ProjectsPage();
+
+            // Find the matching project by title
+            return projectsPage.Projects.FirstOrDefault(p =>
+                p.Title == webAppProject.Title ||
+                (p.Title.Replace(" ", "") == webAppProject.Title.Replace(" ", ""))
+            );
         }
 
         private void UpdateProjectInfo()
@@ -150,6 +167,27 @@ namespace ChromaHub
 
         private void ShowDetailsButton_Click(object sender, RoutedEventArgs e)
         {
+            // Manually update the details before opening
+            DetailsTip.Title = Project.Title;
+
+            // Use ProjectDetails if available, otherwise fall back to WebAppProject
+            if (ProjectDetails != null)
+            {
+                // Use ProjectDetails description if available
+                DetailsDescription.Text = ProjectDetails.Description;
+
+                // Combine technologies from both sources, removing duplicates
+                var technologies = ProjectDetails.Technologies.ToList();
+                technologies.AddRange(Project.Technologies.Where(t => !technologies.Contains(t)));
+                DetailsTechnologiesRepeater.ItemsSource = technologies;
+            }
+            else
+            {
+                // Fallback to WebAppProject data
+                DetailsDescription.Text = Project.Description;
+                DetailsTechnologiesRepeater.ItemsSource = Project.Technologies;
+            }
+
             DetailsTip.Target = sender as FrameworkElement;
             DetailsTip.IsOpen = true;
         }

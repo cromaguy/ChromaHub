@@ -285,6 +285,32 @@
                     </Expander>
                 </Border>
 
+                <!-- Check for Updates Card -->
+                <Border Style="{StaticResource SettingsCardStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Check for updates" 
+                       Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                            <TextBlock Text="Check for the latest version of Chroma Hub and update the app"
+                      Style="{ThemeResource CaptionTextBlockStyle}"
+                      Opacity="0.7"
+                      TextWrapping="Wrap"
+                      Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <Button Grid.Column="1"
+                Content="Check"
+                Click="CheckForUpdatesButton_Click"
+                Style="{ThemeResource AccentButtonStyle}"/>
+                    </Grid>
+                </Border>
+
+                
                 <!-- Reset Button with Card -->
                 <Border Style="{StaticResource SettingsCardStyle}">
                     <Grid>

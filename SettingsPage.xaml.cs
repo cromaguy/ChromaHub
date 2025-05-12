@@ -1,6 +1,9 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Windows.Storage;
 
 namespace ChromaHub
@@ -41,7 +44,7 @@ namespace ChromaHub
                 bool enableAnimations = GetSetting(ANIMATIONS_SETTING, "True") == "True";
                 EnableAnimationsToggle.IsOn = enableAnimations;
             }
-            catch (Exception)
+            catch
             {
                 SetDefaultSettings();
             }
@@ -81,6 +84,13 @@ namespace ChromaHub
         {
             if (BackdropRadioButtons.SelectedItem is RadioButton rb && rb.Tag is string backdropType)
             {
+                if (backdropType == "Solid" && App.CurrentTheme == ElementTheme.Default)
+                {
+                    ApplyTheme(Application.Current.RequestedTheme == ApplicationTheme.Light
+                        ? ElementTheme.Light
+                        : ElementTheme.Dark);
+                }
+
                 SaveSetting(BACKDROP_SETTING, backdropType);
                 ApplyBackdropChange(backdropType);
             }
@@ -97,10 +107,7 @@ namespace ChromaHub
 
         private async void ShowAnimationInfoBar()
         {
-            if (AnimationInfoBar == null)
-            {
-                return;
-            }
+            if (AnimationInfoBar == null) return;
 
             AnimationInfoBar.Message = EnableAnimationsToggle.IsOn ?
                 "Animations enabled for better visual experience" :
@@ -108,7 +115,7 @@ namespace ChromaHub
 
             AnimationInfoBar.IsOpen = true;
 
-            await System.Threading.Tasks.Task.Delay(3000);
+            await Task.Delay(3000);
 
             if (AnimationInfoBar != null)
             {
@@ -116,6 +123,131 @@ namespace ChromaHub
             }
         }
 
+        private void ApplyTheme(ElementTheme theme)
+        {
+            App.SaveThemePreference(theme);
+
+            if (App.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ApplyTheme(theme);
+            }
+        }
+
+        private void ApplyBackdropChange(string backdropType)
+        {
+            if (App.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ApplyBackdrop(backdropType);
+            }
+        }
+
+        private void ApplyAnimationSettings(bool enableAnimations)
+        {
+            if (App.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ApplyAnimationSettings(enableAnimations);
+            }
+        }
+
+        private async Task<string> GetLatestReleaseDownloadUrlAsync()
+        {
+            const string apiUrl = "https://api.github.com/repos/cromaguy/ChromaHub/releases/latest";
+            using var httpClient = new HttpClient();
+
+            // Add a User-Agent header (required by GitHub API)
+            httpClient.DefaultRequestHeaders.Add("User-Agent", "ChromaHub");
+
+            try
+            {
+                var response = await httpClient.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                System.Diagnostics.Debug.WriteLine($"GitHub API Response: {json}");
+
+                var release = System.Text.Json.JsonDocument.Parse(json);
+
+                // Find the .msix asset in the release
+                foreach (var asset in release.RootElement.GetProperty("assets").EnumerateArray())
+                {
+                    var assetName = asset.GetProperty("name").GetString();
+                    var downloadUrl = asset.GetProperty("browser_download_url").GetString();
+
+                    System.Diagnostics.Debug.WriteLine($"Asset Found: {assetName}, URL: {downloadUrl}");
+
+                    if (assetName.EndsWith(".msix"))
+                    {
+                        return downloadUrl;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                System.Diagnostics.Debug.WriteLine($"Error fetching release: {ex.Message}");
+            }
+
+            return null;
+        }
+
+
+
+        private async void CheckForUpdatesButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var downloadUrl = await GetLatestReleaseDownloadUrlAsync();
+                if (string.IsNullOrEmpty(downloadUrl))
+                {
+                    // Show an error message if no update is found
+                    var dialog = new ContentDialog
+                    {
+                        Title = "No Updates Found",
+                        Content = "Could not find a new update. Please check manually.",
+                        CloseButtonText = "OK",
+                        XamlRoot = this.XamlRoot
+                    };
+                    await dialog.ShowAsync();
+                    return;
+                }
+
+                // Download the .msix file
+                var file = await Windows.Storage.DownloadsFolder.CreateFileAsync("ChromaHub_Update.msix", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+                using (var httpClient = new HttpClient())
+                using (var stream = await httpClient.GetStreamAsync(downloadUrl))
+                using (var fileStream = await file.OpenStreamForWriteAsync())
+                {
+                    await stream.CopyToAsync(fileStream);
+                }
+
+                // Launch the installer
+                var success = await Windows.System.Launcher.LaunchFileAsync(file);
+                if (!success)
+                {
+                    var dialog = new ContentDialog
+                    {
+                        Title = "Installation Failed",
+                        Content = "The update could not be installed. Please try again.",
+                        CloseButtonText = "OK",
+                        XamlRoot = this.XamlRoot
+                    };
+                    await dialog.ShowAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and show an error dialog
+                System.Diagnostics.Debug.WriteLine($"Error during update check: {ex.Message}");
+                var dialog = new ContentDialog
+                {
+                    Title = "Error",
+                    Content = $"An error occurred while checking for updates: {ex.Message}",
+                    CloseButtonText = "OK",
+                    XamlRoot = this.XamlRoot
+                };
+                await dialog.ShowAsync();
+            }
+        }
         private void ResetSettingsButton_Click(object sender, RoutedEventArgs e)
         {
             ShowResetConfirmation();
@@ -162,29 +294,6 @@ namespace ChromaHub
             {
                 // Handle errors silently
             }
-        }
-
-        private void ApplyTheme(ElementTheme theme)
-        {
-            App.SaveThemePreference(theme);
-
-            if (App.MainWindow is MainWindow mainWindow)
-            {
-                mainWindow.ApplyTheme(theme);
-            }
-        }
-
-        private void ApplyBackdropChange(string backdropType)
-        {
-            if (App.MainWindow is MainWindow mainWindow)
-            {
-                mainWindow.ApplyBackdrop(backdropType);
-            }
-        }
-
-        private void ApplyAnimationSettings(bool enableAnimations)
-        {
-            UpdateApplicationAnimations(enableAnimations);
         }
 
         private void UpdateApplicationAnimations(bool enable)

@@ -66,7 +66,6 @@
         </TeachingTip>
 
         <TeachingTip x:Name="DetailsTip"
-                    Title="{x:Bind Project.Title}"
                     IsLightDismissEnabled="True"
                     PreferredPlacement="Bottom"
                     CloseButtonContent="Close">
@@ -77,7 +76,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="{x:Bind Project.Description}"
+                <TextBlock x:Name="DetailsDescription"
+                           Text="{x:Bind Project.Description}"
                            TextWrapping="Wrap"
                            Grid.Row="0"
                            Style="{ThemeResource BodyTextBlockStyle}"
@@ -88,7 +88,8 @@
                            Style="{ThemeResource CaptionTextBlockStyle}"
                            FontWeight="SemiBold"/>
 
-                <ItemsRepeater Grid.Row="2" 
+                <ItemsRepeater x:Name="DetailsTechnologiesRepeater"
+                               Grid.Row="2" 
                                ItemsSource="{x:Bind Project.Technologies}"
                                Margin="0,8,0,0">
                     <ItemsRepeater.Layout>

@@ -7,64 +7,53 @@ using Microsoft.UI.Windowing;
 using WinRT.Interop;
 using Microsoft.UI;
 using System.Threading.Tasks;
-using WinRT; // Added for proper WinRT interop
+using WinRT;
 using Windows.Storage;
 using ChromaHub;
 using System.Linq;
-using System.Reflection.Metadata;
 using Microsoft.UI.Xaml.Input;
 
 namespace ChromaHub
 {
     public sealed partial class MainWindow : Window
     {
-        // Make the Frame accessible for navigation from other classes
         public Frame AppFrame => ContentFrame;
 
-        // Variables to track window backdrop
         private MicaController _micaController;
         private SystemBackdropConfiguration _backdropConfiguration;
 
-        // Is loading flag to prevent multiple navigation attempts during initialization
         private bool _isLoading = true;
-
-        // Track the window for maximize/restore functionality
         private AppWindow _appWindow;
         private bool _isMaximized = false;
         private WindowId _windowId;
-
-        // Backdrop type
         private string _currentBackdropType = "Mica";
-
-        // Variable to track if the window is closing
         private bool _isClosing = false;
 
         public MainWindow()
         {
             this.InitializeComponent();
 
-            // Set window properties
             Title = "Anjishnu Nandi | Portfolio";
             SetupWindow();
 
-            // Configure navigation
             NavView.ItemInvoked += NavView_ItemInvoked;
 
-            // Load backdrop setting
             LoadBackdropSetting();
 
-            // Apply theme based on saved settings
             ApplyTheme(App.CurrentTheme);
 
-            // Initialize theme icon based on current theme
-            ElementTheme currentTheme = App.CurrentTheme;
-            UpdateThemeIcon(currentTheme);
+            UpdateThemeIcon(App.CurrentTheme);
 
-            // Initial navigation to splash screen
             ContentFrame.Navigate(typeof(SplashScreen));
 
-            // Set the loading flag to false once the UI is ready
             _isLoading = false;
+
+            Closed += MainWindow_Closed;
+        }
+
+        private void MainWindow_Closed(object sender, WindowEventArgs args)
+        {
+            CleanupBackdrop();
         }
 
         public void ApplyAnimationSettings(bool enableAnimations)
@@ -74,9 +63,9 @@ namespace ChromaHub
                 if (enableAnimations)
                 {
                     ContentFrame.ContentTransitions = new Microsoft.UI.Xaml.Media.Animation.TransitionCollection
-            {
-                new Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition()
-            };
+                    {
+                        new Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition()
+                    };
                 }
                 else
                 {
@@ -84,6 +73,7 @@ namespace ChromaHub
                 }
             }
         }
+
         private void LoadBackdropSetting()
         {
             try
@@ -96,57 +86,39 @@ namespace ChromaHub
             }
             catch
             {
-                // Use default if settings cannot be read
                 _currentBackdropType = "Mica";
             }
         }
+
         private void SetupWindow()
         {
             try
             {
-                // Get window handle and app window
                 IntPtr hWnd = WindowNative.GetWindowHandle(this);
                 _windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
                 _appWindow = AppWindow.GetFromWindowId(_windowId);
 
-                // Remove the default title bar by extending into the caption area
-                // This is the key part to hide the default window controls
                 ExtendsContentIntoTitleBar = true;
-
-                // Set the draggable regions for the custom title bar
                 SetTitleBar(AppTitleBar);
 
-                // Get the AppWindowTitleBar
                 var titleBar = _appWindow.TitleBar;
-
-                // Hide default title bar completely
                 titleBar.ExtendsContentIntoTitleBar = true;
-
-                // Make default system title bar buttons invisible
                 titleBar.ButtonBackgroundColor = Colors.Transparent;
                 titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
                 titleBar.ButtonForegroundColor = Colors.Transparent;
                 titleBar.ButtonInactiveForegroundColor = Colors.Transparent;
-                var hWnd1 = WinRT.Interop.WindowNative.GetWindowHandle(this);
-                var windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd1);
-                var appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
-                var presenter = appWindow.Presenter as Microsoft.UI.Windowing.OverlappedPresenter;
 
-                // Hide both the border and the title bar (including system controls)
+                var presenter = _appWindow.Presenter as Microsoft.UI.Windowing.OverlappedPresenter;
                 presenter.SetBorderAndTitleBar(true, false);
 
-                // Set window size
                 _appWindow.Resize(new Windows.Graphics.SizeInt32 { Width = 1200, Height = 800 });
 
-                // Center the window
                 CenterWindow(_appWindow, _windowId);
 
-                // Apply backdrop based on saved setting
                 ApplyBackdrop(_currentBackdropType);
             }
             catch (Exception ex)
             {
-                // Fallback in case of failure
                 if (RootGrid != null)
                 {
                     RootGrid.Background = new SolidColorBrush(
@@ -169,7 +141,6 @@ namespace ChromaHub
             }
             catch
             {
-                // Silently handle any errors with window positioning
             }
         }
 
@@ -179,7 +150,6 @@ namespace ChromaHub
 
             try
             {
-                // Clean up existing backdrop if any
                 CleanupBackdrop();
 
                 if (backdropType == "Mica")
@@ -193,7 +163,6 @@ namespace ChromaHub
             }
             catch
             {
-                // Fallback to solid color if requested backdrop fails
                 ApplySolidColorBackdrop();
             }
         }
@@ -208,7 +177,6 @@ namespace ChromaHub
 
             _backdropConfiguration = null;
 
-            // Ensure we have a background in case backdrop is removed
             ApplySolidColorBackdrop();
         }
 
@@ -216,29 +184,23 @@ namespace ChromaHub
         {
             try
             {
-                // Initialize the Mica controller
                 _micaController = new MicaController();
                 _backdropConfiguration = new SystemBackdropConfiguration();
 
-                // Configure backdrop
                 _micaController.Kind = MicaKind.BaseAlt;
                 _backdropConfiguration.IsInputActive = true;
                 _backdropConfiguration.Theme = (Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme)App.CurrentTheme;
 
-                // Apply the backdrop
-                // Fixed: Use proper COM interface casting with TryAs
                 _micaController.AddSystemBackdropTarget(this.As<Microsoft.UI.Composition.ICompositionSupportsSystemBackdrop>());
                 _micaController.SetSystemBackdropConfiguration(_backdropConfiguration);
 
-                // Clear background to allow backdrop visibility
                 if (RootGrid != null)
                 {
                     RootGrid.Background = null;
                 }
             }
-            catch (Exception)
+            catch
             {
-                // Fallback to solid color if Mica is not supported
                 ApplySolidColorBackdrop();
             }
         }
@@ -256,7 +218,6 @@ namespace ChromaHub
             }
             catch
             {
-                // Silently handle any errors with applying backdrop
             }
         }
 
