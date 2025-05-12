@@ -9,192 +9,393 @@
     mc:Ignorable="d"
     Background="Transparent">
 
-    <Grid>
-        <ParallaxView Source="{x:Bind ScrollViewer}" VerticalShift="50">
-            <Image Source="ms-appx:///Assets/hero-bg.png" Stretch="UniformToFill" Opacity="0.1"/>
-        </ParallaxView>
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <ScrollViewer x:Name="ScrollViewer" VerticalScrollBarVisibility="Auto">
-            <StackPanel Spacing="24" Padding="24,0,24,48">
+            <!-- Header Section -->
+            <Grid Height="240">
+                <!-- Background accent circle -->
+                <Border x:Name="AccentRect" 
+                        Width="320" 
+                        Height="320" 
+                        CornerRadius="160"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,-80,-140">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="{ThemeResource SystemAccentColor}" Offset="0.0" />
+                            <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Opacity>0.15</Border.Opacity>
+                </Border>
 
-                <!-- Hero Section -->
-                <Grid Height="500" Margin="0,48,0,0">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="16">
-                        <TextBlock Text="Hi, I'm" 
-                                   Style="{ThemeResource SubtitleTextBlockStyle}" 
-                                   HorizontalAlignment="Center"
-                                   Opacity="0.8"/>
+                <!-- Subtle pattern overlay -->
+                <Canvas>
+                    <Path x:Name="PatternPath1" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                          Data="M50,30 C110,20 180,50 240,30" Canvas.Left="480" Canvas.Top="40" />
+                    <Path x:Name="PatternPath2" Stroke="{ThemeResource SystemAccentColor}" StrokeThickness="0.5" Opacity="0.2" 
+                          Data="M30,60 C100,40 160,80 230,60" Canvas.Left="500" Canvas.Top="70" />
+                    <Path x:Name="PatternPath3" Stroke="{ThemeResource SystemAccentColorDark1}" StrokeThickness="0.5" Opacity="0.15" 
+                          Data="M20,90 C90,70 170,100 250,80" Canvas.Left="520" Canvas.Top="100" />
+                </Canvas>
 
-                        <TextBlock Text="Anjishnu Nandi" 
-                                   Style="{ThemeResource HeaderTextBlockStyle}" 
-                                   FontWeight="Bold" 
-                                   HorizontalAlignment="Center">
-                            <TextBlock.Transitions>
-                                <TransitionCollection>
-                                    <EntranceThemeTransition IsStaggeringEnabled="True" FromVerticalOffset="50"/>
-                                </TransitionCollection>
-                            </TextBlock.Transitions>
-                        </TextBlock>
+                <!-- Hero content -->
+                <Grid Margin="30,0,30,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-                        <TextBlock Text="Tech Explorer | Developer | Innovator" 
-                                   Style="{ThemeResource SubtitleTextBlockStyle}" 
-                                   HorizontalAlignment="Center"
-                                   Opacity="0.9">
-                            <TextBlock.Transitions>
-                                <TransitionCollection>
-                                    <EntranceThemeTransition IsStaggeringEnabled="True" FromVerticalOffset="50" FromHorizontalOffset="0"/>
-                                </TransitionCollection>
-                            </TextBlock.Transitions>
-                        </TextBlock>
-
-                        <TextBlock Text="I transform ideas into reality through elegant code ✨" 
-                                   Style="{ThemeResource BodyTextBlockStyle}" 
-                                   HorizontalAlignment="Center"
-                                   Opacity="0.8"
-                                   Margin="0,8,0,16">
-                            <TextBlock.Transitions>
-                                <TransitionCollection>
-                                    <EntranceThemeTransition IsStaggeringEnabled="True" FromVerticalOffset="50"/>
-                                </TransitionCollection>
-                            </TextBlock.Transitions>
-                        </TextBlock>
-
-                        <Button x:Name="ViewWorkButton" 
-                                Content="View My Work" 
-                                Click="ViewWorkButton_Click"
-                                HorizontalAlignment="Center"
-                                Style="{StaticResource AccentButtonStyle}">
-                            <Button.Transitions>
-                                <TransitionCollection>
-                                    <EntranceThemeTransition IsStaggeringEnabled="True" FromVerticalOffset="50"/>
-                                </TransitionCollection>
-                            </Button.Transitions>
-                        </Button>
+                    <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
+                        <TextBlock Text="Welcome to my digital space"
+                                 Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                                 FontSize="16"
+                                 Opacity="0.9"
+                                 FontWeight="SemiBold"
+                                 x:Name="HeaderSubtitle"/>
+                        <TextBlock Text="Anjishnu Nandi"
+                                 Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                                 FontSize="42"
+                                 FontWeight="Bold"
+                                 x:Name="HeaderTitle"
+                                 Margin="0,4,0,0"/>
+                        <TextBlock Text="Developer • Designer • Tech Enthusiast"
+                                 FontSize="18"
+                                 Opacity="0.8"
+                                 Margin="0,8,0,0"/>
                     </StackPanel>
                 </Grid>
+            </Grid>
 
-                <!-- Featured Project -->
-                <StackPanel Spacing="16" x:Name="FeaturedProject">
-                    <TextBlock Text="Featured Project" 
-                               Style="{ThemeResource TitleTextBlockStyle}" 
-                               FontWeight="SemiBold"/>
+            <!-- Main Content Section -->
+            <StackPanel Grid.Row="1" Spacing="32" Margin="30,24,30,40">
+                <!-- Featured Section -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                    <Grid Height="300" CornerRadius="10">
+                    <TextBlock Text="Featured Work" 
+                               Style="{StaticResource SubtitleLargeTextBlockStyle}" 
+                               Margin="0,0,0,16"/>
+
+                    <Grid Grid.Row="1" Height="280">
+                        <Border CornerRadius="12" 
+                                Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}" 
+                                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" 
+                                BorderThickness="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" Padding="24">
+                                    <StackPanel VerticalAlignment="Center" Spacing="16">
+                                        <TextBlock Text="Project Spotlight" 
+                                                   Style="{StaticResource SubtitleTextBlockStyle}" 
+                                                   Foreground="{ThemeResource SystemAccentColor}"/>
+                                        <TextBlock Text="StudySkill Re" 
+                                                   Style="{StaticResource TitleTextBlockStyle}" 
+                                                   FontWeight="Bold"/>
+                                        <TextBlock Text="An innovative learning platform designed to enhance study productivity with AI-powered tools and streamlined note-taking capabilities."
+                                                   TextWrapping="Wrap" 
+                                                   Style="{StaticResource BodyTextBlockStyle}" 
+                                                   Opacity="0.8"/>
+                                        <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+                                            <!-- Updated button for project details -->
+                                            <Button Content="View Details" 
+                                                    Style="{StaticResource AccentButtonStyle}" 
+                                                    Tag="StudySkillRe"
+                                                    Click="ViewFeaturedProject_Click"/>
+                                            <!-- GitHub source code button -->
+                                            <Button Content="Source Code" 
+                                                    Tag="https://github.com/cromaguy/StudySkill-Revamped"
+                                                    Click="ViewSourceCode_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <Image Source="ms-appx:///Assets/StudySkill.png" 
+                                           Stretch="UniformToFill"/>
+                                    <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Opacity="0.1"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                <!-- Quick Links Section -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Quick Access" 
+                               Style="{StaticResource SubtitleTextBlockStyle}" 
+                               Margin="0,0,0,16"/>
+
+                    <Grid Grid.Row="1">
+                        <ItemsRepeater x:Name="QuickLinksRepeater" ItemsSource="{x:Bind QuickLinks}">
+                            <ItemsRepeater.Layout>
+                                <UniformGridLayout MinItemWidth="200" 
+                                                   MinItemHeight="120"
+                                                   MinRowSpacing="16"
+                                                   MinColumnSpacing="16"/>
+                            </ItemsRepeater.Layout>
+                            <ItemsRepeater.ItemTemplate>
+                                <DataTemplate>
+                                    <Button HorizontalAlignment="Stretch" 
+                                            VerticalAlignment="Stretch"
+                                            Tag="{Binding Tag}"
+                                            Click="NavigationButton_Click">
+                                        <Button.Resources>
+                                            <ResourceDictionary>
+                                                <ResourceDictionary.ThemeDictionaries>
+                                                    <ResourceDictionary x:Key="Light">
+                                                        <SolidColorBrush x:Key="ButtonBackground" Color="#F8F8F8"/>
+                                                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#F0F0F0"/>
+                                                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#E8E8E8"/>
+                                                    </ResourceDictionary>
+                                                    <ResourceDictionary x:Key="Dark">
+                                                        <SolidColorBrush x:Key="ButtonBackground" Color="#2D2D2D"/>
+                                                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3D3D3D"/>
+                                                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4D4D4D"/>
+                                                    </ResourceDictionary>
+                                                </ResourceDictionary.ThemeDictionaries>
+                                            </ResourceDictionary>
+                                        </Button.Resources>
+                                        <Grid>
+                                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="12">
+                                                <FontIcon Glyph="{Binding Icon}" FontSize="32"/>
+                                                <TextBlock Text="{Binding Title}" 
+                                                           HorizontalAlignment="Center" 
+                                                           FontWeight="SemiBold"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsRepeater.ItemTemplate>
+                        </ItemsRepeater>
+                    </Grid>
+                </Grid>
+
+                <!-- Skills Showcase Section -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Skills Overview" 
+                               Style="{StaticResource SubtitleTextBlockStyle}" 
+                               Margin="0,0,0,16"/>
+
+                    <Border Grid.Row="1" 
+                            Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}"
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="24">
+                        <StackPanel Spacing="20">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Web Development" 
+                                           Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE734;" Foreground="{ThemeResource SystemAccentColorLight3}"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="App Development" 
+                                           Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="UI/UX Design" 
+                                           Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE734;" Foreground="{ThemeResource SystemAccentColorLight3}"/>
+                                    <FontIcon Glyph="&#xE734;" Foreground="{ThemeResource SystemAccentColorLight3}"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Data Science" 
+                                           Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE735;" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <FontIcon Glyph="&#xE734;" Foreground="{ThemeResource SystemAccentColorLight3}"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Updated Recent Projects Section for HomePage.xaml -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-
-                        <Image Source="ms-appx:///Assets/NewAngle.png" 
-                               Stretch="UniformToFill"
-                               Grid.Column="0"
-                               VerticalAlignment="Center">
-                            <Image.Clip>
-                                <RectangleGeometry Rect="0,0,600,300"/>
-                            </Image.Clip>
-                        </Image>
-
-                        <Grid Grid.Column="1" 
-                              Padding="24"
-                              Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
-                            <StackPanel VerticalAlignment="Center" Spacing="16">
-                                <TextBlock Text="Project NewAngle" 
-                                           Style="{ThemeResource SubtitleTextBlockStyle}" 
-                                           FontWeight="SemiBold"/>
-
-                                <TextBlock Text="An intelligent chat assistant built with Gemini 1.5 Flash." 
-                                           Style="{ThemeResource BodyTextBlockStyle}" 
-                                           TextWrapping="Wrap"
-                                           Opacity="0.8"/>
-
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <Button Content="View Project" 
-                                            Click="ViewProjectButton_Click"
-                                            Tag="https://new-angle.vercel.app/"/>
-
-                                    <HyperlinkButton Content="Source Code" 
-                                                     NavigateUri="https://github.com/cromaguy/Project-NewAngle"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
+                        <TextBlock Text="Recent Projects" 
+                   Style="{StaticResource SubtitleTextBlockStyle}"/>
+                        <HyperlinkButton Grid.Column="1" 
+                         Content="View all" 
+                         Click="ViewAllProjects_Click"/>
                     </Grid>
 
-                    <Button Content="See All Projects" 
-                            Click="SeeAllProjectsButton_Click"
-                            HorizontalAlignment="Right"/>
-                </StackPanel>
-
-                <!-- Social Links -->
-                <InfoBar Title="Let's Connect" 
-                         Message="Find me on these platforms or send me an email to get in touch."
-                         IsOpen="True"
-                         Severity="Informational"
-                         IsClosable="False">
-                    <InfoBar.ActionButton>
-                        <HyperlinkButton Content="Email Me" 
-                                         Click="EmailButton_Click"/>
-                    </InfoBar.ActionButton>
-                </InfoBar>
-
-                <!-- Updated Social Links Section -->
-                <Grid Margin="0,12,0,0" MaxWidth="800" HorizontalAlignment="Center">
-                    <ItemsRepeater ItemsSource="{x:Bind SocialLinks}">
+                    <ItemsRepeater Grid.Row="1" x:Name="RecentProjectsRepeater" Margin="0,16,0,0">
                         <ItemsRepeater.Layout>
-                            <UniformGridLayout MinItemWidth="160" 
-                                              MinItemHeight="56"
-                                              MaximumRowsOrColumns="2"
-                                              ItemsStretch="Uniform"
-                                              MinRowSpacing="16"
-                                              MinColumnSpacing="16"/>
+                            <UniformGridLayout MinItemWidth="320" 
+                               MinItemHeight="200"
+                               MinRowSpacing="16"
+                               MinColumnSpacing="16"/>
                         </ItemsRepeater.Layout>
                         <ItemsRepeater.ItemTemplate>
-                            <DataTemplate x:DataType="local:SocialLinkItem">
-                                <Button Click="SocialButton_Click" 
-                                        Tag="{Binding Url}" 
-                                        HorizontalAlignment="Stretch"
-                                        VerticalAlignment="Stretch"
-                                        HorizontalContentAlignment="Center"
-                                        Padding="16,8"
-                                        CornerRadius="10">
-                                    <StackPanel Orientation="Horizontal" Spacing="12">
-                                        <Image Source="{Binding IconPath}" Width="50" Height="50"/>
-                                        <TextBlock Text="{Binding Name}" 
-                                                   VerticalAlignment="Center"
-                                                   FontWeight="SemiBold"/>
-                                    </StackPanel>
-                                    <Button.Resources>
-                                        <ResourceDictionary>
-                                            <ResourceDictionary.ThemeDictionaries>
-                                                <ResourceDictionary x:Key="Light">
-                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#F0F0F0"/>
-                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#E0E0E0"/>
-                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#D0D0D0"/>
-                                                </ResourceDictionary>
-                                                <ResourceDictionary x:Key="Dark">
-                                                    <SolidColorBrush x:Key="ButtonBackground" Color="#2D2D2D"/>
-                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3D3D3D"/>
-                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4D4D4D"/>
-                                                </ResourceDictionary>
-                                            </ResourceDictionary.ThemeDictionaries>
-                                        </ResourceDictionary>
-                                    </Button.Resources>
-                                </Button>
+                            <DataTemplate x:DataType="local:ProjectItem">
+                                <Grid>
+                                    <Border CornerRadius="8" 
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <!-- Project Image -->
+                                            <Grid Height="120">
+                                                <Image Source="{x:Bind ImageUrl}" 
+                                       Stretch="UniformToFill"/>
+                                                <Grid Background="Black" Opacity="0.3"/>
+                                                <TextBlock Text="{x:Bind Title}"
+                                           Style="{StaticResource SubtitleTextBlockStyle}"
+                                           Foreground="White"
+                                           FontWeight="SemiBold"
+                                           Margin="12"
+                                           VerticalAlignment="Bottom"/>
+                                            </Grid>
+
+                                            <!-- Project Description -->
+                                            <TextBlock Grid.Row="1"
+                                       Text="{x:Bind Description}"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       Style="{StaticResource CaptionTextBlockStyle}"
+                                       Margin="12,12,12,0"
+                                       MaxLines="2"/>
+
+                                            <!-- Primary Technology Badge -->
+                                            <StackPanel Grid.Row="2" 
+                                      Orientation="Horizontal"
+                                      Margin="12,8,12,12"
+                                      Spacing="8">
+
+                                                <Button Content="View"
+                                        Tag="{x:Bind}"
+                                        Click="ViewProject_Click"
+                                        Style="{StaticResource AccentButtonStyle}"
+                                        HorizontalAlignment="Right"
+                                        Margin="0,0,0,0"/>
+                                            </StackPanel>
+
+                                            <!-- Highlight border for hover effect -->
+                                            <Border x:Name="HighlightBorder"
+                                    Grid.RowSpan="3"
+                                    CornerRadius="8"
+                                    BorderBrush="{ThemeResource SystemAccentColor}"
+                                    BorderThickness="2"
+                                    Opacity="0"/>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
                             </DataTemplate>
                         </ItemsRepeater.ItemTemplate>
                     </ItemsRepeater>
                 </Grid>
-            </StackPanel>
-        </ScrollViewer>
 
-        <!-- Scroll to top button -->
-        <Button x:Name="BackToTopButton" 
-                Style="{StaticResource AccentButtonStyle}"
-                Click="BackToTopButton_Click"
-                VerticalAlignment="Bottom" 
-                HorizontalAlignment="Right"
-                Margin="0,0,24,24"
-                Visibility="Collapsed">
-            <FontIcon Glyph="&#xE70E;"/>
-        </Button>
-    </Grid>
+
+                <!-- Call to Action Section -->
+                <Border Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="12"
+                        Padding="24"
+                        Margin="0,8,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Spacing="8" VerticalAlignment="Center">
+                            <TextBlock Text="Let's Connect" 
+                                       Style="{StaticResource SubtitleTextBlockStyle}" 
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="Have a project in mind or just want to say hello?" 
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       Opacity="0.8"/>
+                        </StackPanel>
+
+                        <Button Grid.Column="1"
+                                Content="Get in Touch"
+                                Style="{StaticResource AccentButtonStyle}"
+                                Click="ContactButton_Click"
+                                Padding="24,8"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Page>

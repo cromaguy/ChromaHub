@@ -1,101 +1,163 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Microsoft.UI.Xaml.Media.Animation;
+using System.Linq;
 
 namespace ChromaHub
 {
     public sealed partial class HomePage : Page
     {
-        public List<SocialLinkItem> SocialLinks { get; } = new List<SocialLinkItem>
-        {
-            new SocialLinkItem { Name = "LinkedIn", IconPath = "Assets/Icons/linkedin.svg", Url = "https://linkedin.com/in/anjishnu-nandi" },
-            new SocialLinkItem { Name = "X", IconPath = "Assets/Icons/x.svg", Url = "https://x.com/AnjiCroma" },
-            new SocialLinkItem { Name = "GitHub", IconPath = "Assets/Icons/github.svg", Url = "https://github.com/cromaguy" },
-            new SocialLinkItem { Name = "Instagram", IconPath = "Assets/Icons/instagram.svg", Url = "https://instagram.com/its.chroma.anji" }
-        };
+        public ObservableCollection<QuickLinkItem> QuickLinks { get; } = new ObservableCollection<QuickLinkItem>();
+
+        // Remove RecentProjects collection
+
+        // Add a property to store the featured project
+        public WebAppProject FeaturedProject { get; private set; }
+
+        // New property for recent projects that will fetch data from ProjectsPage
+        public ObservableCollection<ProjectItem> RecentProjects { get; } = new ObservableCollection<ProjectItem>();
 
         public HomePage()
         {
             this.InitializeComponent();
 
-            // Set up scroll event - using null checking to fix CS0120 error
-            if (ScrollViewer != null)
+            // Initialize the featured project
+            FeaturedProject = new WebAppProject
             {
-                ScrollViewer.ViewChanged += ScrollViewer_ViewChanged;
-            }
+                Title = "StudySkill Re",
+                Description = "An innovative learning platform designed to enhance study productivity with AI-powered tools and streamlined note-taking capabilities.",
+                Url = "https://studyskill.vercel.app/",
+                ImageUrl = "ms-appx:///Assets/StudySkill.png",
+                Technologies = new List<string> { "React", "Node.js", "MongoDB" }
+            };
+
+            // Initialize Quick Links
+            QuickLinks.Add(new QuickLinkItem { Title = "Projects", Icon = "\uE8A5", Tag = "Projects" });
+            QuickLinks.Add(new QuickLinkItem { Title = "About Me", Icon = "\uE77B", Tag = "About" });
+            QuickLinks.Add(new QuickLinkItem { Title = "Contact", Icon = "\uE715", Tag = "Contact" });
+            QuickLinks.Add(new QuickLinkItem { Title = "Web Apps", Icon = "\uE774", Tag = "WebApps" });
+
+            // Load recent projects from ProjectsPage data
+            LoadRecentProjects();
         }
 
-        private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+        // New method to fetch and load recent projects from ProjectsPage
+        private void LoadRecentProjects()
         {
-            // Show/hide back to top button based on scroll position
-            if (BackToTopButton != null && ScrollViewer != null)
+            try
             {
-                BackToTopButton.Visibility = ScrollViewer.VerticalOffset > 300 ?
-                    Visibility.Visible : Visibility.Collapsed;
-            }
-        }
+                // Get projects from ProjectsPage
+                var projectsPage = new ProjectsPage();
 
-        private void ViewWorkButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Navigate to projects page
-            if (App.MainWindow != null)
-            {
-                var mainWindow = App.MainWindow as MainWindow;
-                if (mainWindow != null)
+                // Take the 3 most recent projects
+                var recentItems = projectsPage.Projects
+                    .Take(3)  // Take only 3 most recent projects
+                    .ToList();
+
+                // Clear and add to our collection
+                RecentProjects.Clear();
+                foreach (var project in recentItems)
                 {
-                    mainWindow.NavigateToPage("Projects");
+                    RecentProjects.Add(project);
+                }
+
+                // Set up binding for Recent Projects repeater in the XAML
+                RecentProjectsRepeater.ItemsSource = RecentProjects;
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                System.Diagnostics.Debug.WriteLine($"Error loading recent projects: {ex.Message}");
+            }
+        }
+
+        private void NavigationButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Tag is string destination)
+            {
+                // In WinUI 3, we need to use this approach instead of Window.Current
+                Frame rootFrame = this.Frame;
+                if (rootFrame != null)
+                {
+                    // Try to navigate using the tag as the page name
+                    Type pageType = Type.GetType($"ChromaHub.{destination}Page");
+                    if (pageType != null)
+                    {
+                        rootFrame.Navigate(pageType, null);
+                    }
                 }
             }
         }
 
-        private async void ViewProjectButton_Click(object sender, RoutedEventArgs e)
+        private void ViewAllProjects_Click(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            var url = button?.Tag?.ToString();
-            if (!string.IsNullOrEmpty(url))
+            Frame rootFrame = this.Frame;
+            if (rootFrame != null)
             {
-                await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+                rootFrame.Navigate(typeof(ProjectsPage), null);
             }
         }
 
-        private void SeeAllProjectsButton_Click(object sender, RoutedEventArgs e)
+        private void ContactButton_Click(object sender, RoutedEventArgs e)
         {
-            // Fixed navigation to projects page
-            if (App.MainWindow != null)
+            Frame rootFrame = this.Frame;
+            if (rootFrame != null)
             {
-                var mainWindow = App.MainWindow as MainWindow;
-                if (mainWindow != null)
+                rootFrame.Navigate(typeof(ContactPage), null);
+            }
+        }
+
+        // Add method for the featured project view button
+        private void ViewFeaturedProject_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Tag?.ToString() == "StudySkillRe")
+            {
+                Frame.Navigate(typeof(WebAppViewPage), FeaturedProject, new DrillInNavigationTransitionInfo());
+            }
+        }
+
+        // Add method for the source code button
+        private async void ViewSourceCode_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                string repoUrl = button.Tag?.ToString();
+                if (!string.IsNullOrEmpty(repoUrl))
                 {
-                    mainWindow.NavigateToPage("Projects");
+                    await Windows.System.Launcher.LaunchUriAsync(new Uri(repoUrl));
                 }
             }
         }
 
-        private async void SocialButton_Click(object sender, RoutedEventArgs e)
+        // New method to handle viewing a project's details
+        private void ViewProject_Click(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            var url = button?.Tag?.ToString();
-            if (!string.IsNullOrEmpty(url))
-                await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
-        }
-
-
-        private async void EmailButton_Click(object sender, RoutedEventArgs e)
-        {
-            await Windows.System.Launcher.LaunchUriAsync(new Uri("mailto:anjicroma@gmail.com"));
-        }
-
-        private void BackToTopButton_Click(object sender, RoutedEventArgs e)
-        {
-            ScrollViewer?.ChangeView(null, 0, null, true);
+            if (sender is Button button && button.Tag is ProjectItem project)
+            {
+                // Navigate to project details page or handle as needed
+                // For example, you might convert the ProjectItem to a WebAppProject or use another approach
+                Frame.Navigate(typeof(WebAppViewPage), new WebAppProject
+                {
+                    Title = project.Title,
+                    Description = project.Description,
+                    Url = project.LiveUrl,
+                    ImageUrl = project.ImageUrl,
+                    Technologies = project.Technologies
+                }, new DrillInNavigationTransitionInfo());
+            }
         }
     }
 
-    public class SocialLinkItem
+    public class QuickLinkItem
     {
-        public string Name { get; set; }
-        public string IconPath { get; set; }
-        public string Url { get; set; }
+        public string Title { get; set; }
+        public string Icon { get; set; }
+        public string Tag { get; set; }
     }
+
+    // Remove RecentProjectItem class as we'll use ProjectItem from ProjectsPage directly
 }

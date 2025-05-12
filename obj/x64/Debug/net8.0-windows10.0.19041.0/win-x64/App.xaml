@@ -52,6 +52,23 @@
                 <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
             </Style>
 
+            <Style x:Key="DisplayLargeTextBlockStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="64"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+
+                <Style x:Key="SubtitleLargeTextBlockStyle" TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="24"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+   
+
+            
             <!-- Custom Colors -->
             <Color x:Key="WindowCaptionBackground">Transparent</Color>
             <Color x:Key="WindowCaptionBackgroundDisabled">Transparent</Color>

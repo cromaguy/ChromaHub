@@ -24,8 +24,20 @@ namespace ChromaHub
             if (e.Parameter is WebAppProject project)
             {
                 Project = project;
+
+                // Update UI elements with project information
+                UpdateProjectInfo();
+
+                // Load the project into WebView
                 LoadProject();
             }
+        }
+
+        private void UpdateProjectInfo()
+        {
+            // Update title and URL in the header
+            ProjectTitle.Text = Project.Title;
+            ProjectUrl.Text = Project.Url;
         }
 
         private async void LoadProject()
@@ -140,6 +152,19 @@ namespace ChromaHub
         {
             DetailsTip.Target = sender as FrameworkElement;
             DetailsTip.IsOpen = true;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            // Clean up event handlers when navigating away from the page
+            if (ProjectWebView != null && ProjectWebView.CoreWebView2 != null)
+            {
+                ProjectWebView.CoreWebView2.NavigationStarting -= CoreWebView2_NavigationStarting;
+                ProjectWebView.CoreWebView2.NavigationCompleted -= CoreWebView2_NavigationCompleted;
+                ProjectWebView.CoreWebView2.ProcessFailed -= CoreWebView2_ProcessFailed;
+            }
         }
     }
 }

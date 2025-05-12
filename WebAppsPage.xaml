@@ -52,7 +52,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,35">
-                    <TextBlock Text="Explore my interactive web applicationss"
+                    <TextBlock Text="Explore my interactive web applications"
                        Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
                        FontSize="16"
                        Opacity="0.9"
