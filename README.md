@@ -1,4 +1,4 @@
-# ChromaHub 🎨
+# ChromaHub 
 
 <div align="center">
   <img src="Assets/ChromaLogo_Dark.png" alt="ChromaHub Logo" width="200" />
