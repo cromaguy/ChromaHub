@@ -99,16 +99,17 @@
                 <ItemsRepeater x:ConnectionId='4' x:Name="ProjectsRepeater"                                        >
                     <ItemsRepeater.Layout>
                         <UniformGridLayout MinItemWidth="380" 
-                                           MinItemHeight="360"
-                                           MinRowSpacing="24"
-                                           MinColumnSpacing="24"/>
+                                       MinItemHeight="360"
+                                       MinRowSpacing="24"
+                                       MinColumnSpacing="24"/>
                     </ItemsRepeater.Layout>
                     <ItemsRepeater.ItemTemplate>
                         <DataTemplate                               >
                             <Grid x:ConnectionId='6' CornerRadius="8" 
-                                  BorderThickness="1"
-                                  BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
-                                  Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
+                              BorderThickness="1"
+                              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                              Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}"
+                                                         >
 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="180"/>

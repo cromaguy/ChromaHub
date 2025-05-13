@@ -202,6 +202,18 @@ namespace ChromaHub
                     // Find the highlight border
                     var highlightBorder = FindChildByName<Border>(projectGrid, "HighlightBorder");
 
+                    // Get the project data
+                    var itemIndex = args.Index;
+                    if (itemIndex >= 0 && itemIndex < FilteredProjects.Count)
+                    {
+                        // Set the project as the grid's DataContext (in case it's not already set)
+                        projectGrid.DataContext = FilteredProjects[itemIndex];
+
+                        // Add tap event handler directly to ensure navigation works
+                        projectGrid.Tapped -= ProjectItem_Tapped; // Remove any previous handlers
+                        projectGrid.Tapped += ProjectItem_Tapped;
+                    }
+
                     // Add pointer events
                     projectGrid.PointerEntered += (s, e) => {
                         try
@@ -388,6 +400,48 @@ namespace ChromaHub
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"ShowAllProjects error: {ex.Message}");
+            }
+        }
+
+        private void ProjectItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("ProjectItem_Tapped event triggered");
+
+                // Method 1: Get project from DataContext
+                if (sender is FrameworkElement element && element.DataContext is ProjectItem project)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Navigating to AppInfoPage for project: {project.Title}");
+                    e.Handled = true;
+                    Frame.Navigate(typeof(AppInfoPage), project, new DrillInNavigationTransitionInfo());
+                    return;
+                }
+
+                // Method 2: Find project by searching through visual tree
+                if (sender is Grid projectGrid)
+                {
+                    // Try to determine which project this is from its index
+                    var container = ProjectsRepeater.TryGetElement(ProjectsRepeater.GetElementIndex(projectGrid));
+                    if (container != null)
+                    {
+                        int index = ProjectsRepeater.GetElementIndex(container);
+                        if (index >= 0 && index < FilteredProjects.Count)
+                        {
+                            var selectedProject = FilteredProjects[index];
+                            System.Diagnostics.Debug.WriteLine($"Found project by index: {selectedProject.Title}");
+                            e.Handled = true;
+                            Frame.Navigate(typeof(AppInfoPage), selectedProject, new DrillInNavigationTransitionInfo());
+                            return;
+                        }
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("Failed to find project from tapped element");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"ProjectItem_Tapped error: {ex.Message}");
             }
         }
     }

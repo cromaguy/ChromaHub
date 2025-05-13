@@ -99,16 +99,17 @@
                 <ItemsRepeater x:Name="ProjectsRepeater" ItemsSource="{x:Bind FilteredProjects}">
                     <ItemsRepeater.Layout>
                         <UniformGridLayout MinItemWidth="380" 
-                                           MinItemHeight="360"
-                                           MinRowSpacing="24"
-                                           MinColumnSpacing="24"/>
+                                       MinItemHeight="360"
+                                       MinRowSpacing="24"
+                                       MinColumnSpacing="24"/>
                     </ItemsRepeater.Layout>
                     <ItemsRepeater.ItemTemplate>
                         <DataTemplate x:DataType="local:ProjectItem">
                             <Grid CornerRadius="8" 
-                                  BorderThickness="1"
-                                  BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
-                                  Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
+                              BorderThickness="1"
+                              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                              Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}"
+                              Tapped="ProjectItem_Tapped">
 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="180"/>

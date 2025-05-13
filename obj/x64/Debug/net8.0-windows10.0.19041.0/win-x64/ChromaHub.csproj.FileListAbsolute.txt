@@ -1,6 +1,7 @@
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChromaHub.exe
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AboutPage.xbf
+C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppInfoPage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ContactPage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MainWindow.xbf
@@ -230,6 +231,8 @@ C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App.g.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AboutPage.g.i.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AboutPage.g.cs
+C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppInfoPage.g.i.cs
+C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppInfoPage.g.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ContactPage.g.i.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ContactPage.g.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.g.i.cs
@@ -251,6 +254,7 @@ C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\XamlTypeInfo.g.cs
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App.xaml
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AboutPage.xaml
+C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppInfoPage.xaml
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ContactPage.xaml
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.xaml
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MainWindow.xaml
@@ -262,6 +266,7 @@ C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WebAppViewPage.xaml
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AboutPage.xbf
+C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppInfoPage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ContactPage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.xbf
 C:\Users\KIIT0001\source\repos\ChromaHub\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MainWindow.xbf
